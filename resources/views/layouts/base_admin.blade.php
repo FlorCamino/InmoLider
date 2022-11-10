@@ -11,18 +11,17 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/base_admin.css') }}">
     {{-- Favicon --}}
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="logo1.ico" type="image/x-icon" />
     {{-- Autenticación --}}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 
 <body>
-    <nav id="navbar" class="navbar navbar-expand navbar-light" style="background-color:grey">
+    {{-- Barra de navegación --}}
+    <nav id="navbar" class="navbar navbar-expand">
         <div class="container col-1">
-            <a class="navbar-brand"><img class="d-block" width="40" height="36"
-                    src="{{ asset('img/images.png') }}"></a>
-            <a class="navbar-brand">InmoLíder</a>
+            <a class="navbar-brand"><img id="img" src="{{ asset('img/logo1.jpg') }}"></a>
         </div>
         <div class="container col-8"
             style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
@@ -31,49 +30,52 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
+                <ul id="navwords" class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">TRANSACCIÓN</a>
+                        <a class="nav-link" aria-current="page" href="#">Transacción</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">PROPIETARIOS</a>
+                        <a class="nav-link" href="#">Propietarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">USUARIOS</a>
+                        <a class="nav-link" href="#">Usuarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('ciudad.index') }}">CIUDADES</a>
+                        <a class="nav-link" href="{{ route('ciudad.index') }}">Ciudades</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            PROPIEDADES
+                            Propiedades
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">ESTADO DE PROPIEDADES</a></li>
-                            <li><a class="dropdown-item" href="#">PERIODO</a></li>
-                            <li><a class="dropdown-item" href="#">IMAGENES</a></li>
-                            <li><a class="dropdown-item" href="#">FAVORITAS</a></li>
+                            <li><a class="dropdown-item" href="#">Estado de propiedades</a></li>
+                            <li><a class="dropdown-item" href="#">Período</a></li>
+                            <li><a class="dropdown-item" href="#">Imagenes</a></li>
+                            <li><a class="dropdown-item" href="#">Favoritas</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
-            <div class="container col-2">
-                <p> <strong> Hola,
-                        "nombre" </strong> </p>
+            <div id="user" class="container col-3">
+                <p>  Hola, nombre </p>
+                <span><a class="navbar-brand"><img id="userimg" src="{{ asset('img/vector.jpg') }}"></a></span>
             </div>
+            
     </nav>
+    {{-- Línea horizontal --}}
+    <hr class="container-absolute col-10bg-secondary border-1 border-top border-secondary">
 
     @yield('content')
 
-
-    <footer class="bg-info text-center text-lg-start fixed-bottom">
-        <div class="container-absolute p-4" style="background-color: grey">
+{{-- Footer --}}
+    <footer id="footer" class="fixed-bottom">
+        <div id="foot" class="container-absolute p-4">
 
             <div class="row">
-                <div class="text-center p-3" style="background-color:aliceblue">
+                <div class="text-center">
                     © 2020 Copyright:
-                    <strong>InmoLíder.com</strong>
+                    <strong> <a id="footlink" href="{{--route('admin.inicio')--}}"> InmoLider.com </a> </strong>
                 </div>
             </div>
         </div>

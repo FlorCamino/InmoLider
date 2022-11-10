@@ -56,9 +56,9 @@ class AdminController extends Controller
     private function validar(Request $request)
     {
         Validator::make($request->post(), [
-            // 'nombre' => ['required', 'alpha'],
-            // 'apellido' => ['required', 'alpha'],
-            // 'legajo' => ['required', 'numeric']
+            'nombre' => ['required', 'alpha'],
+            'apellido' => ['required', 'alpha'],
+            'legajo' => ['required', 'numeric']
         ])->validate();
     }
 
@@ -89,7 +89,7 @@ class AdminController extends Controller
                     $request->post('costo')
                 ]);
             });
-            return redirect(route('administrador.login'));
+            return redirect(route('admin.login'));
         } catch (\Exception $exception) {
             DB::rollBack();
             echo $exception->getMessage();
