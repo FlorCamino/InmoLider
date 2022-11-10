@@ -9,7 +9,7 @@
                 <h2>Editar</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-secondary" href="{{ route('propietario.index') }}" enctype="multipart/form-data">
+                <a class="btn btn-success" href="{{ route('propietario.index') }}" enctype="multipart/form-data">
                     Volver</a>
             </div>
         </div>

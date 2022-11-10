@@ -14,7 +14,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('administrador.login');
+        return view('admin.login');
     }
 
     /**
@@ -26,8 +26,10 @@ class LoginController extends Controller
     public function store(Request $request)
     {
         if (Auth::attempt([
-            'email' => $request->post('username'),
-            'password' => $request->post('contrasenia')
+            'email' => $request,
+            // ->post('username')
+            'password' => $request
+            // ->post('contrasenia')
         ])) {
             $request->session()->regenerate();
             return redirect()->intended(route('administrador.index'));
@@ -48,6 +50,6 @@ class LoginController extends Controller
     public function destroy(Request $request)
     {
         $request->session()->invalidate();
-        return redirect(route('administrador.login'));
+        return redirect(route('admin.login'));
     }
 }

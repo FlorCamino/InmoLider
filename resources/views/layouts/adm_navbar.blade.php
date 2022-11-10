@@ -21,7 +21,7 @@
     </div>
   </nav>
   <div class="container-fluid col-12 py-15 mx-15 w-100 ">
-    <img src=
+    {{-- <img src=
     "{{ asset('img/encabezado.jpg') }}"
-     width="1900" height="900" alt=""/>
+     width="1900" height="900" alt=""/> --}}
   </div>

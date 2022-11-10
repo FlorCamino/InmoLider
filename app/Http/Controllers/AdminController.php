@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
+use App\Models\Administrador;
 use App\Models\Propiedad;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,6 +12,10 @@ use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -19,17 +25,18 @@ class AdminController extends Controller
     {
         $usuario = Auth::user();
 
-        $propiedades = DB::select('SELECT p.id, p.descripcion, 
-        p.direccion, p.barrio, p.CP, p.costo , p.cantBanios, 
-        p.cantHab, p.estacionamiento, p.aceptaMascotas, p.amoblado,
-        c.nombre as nombreCiudad, pp.nombre as nombrePropietario, 
-        t.nombre as nombreTipoTransaccion, e.nombre as nombreEstadoPropiedad,
-        pe.nombre as nombrePeriodo FROM propiedad p
-        inner join ciudad c ON p.idciudad = c.id
-        inner join propietario pp ON p.idPropietario = pp.id
-        inner join tipotransaccion t ON p.idTipoTransaccion = t.id
-        inner join estadoPropiedad e ON p.idEstadoPropiedad = e.id
-        left join periodo pe ON p.idPeriodo = pe.id');
+        // $propiedades = DB::select('SELECT p.id, p.descripcion, 
+        // p.direccion, p.barrio, p.CP, p.costo , p.cantBanios, 
+        // p.cantHab, p.estacionamiento, p.aceptaMascotas, p.amoblado,
+        // c.nombre as nombreCiudad, pp.nombre as nombrePropietario, 
+        // t.nombre as nombreTipoTransaccion, e.nombre as nombreEstadoPropiedad,
+        // pe.nombre as nombrePeriodo FROM propiedad p
+        // inner join ciudad c ON p.idciudad = c.id
+        // inner join propietario pp ON p.idPropietario = pp.id
+        // inner join tipotransaccion t ON p.idTipoTransaccion = t.id
+        // inner join estadoPropiedad e ON p.idEstadoPropiedad = e.id
+        // left join periodo pe ON p.idPeriodo = pe.id');
+        $propiedades = Admin::all();
         return view('administrador.index', [
             'propiedades' => $propiedades,
             'titulo' => 'Listado de propiedades',
@@ -97,10 +104,7 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        $propiedades = DB::selectOne("SELECT * FROM propiedad WHERE id = {$id}");
-        return view('administrador.show', [
-            'propiedades' => $propiedades
-        ]);
+        return view('admin.show', compact('propiedad'));
     }
 
 
@@ -112,7 +116,7 @@ class AdminController extends Controller
      */
     public function edit(Propiedad $propiedad)
     {
-        return view('administrador.editar', compact('propiedad'));
+        return view('admin.editar', compact('propiedad'));
     }
 
     /**

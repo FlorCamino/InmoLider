@@ -26,79 +26,79 @@
                 <div class="form-group">
                     <strong>Nombre:</strong>
                     <input type="text" name="nombre" class="form-control" placeholder="Nombre">
-                    {{-- @error('nombre')
+                    @error('nombre')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                    @enderror --}}
+                    @enderror
                 </div>
                     <div class="form-group">
                         <strong>Apellido:</strong>
                         <input type="text" name="apellido" class="form-control" placeholder="Apellido">
-                        {{-- @error('apellido')
+                         @error('apellido')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                        @enderror --}}
+                        @enderror 
                     </div>
                     <div class="form-group">
                         <strong>DNI:</strong>
                         <input type="text" name="dni" class="form-control" placeholder="DNI">
-                        {{-- @error('dni')
+                         @error('dni')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                        @enderror --}}
+                        @enderror 
                     </div>
                     <div class="form-group">
                         <strong>Fecha de Nacimiento:</strong>
                         <input type="text" name="fechaNacimiento" class="form-control" placeholder="Fecha nacimiento">
-                        {{-- @error('fechaNacimiento')
+                         @error('fechaNacimiento')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                        @enderror --}}
+                        @enderror 
                     </div>
                     <div class="form-group">
                         <strong>Email:</strong>
                         <input type="text" name="email" class="form-control" placeholder="email">
-                        {{-- @error('email')
+                         @error('email')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                        @enderror --}}
+                        @enderror 
                     </div>
                     <div class="form-group">
                         <strong>Teléfono:</strong>
                         <input type="text" name="telefono" class="form-control" placeholder="telefono">
-                        {{-- @error('telefono')
+                         @error('telefono')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                        @enderror --}}
+                        @enderror 
                     </div>
                     <div class="form-group">
                         <strong>Domicilio:</strong>
                         <input type="text" name="domicilio" class="form-control" placeholder="domicilio">
-                        {{-- @error('domicilio')
+                         @error('domicilio')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                        @enderror --}}
+                        @enderror 
                     </div>
                     <div class="form-group">
                         <strong>Ciudad:</strong>
                         <input type="text" name="nombre" class="form-control" placeholder="ciudad">
-                        {{-- @error('ciudad')
+                         @error('ciudad')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                        @enderror --}}
+                        @enderror 
                     </div>
                     <div class="form-group">
                         <strong>Código Postal:</strong>
                         <input type="text" name="CP" class="form-control" placeholder="CP">
-                        {{-- @error('CP')
+                        @error('CP')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                        @enderror --}}
+                        @enderror 
                     </div>
                     <div class="form-group">
                         <strong>Descripción:</strong>
                         <input type="text" name="descripcion" class="form-control" placeholder="Descripción">
-                        {{-- @error('descripcion')
+                         @error('descripcion')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                        @enderror --}}
+                        @enderror 
                     </div>
                     <div class="form-group">
                         <strong>Fecha y hora de registro:</strong>
                         <input type="text" name="fechaDeCarga" class="form-control" placeholder="Fecha de registro">
-                        {{-- @error('fechaDeCarga')
+                         @error('fechaDeCarga')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                        @enderror --}}
+                        @enderror 
                     </div>
                 <div>
                     <button type="submit" class="btn btn-success ml-3">Guardar</button>

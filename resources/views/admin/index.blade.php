@@ -1,7 +1,7 @@
-@extends('layouts.plantilla')
+@include('layouts.base_admin')
 
-@include('layouts.adm_navbar')
-
+<main class="w-90vm py-30"
+style="min-height: 100vh - 211px - 58 px">
 @section('content')
 <h1 class="text-align-center">Listado de propiedades</h1>
 @section('body')
@@ -11,7 +11,7 @@
 </div>
 @endcan
 <div>
-    <p>Hola {{$usuario->nombre}}</p> 
+    {{-- <p>Hola {{$usuario->nombre}}</p>  --}}
 </div>
 <table  class="table table-success table-striped-columns">
     <thead>
@@ -53,12 +53,15 @@
                 </td>
                 <td>{{$propiedad->nombreTipoTransaccion}}</td>
                 <td>
-                    <a href="{{route('administrador.show', $propiedad->id)}}">Ver detalle</a> 
+                    {{-- <a href="{{route('administrador.show', $propiedad->id)}}">Ver detalle</a>  --}}
                </td>
                <td>
-                    <a href="{{route('administrador.edit', $propiedad->id)}}">Editar</a> 
+                    {{-- <a href="{{route('administrador.edit', $propiedad->id)}}">Editar</a>  --}}
                </td>
             </tr>
         @endforeach
     </tbody>
 </table>
+@endsection
+</main>
+@include('layouts.footer')
