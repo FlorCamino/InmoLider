@@ -1,5 +1,2 @@
-@extends('layouts.plantilla')
+@extends('layouts.base_user')
 
-@include('layouts.navbar')
-
-@include('layouts.footer')
