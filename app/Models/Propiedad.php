@@ -10,4 +10,9 @@ class Propiedad extends Model
     use HasFactory;
 
     protected $table = 'propiedad';
+
+    public function Ciudad()
+    {
+        return $this->belongsTo(Ciudad::class, 'idCiudad');
+    }
 }

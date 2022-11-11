@@ -11,4 +11,10 @@ class Admin extends Model
 
     public $timestamps = false;
     protected $fillable = [];
+
+
+    public function propiedads()
+    {
+        return $this->hasMany('User');
+    }
 }

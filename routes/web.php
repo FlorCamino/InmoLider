@@ -24,9 +24,9 @@ Route::get('/', function () {
 
 Route::resource('inicio', InicioController::class);
 
-Route::resource('admin', AdminController::class)
-    ->middleware('auth')
-    ->middleware('can:ver_tecnicos');
+Route::resource('admin', AdminController::class);
+// ->middleware('auth')
+// ->middleware('can:ver_tecnicos');
 
 Route::resource('login', LoginController::class);
 
@@ -35,6 +35,10 @@ Route::post('logout', [LoginController::class, 'destroy']);
 Route::resource('propietario', PropietarioController::class);
 
 Route::resource('ciudad', CiudadController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 

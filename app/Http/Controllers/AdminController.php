@@ -36,8 +36,8 @@ class AdminController extends Controller
         // inner join tipotransaccion t ON p.idTipoTransaccion = t.id
         // inner join estadoPropiedad e ON p.idEstadoPropiedad = e.id
         // left join periodo pe ON p.idPeriodo = pe.id');
-        $propiedades = Admin::all();
-        return view('administrador.index', [
+        $propiedades = Propiedad::all();
+        return view('admin.index', [
             'propiedades' => $propiedades,
             'titulo' => 'Listado de propiedades',
             "usuario" => $usuario
