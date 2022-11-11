@@ -1,19 +1,16 @@
 @include('layouts.base_admin')
 
-<main class="w-90vm py-30"
-style="min-height: 100vh - 211px - 58 px">
 @section('content')
 <h1 class="text-align-center">Listado de propiedades</h1>
-@section('body')
-@can('crear_tecnicos')
+{{-- @can('crear_tecnicos') --}}
 <div>
-     <a href="{{route('administrador.create')}}"><button>Agregar</button></a> 
+     <a href="{{route('admin.create')}}"><button>Agregar</button></a> 
 </div>
-@endcan
+{{-- @endcan --}}
 <div>
     {{-- <p>Hola {{$usuario->nombre}}</p>  --}}
 </div>
-<table  class="table table-success table-striped-columns">
+<table class="table table-success table-striped-columns">
     <thead>
         <tr>
             <th>ID</th>
@@ -33,7 +30,7 @@ style="min-height: 100vh - 211px - 58 px">
             <tr>
                 <td>{{$propiedad->id}}</td>
                 <td>{{$propiedad->descripcion}}</td>
-                <td>{{$propiedad->nombreCiudad}}</td>
+                <td>{{$propiedad->Ciudad->nombre}}</td>
                 <td>{{$propiedad->direccion}}</td>
                 <td>{{$propiedad->cantHab}}</td>
                 <td>{{$propiedad->cantBanios}}</td>
@@ -62,6 +59,4 @@ style="min-height: 100vh - 211px - 58 px">
         @endforeach
     </tbody>
 </table>
-@endsection
-</main>
-@include('layouts.footer')
+

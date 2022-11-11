@@ -65,6 +65,7 @@
     </nav>
     {{-- Línea horizontal --}}
     <hr class="container-absolute col-10bg-secondary border-1 border-top border-secondary">
+    @yield('head')
 
     @yield('content')
 
