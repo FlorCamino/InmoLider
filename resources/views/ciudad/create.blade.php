@@ -1,4 +1,3 @@
-@extends('layouts.plantilla')
 @include('layouts.adm_navbar')
 @section('name')
 
