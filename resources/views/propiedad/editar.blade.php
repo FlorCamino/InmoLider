@@ -40,6 +40,7 @@
                             @error('descripcion')
                                 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                             @enderror
+                            
                         </div>
                         <div class="form-group">
                             <strong>Fecha de registro:</strong>

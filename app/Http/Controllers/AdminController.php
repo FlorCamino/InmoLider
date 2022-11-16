@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use App\Models\Administrador;
 use App\Models\Propiedad;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -104,7 +105,12 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        return view('admin.show', compact('propiedad'));
+
+
+        return view('admin.show', [
+            'user' => User::findOrFail($id)
+        ]);
+        // return view('admin.show', compact('propiedad'));
     }
 
 
