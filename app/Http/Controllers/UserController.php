@@ -48,7 +48,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, User $name, User $usuarios)
     {
 
         $name = $request->name;
@@ -57,7 +57,7 @@ class UserController extends Controller
             'nombre' => 'required',
         ]);
 
-        $ciudad = User::create([
+        $usuarios = User::create([
             'nombre' => $request->nombre
         ]);
 
