@@ -1,4 +1,4 @@
-@include('layouts.adm_navbar')
+@include('layouts.base_admin')
 
 @section('name', 'InmoLider')
 

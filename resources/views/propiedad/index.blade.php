@@ -1,5 +1,4 @@
-@extends('layouts.base_user')
-
+@extends('layouts.base_admin')
 
 @section('name', 'InmoLider')
 
@@ -35,7 +34,7 @@
                     <td>{{ $propiedad->fechaCreacion }}</td>
                     <td>{{ $propiedad->direccion }}</td>
                     <td>{{ $propiedad->barrio }}</td>
-                    <td>{{ $propiedad->ciudad->nombre }}</td>
+                    <td>{{ $propiedad->ciudad }}</td>
                     <td>{{ $propiedad->CP }}</td>
                     <td>{{ $propiedad->propietario }}</td>
                     <td>{{ $propiedad->cantHab }}</td>
@@ -43,17 +42,17 @@
                     <td>{{ $propiedad->estacionamiento }}</td>
                     <td>{{ $propiedad->aceptaMascotas }}</td>
                     <td>{{ $propiedad->amoblado }}</td>
-                    <td>{{ $propiedad->idTipoTransaccion->tipoTransaccion->nombre }}</td>
-                    <td>{{ $propiedad->idPeriodo->Periodo->nombre }}</td>
+                    <td>{{ $propiedad->idTipoTransaccion }}</td>
+                    <td>{{ $propiedad->idPeriodo }}</td> 
                     <td>{{ $propiedad->costo }}</td>
-                    <td>{{ $propiedad->idEstadoPropiedad->estadoPropiedad->nombre }}</td>
-                    <td><a href="{{ route('propiedad.show', $propiedad) }}"><button type="submit"
+                    <td>{{ $propiedad->idEstadoPropiedad }}</td> 
+                    <td><a href="{{ route('inicio.show', $propiedad) }}"><button type="submit"
                                 class="btn btn-primary btn-sm">Ver
                                 detalle</button></a></td>
-                    <td><a href="{{ route('propiedad.edit', $propiedad) }}"><button type="submit"
+                    <td><a href="{{ route('inicio.edit', $propiedad) }}"><button type="submit"
                                 class="btn btn-primary btn-sm">Editar</button></a></td>
                     <td>
-                        <form method="post" action="{{ route('propiedad.destroy', $dato->id) }}">
+                        <form method="post" action="{{ route('inicio.destroy', $propiedad->id) }}">
                             @method('delete')
                             @csrf
                             <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
@@ -61,7 +60,7 @@
                     </td>
             @endforeach
             </tr>
-        </tbody>
+        </tbody> 
     </table>
-    <a href="{{ route('propiedad.create') }}"><button type="submit" class="btn btn-primary btn-sm">Agregar nueva</button></a>
+    <a href="{{ route('inicio.create') }}"><button type="submit" class="btn btn-primary btn-sm">Agregar nueva</button></a>
 @endsection
