@@ -14,7 +14,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('admin.login');
+        return view('auth.login');
     }
 
     /**
@@ -32,7 +32,7 @@ class LoginController extends Controller
             // ->post('contrasenia')
         ])) {
             $request->session()->regenerate();
-            return redirect()->intended(route('administrador.index'));
+            return redirect()->intended(route('admin.index'));
         } else {
             return back()->withErrors([
                 'username' => "El nombre de usuario/email no coincide con ningún registro",
@@ -50,6 +50,6 @@ class LoginController extends Controller
     public function destroy(Request $request)
     {
         $request->session()->invalidate();
-        return redirect(route('admin.login'));
+        return redirect(route('login.index'));
     }
 }
