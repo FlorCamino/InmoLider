@@ -31,6 +31,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         $propiedades = Propiedad::all();
         return view('propiedad.index', [
             'propiedades' => $propiedades,

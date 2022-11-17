@@ -2,7 +2,8 @@
 
 @section('name', 'InmoLider')
 
-@section('contenido')
+
+@section ('content')
     <h1 class="text-center">Propiedades</h1>
     <table class="table" style="border: solid 1 px black">
         <thead class="table-secondary text-dark">
@@ -63,4 +64,4 @@
         </tbody> 
     </table>
     <a href="{{ route('inicio.create') }}"><button type="submit" class="btn btn-primary btn-sm">Agregar nueva</button></a>
-@endsection
+    @endsection
