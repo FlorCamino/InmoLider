@@ -2,6 +2,17 @@
 
 @section('content')
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript">
+$(function() {
+    $('#fechaNacimiento').datetimepicker({
+    format: 'YYYY-MM-DD'
+    });
+    });
+</script>    
 <div class="container mt-2">
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -56,7 +67,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Fecha de Nacimiento:</strong>
-                    <input type="text" name="fechaNacimiento" value="{{ $propietario->fechaNacimiento }}" class="form-control"
+                    <input type="text" name="fechaNacimiento" id="fechaNacimiento" value="{{ $propietario->fechaNacimiento }}" class="form-control"
                         placeholder="Fecha nacimiento">
                     @error('fechaNacimiento')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>

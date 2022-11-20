@@ -15,6 +15,10 @@
     {{-- Autenticación --}}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
 </head>
 
 <body>
@@ -58,18 +62,18 @@
                 </ul>
             </div>
             <div id="user" class="container col-3">
-                <p>  Hola, nombre </p>
+                <p> Hola, nombre </p>
                 <span><a class="navbar-brand"><img id="userimg" src="{{ asset('img/vector.jpg') }}"></a></span>
             </div>
-            
+
     </nav>
     {{-- Línea horizontal --}}
     <hr class="container-absolute col-10bg-secondary border-1 border-top border-secondary">
-    
+
 
     @yield('content')
 
-{{-- Footer --}}
+    {{-- Footer --}}
     <footer id="footer" class="fixed-bottom">
         <div id="foot" class="container-absolute p-4">
 
