@@ -9,7 +9,6 @@
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Nombre</th>
-        <th scope="col">Apellido</th>
         <th scope="col">DNI</th>
         <th scope="col">Fecha de Nacimiento</th>
         <th scope="col">Email</th>
@@ -25,14 +24,13 @@
          @foreach ($propietarios as $propietario)
       <tr>
         <td>{{$propietario->id}}</td>
-        <td>{{$propietario->nombre}}</td>
-        <td>{{$propietario->apellido}}</td>
+        <td>{{$propietario->nombre}} {{$propietario->apellido}}</td>
         <td>{{$propietario->dni}}</td>
         <td>{{$propietario->fechaNacimiento}}</td>
         <td>{{$propietario->email}}</td>
         <td>{{$propietario->telefono}}</td>
         <td>{{$propietario->domicilio}}</td>
-        <td>{{$propietario->idCiudad}}</td>
+        <td>{{$propietario->Ciudad->nombre}}</td>
         <td>{{$propietario->CP}}</td>
         <td>{{$propietario->descripcion}}</td>
         <td>{{$propietario->fechaCarga}}</td>
@@ -47,5 +45,5 @@
       </tr> 
     </tbody>
   </table>
-  <a href="{{route('propietario.create')}}"><button type="submit" class="btn btn-success btn-sm">Agregar ciudad</button></a>
+  <a href="{{route('propietario.create')}}"><button type="submit" class="btn btn-success btn-sm">Agregar Propietario</button></a>
 @endsection

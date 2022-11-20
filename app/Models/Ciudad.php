@@ -12,4 +12,9 @@ class Ciudad extends Model
     protected $table = 'ciudad';
     public $timestamps = false;
     protected $fillable = ['nombre'];
+
+    public function propietarios()
+    {
+        return $this->hasMany(Propietario::class, 'idCiudad');
+    }
 }

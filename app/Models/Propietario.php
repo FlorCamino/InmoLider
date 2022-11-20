@@ -11,5 +11,10 @@ class Propietario extends Model
 
     protected $table = 'propietario';
     public $timestamps = false;
-    protected $fillable = [''];
+    protected $fillable = ['id', 'nombre', 'apellido', 'dni', 'fechaNacimiento', 'email', 'telefono', 'domicilio', 'CP', 'descripcion', 'fechaDeCarga', 'idCiudad'];
+
+    public function Ciudad()
+    {
+        return $this->belongsTo(Ciudad::class, 'idCiudad');
+    }
 }

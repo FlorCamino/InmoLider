@@ -1,8 +1,7 @@
-@extends('layouts.plantilla')
+{{-- @extends('layouts.base_admin')
 
-@section('name')
 
-@section('content')
+@section('content') --}}
 <div class="container mt-2">
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -74,7 +73,13 @@
                     </div>
                     <div class="form-group">
                         <strong>Ciudad:</strong>
-                        <input type="text" name="nombre" class="form-control" placeholder="ciudad">
+                        <select class="form-control" name="idCiudad" id="idCiudad">
+                            @foreach($ciudades as $ciudad )
+                               <option value="{{$ciudad->id}}">{{ $ciudad->nombre }}</option>
+                            @endforeach
+
+                        </select>
+                        {{-- <input type="text" name="nombre" class="form-control" placeholder="ciudad"> --}}
                          @error('ciudad')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror 
@@ -93,17 +98,10 @@
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror 
                     </div>
-                    <div class="form-group">
-                        <strong>Fecha y hora de registro:</strong>
-                        <input type="text" name="fechaDeCarga" class="form-control" placeholder="Fecha de registro">
-                         @error('fechaDeCarga')
-                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                        @enderror 
-                    </div>
                 <div>
                     <button type="submit" class="btn btn-success ml-3">Guardar</button>
                 </div>
             </div>
         </div>
     </form>
-@endsection
+{{-- @endsection --}}

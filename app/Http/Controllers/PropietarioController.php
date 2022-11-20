@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ciudad;
 use App\Models\Propietario;
 use Illuminate\Http\Request;
 
@@ -27,7 +28,10 @@ class PropietarioController extends Controller
      */
     public function create()
     {
-        return view('propietario.create');
+        $ciudades = Ciudad::all();
+        return view('propietario.create', [
+            'ciudades' => $ciudades,
+        ]);
     }
 
     /**
@@ -41,7 +45,22 @@ class PropietarioController extends Controller
         $request->validate([
             'nombre' => 'required',
         ]);
-        Propietario::create($request->post());
+
+        $propietario = new Propietario();
+        $propietario->nombre = $request->nombre;
+        $propietario->apellido = $request->apellido;
+        $propietario->dni = $request->dni;
+        $propietario->fechaNacimiento = $request->fechaNacimiento;
+        $propietario->email = $request->email;
+        $propietario->telefono = $request->telefono;
+        $propietario->domicilio = $request->domicilio;
+        $propietario->CP = $request->CP;
+        $propietario->descripcion = $request->descripcion;
+        $propietario->fechaDeCarga = date('y-m-d h:i:s');
+        $propietario->idCiudad = $request->idCiudad;
+
+        $propietario->save();
+
         return redirect()->route('propietario.index')->with('Exitoso', 'La ciudad ha sido creada con exito.');
     }
 
