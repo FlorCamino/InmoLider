@@ -96,8 +96,11 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Ciudad:</strong>
-                    <input type="text" name="nombre" value="{{ $propietario->idCiudad }}" class="form-control"
-                        placeholder="ciudad">
+                    <select class="form-control" name="idCiudad" id="idCiudad">
+                        @foreach($ciudades as $ciudad )
+                           <option value="{{$ciudad->id}}" {{ $ciudad->id == $propietario->idCiudad ? 'selected':'' }} >{{ $ciudad->nombre }}</option>
+                        @endforeach
+                    </select>
                     @error('ciudad')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
@@ -119,16 +122,6 @@
                     <input type="text" name="descripcion" value="{{ $propietario->descripcion }}" class="form-control"
                         placeholder="Descripción">
                     @error('descripcion')
-                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                    @enderror
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Fecha y hora de registro:</strong>
-                    <input type="text" name="fechaDeCarga" value="{{ $propietario->fechaDeCarga }}" class="form-control"
-                        placeholder="Fecha de registro">
-                    @error('fechaDeCarga')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
                 </div>

@@ -83,7 +83,9 @@ class PropietarioController extends Controller
      */
     public function edit(Propietario $propietario)
     {
-        return view('propietario.edit', compact('propietario'));
+
+        $ciudades = Ciudad::all();
+        return view('propietario.edit', compact('propietario', 'ciudades'));
     }
 
     /**
