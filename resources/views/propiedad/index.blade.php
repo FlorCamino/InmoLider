@@ -4,7 +4,7 @@
 
 
 @section ('content')
-    <h1 class="text-center">Propiedades</h1>
+    <h1 class="text-center">Usuarios</h1>
     <table class="table" style="border: solid 1 px black">
         <thead class="table-secondary text-dark">
             <tr>

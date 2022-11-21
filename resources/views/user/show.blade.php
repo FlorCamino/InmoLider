@@ -12,6 +12,14 @@
             <label class="form-label"> <strong> Nombre </strong> </label>
             <input class="form-control"type="text" name="nombre" value="{{ $ciudad->nombre }}">
         </div>
+        <div>
+            <label class="form-label"> <strong> Email </strong> </label>
+            <input class="form-control"type="text" name="nombre" value="{{ $ciudad->nombre }}">
+        </div>
+        <div>
+            <label class="form-label"> <strong> Email de confirmación </strong> </label>
+            <input class="form-control"type="text" name="nombre" value="{{ $ciudad->nombre }}">
+        </div>
         <div class="container">
             <div class="row col-2 text-left">
                 <a class="text-black " href="{{ route('ciudad.index') }}">Volver</a>

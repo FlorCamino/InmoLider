@@ -23,7 +23,7 @@
     </head>
 
 <body>
-
+<nav>
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="bootstrap" viewBox="0 0 118 94">
       <title>Bootstrap</title>
@@ -49,7 +49,6 @@
   </svg>
     {{-- Barra de navegación --}}
 <header>
-    <header>
         <div class="px-3 py-2 bg-white text-dark">
           <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -95,9 +94,8 @@
         <div class="px-3 py-3 border-bottom mb-3" style="background-color:#1565c0 ">
           <div class="container d-flex flex-wrap justify-content-center">  
             <div class="col-12 text-end">
-              <button id="btn" type="button" class="btn btn-light text-dark me-2">Entrar</button>
-              <button id="btn" type="button" class="btn btn-light text-dark">Registrarse</button>
-            </div>
+              <a id="usuario" href="/">Hola, Nombre</a>
+              </div>
           </div>
         </div>
       </header>
@@ -106,13 +104,14 @@
     @yield('content')
 
     {{-- Footer --}}
-    <footer id="footer" class="fixed-bottom">
-        <div id="foot" class="container-absolute p-4">
-
+    <footer>
+        <div id="foot" class="container-fluid py-3">
             <div class="row">
                 <div class="text-center py-3">
                     © 2020 Copyright:
-                    <strong> <a id="footlink" href="{{--route('admin.inicio')--}}"> InmoLider.com </a> </strong>
+                    <strong> 
+                      <a id="footlink" href="{{route('propietario.index')}}"> InmoLider.com </a> 
+                    </strong>
                 </div>
             </div>
         </div>

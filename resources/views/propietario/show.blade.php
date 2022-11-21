@@ -1,60 +1,79 @@
 @extends('layouts.base_admin')
 
+@section('name', 'InmoLíder')
+
 @section('content')
 
-<h2>Propietarios:</h2>
-<div class="form-control">
-    <label>Identificación</label>
-    <input type="text" name="id" value="{{$propietario->id}}">
-</div>
-<div class="form-control">
-    <label>Nombre</label>
-    <input type="text" name="nombre" value="{{$propietario->nombre}}">
-</div>
-<div class="form-control">
-    <label>Apellido</label>
-    <input type="text" name="apellido" value="{{$propietario->apellido}}">
-</div>
-<div class="form-control">
-    <label>DNI</label>
-    <input type="text" name="dni" value="{{$propietario->dni}}">
-</div>
-<div class="form-control">
-    <label>Fecha de Nacimiento</label>
-    <input type="text" name="fechaNacimiento" value="{{$propietario->fechaNacimiento}}">
-</div>
-<div class="form-control">
-    <label>Email</label>
-    <input type="text" name="email" value="{{$propietario->email}}">
-</div>
-<div class="form-control">
-    <label>Teléfono</label>
-    <input type="text" name="telefono" value="{{$propietario->telefono}}">
-</div>
-<div class="form-control">
-    <label>Domicilio</label>
-    <input type="text" name="domicilio" value="{{$propietario->domicilio}}">
-</div>
-<div class="form-control">
-    <label>Ciudad</label>
-    <input type="text" name="ciudad" value="{{$propietario->idCiudad}}">
-</div>
-<div class="form-control">
-    <label>Código Postal</label>
-    <input type="text" name="CP" value="{{$propietario->CP}}">
-</div>
-<div class="form-control">
-    <label>Descripción</label>
-    <input type="text" name="descripcion" value="{{$propietario->descripcion}}">
-</div>
-<div class="form-control">
-    <label>Fecha y hora de registro</label>
-    <input type="text" name="fechaDeCarga" value="{{$propietario->fechaDeCarga}}">
-</div>
-<div>
-    <button type="button" class="btn btn-success">
-    <a href="{{route('propietario.index')}}">Volver</a>
-</button>
-</div>
+<div id="formShow" class="container">
+    <h2 id="h2">Propietario</h2>
+    
+    <form style="position: relative">
+        <div class="form-outline mb-4" style="margin-bottom: 0px">
+            <input type="text" id="form6Example1" class="form-control" disabled value="{{$propietario->id}}"/>
+            <label class="form-label" for="form6Example1">Identificación</label>
+        </div>
+      
+        <div class="row mb-4">
+            <div class="col">
+              <div class="form-outline"  style="margin-bottom: 0px">
+                <input type="text" id="form6Example1" class="form-control" disabled value="{{$propietario->nombre}}" />
+                <label class="form-label" for="form6Example1">Apellido</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-outline"  style="margin-bottom: 0px">
+                <input type="text" id="form6Example1" class="form-control" disabled value="{{$propietario->apellido}}" />
+                <label class="form-label" for="form6Example2">DNI</label>
+              </div>
+            </div>
+        </div>
+       
+        <div class="form-outline mb-4"  style="margin-bottom: 0px">
+          <input type="text" id="form6Example1" class="form-control" disabled value="{{$propietario->fechaNacimiento}}"/>
+          <label class="form-label" for="form6Example1">Fecha de Nacimiento</label>
+        </div>
 
+        <div class="form-outline mb-4"  style="margin-bottom: 0px">
+          <input type="text" id="form6Example1" class="form-control" disabled value="{{$propietario->email}}"/>
+          <label class="form-label" for="form6Example1">Email</label>
+        </div>
+      
+        <div class="form-outline mb-4"  style="margin-bottom: 0px">
+          <input type="email" id="form6Example1" class="form-control" disabled value="{{$propietario->telefono}}" />
+          <label class="form-label" for="form6Example1">Teléfono</label>
+        </div>
+      
+        <div class="form-outline mb-4"  style="margin-bottom: 0px">
+          <input type="text" id="form6Example1" class="form-control" disabled value="{{$propietario->domicilio}}"/>
+          <label class="form-label" for="form6Example1">Domicilio</label>
+        </div>
+      
+        <div class="row mb-4">
+            <div class="col">
+              <div class="form-outline"  style="margin-bottom: 0px">
+                <input type="text" id="form6Example1" class="form-control" disabled value="{{$propietario->Ciudad->nombre}}" />
+                <label class="form-label" for="form6Example1">Ciudad</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-outline"  style="margin-bottom: 0px">
+                <input type="text" id="form6Example1" class="form-control" disabled value="{{$propietario->CP}}" />
+                <label class="form-label" for="form6Example1">Código Postal</label>
+              </div>
+            </div>
+          </div>
+
+            <!-- Message input -->
+  <div class="form-outline mb-4"  style="margin-bottom: 0px">
+    <textarea class="form-control" id="form6Example1" rows="4" disabled value="{{$propietario->descripcion}}"></textarea>
+    <label class="form-label" for="form6Example7">Informacion Adicional</label>
+  </div>
+      
+        <!-- Submit button -->
+    <div class="container text-right">
+        <button id="btn" type="button" class="btn btn-lg">
+            <a class="text-dark" href="{{route('propietario.index')}}">Volver</a>
+        </button>
+    </div>
+</div>
 @endsection

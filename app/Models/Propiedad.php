@@ -18,12 +18,13 @@ class Propiedad extends Model
         'cantHab', 'cantBanios', 'aceptaMascotas', 'amoblado', 'idTipoTransaccion',
         'idEstadoPropiedad', 'costo'
     ];
-
     public function Ciudad()
     {
         return $this->belongsTo(Ciudad::class, 'idCiudad');
-        return $this->belongsTo(Periodo::class, 'idPeriodo');
+    }
+
+    public function EstadoPropiedad()
+    {
         return $this->belongsTo(EstadoPropiedad::class, 'idEstadoPropiedad');
-        return $this->belongsTo(TipoTransaccion::class, 'idTipoTransaccion');
     }
 }
