@@ -6,6 +6,8 @@ use App\Models\Ciudad;
 use App\Models\Propietario;
 use Illuminate\Http\Request;
 
+use Validator;
+
 class PropietarioController extends Controller
 {
     /**
@@ -112,7 +114,12 @@ class PropietarioController extends Controller
      */
     public function destroy(Propietario $propietario)
     {
-        $propietario->delete();
-        return redirect()->route('propietario.index')->with('Exitoso', 'La ciudad ha sido eliminada con exito.');
+        $cantPropiedadesDePropietario = count($propietario->Propiedades()->get());
+        if ($cantPropiedadesDePropietario == 0) {
+            $propietario->delete();
+            return response()->json(['success' => 'El Propietario ' . $propietario->nombre . ' ha sido eliminado con exito']);
+        } else {
+            return response()->json(['error' => 'El Propietario ' . $propietario->nombre . ' no puede ser eliminado porque contiene propiedades a su nombre.']);
+        }
     }
 }

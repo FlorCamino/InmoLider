@@ -3,6 +3,8 @@
 @section('name', 'InmoLíder')
 
 @section('content')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.1/sweetalert2.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.1/sweetalert2.all.min.js"></script>
 <div class="container-fluid">
 <h2 id="h2">Listado de propietarios</h2>
 
@@ -48,11 +50,8 @@
     </a>
   </td>
    <td>
-    <form method="post" action="{{route('propietario.destroy',$propietario->id)}}">
-     @method('delete')
-     @csrf
-     <button id="btn" type="submit" class="btn btn-primary btn-sm">Delete</button>
- </form>
+     <button id="btn" type="submit" onclick="deleteConfirmation({{$propietario->id}})" class="btn btn-primary btn-sm">Eliminar</button>
+ {{-- </form> --}}
 </td>
    @endforeach
  </tr> 
@@ -65,4 +64,48 @@
     <button id="btn" type="submit" class="btn btn-primary btn-sm">Agregar</button>
   </a>
 </div>
+
+
+<script type="text/javascript">
+  function deleteConfirmation(id) {
+      swal.fire({
+          title: "Eliminar?",
+          icon: 'question',
+          text: "¿Estas seguro que desea eliminar este registro?",
+          type: "warning",
+          showCancelButton: !0,
+          confirmButtonText: "Si",
+          cancelButtonText: "No",
+          reverseButtons: !0
+      }).then(function (e) {
+
+          if (e.value === true) {
+              let token = $('meta[name="csrf-token"]').attr('content');
+              let _url = `/propietario/${id}`;
+              
+              $.ajax({
+                  type: 'DELETE',
+                  url: _url,
+                  data: {_token: token},
+                  success: function (resp) {
+                      if (resp.success) {
+                          swal.fire("Realizado!", resp.message, "success");
+                      } else {
+                          swal.fire("Error!", resp.error, "error");
+                      }
+                  },
+                  error: function (resp) {
+                      swal.fire("Error!", 'Something went wrong.', "error");
+                  }
+              });
+
+          } else {
+              e.dismiss;
+          }
+
+      }, function (dismiss) {
+          return false;
+      })
+  }
+</script>
 @endsection

@@ -27,4 +27,8 @@ class Propiedad extends Model
     {
         return $this->belongsTo(EstadoPropiedad::class, 'idEstadoPropiedad');
     }
+    public function Propietario()
+    {
+        return $this->belongsTo(Propietario::class, 'idPropietario');
+    }
 }

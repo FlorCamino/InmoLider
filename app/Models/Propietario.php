@@ -17,4 +17,9 @@ class Propietario extends Model
     {
         return $this->belongsTo(Ciudad::class, 'idCiudad');
     }
+
+    public function Propiedades()
+    {
+        return $this->hasMany(Propiedad::class, 'idPropietario');
+    }
 }
