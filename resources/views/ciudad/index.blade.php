@@ -1,39 +1,106 @@
 @extends('layouts.base_admin')
 
-@section('name', 'InmoLider')
+@section('name', 'InmoLíder')
 
 @section('content')
-    <h1 class="text-center">Ciudades</h1>
-    <table class="table" style="border: solid 1 px black">
-        <thead class="table-secondary text-dark">
-            <tr>
-                <th scope="col-3">Identificación</th>
-                <th scope="col-3">Nombre</th>
-                <th scope="col-2">Detalle</th>
-                <th scope="col-2">Editar</th>
-                <th scope="col-2">Eliminar</th>
-            </tr>
-        </thead>
-        <tbody class="table-group-divider">
-            @foreach ($ciudades as $dato)
-                <tr>
-                    <th scope="row">{{ $dato->id }}</th>
-                    <td>{{ $dato->nombre }}</td>
-                    <td><a href="{{ route('ciudad.show', $dato) }}"><button type="submit"
-                                class="btn btn-primary btn-sm">Ver
-                                detalle</button></a></td>
-                    <td><a href="{{ route('ciudad.edit', $dato) }}"><button type="submit"
-                                class="btn btn-primary btn-sm">Editar</button></a></td>
-                    <td>
-                        <form method="post" action="{{ route('ciudad.destroy', $dato->id) }}">
-                            @method('delete')
-                            @csrf
-                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                        </form>
-                    </td>
-            @endforeach
-            </tr>
-        </tbody>
-    </table>
-    <a href="{{ route('ciudad.create') }}"><button type="submit" class="btn btn-primary btn-sm">Agregar nueva</button></a>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.1/sweetalert2.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.1/sweetalert2.all.min.js"></script>
+
+{{--Linea de código--}}
+<div class="container-fluid">
+<h2 class="title">Listado de ciudades</h2>
+
+<table class="table table-striped table-hover">
+ 
+  <thead class="justify-content-center">
+    <tr>
+        <th scope="col-3">Identificación</th>
+        <th scope="col-3">Nombre</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    @foreach ($ciudades as $dato)
+ <tr>
+   <td>{{$dato->id}}</td>
+   <td>{{$dato->nombre}}</td>
+   <td>
+    <a href="{{route('ciudad.show', $dato)}}">
+      <button type="button" class="icon btn-labeled btn-primary"><i class="fa fa-eye"></i></button>
+    </a>
+  </td>
+   <td>
+    <a href="{{route('ciudad.edit', $dato)}}">
+      <button type="button" class="icon btn-labeled btn-primary"><i class="fa fa-pencil"></i></button>
+    </a>
+  </td>
+   <td>
+    <button type="button" class="icon btn-labeled btn-danger" 
+    onclick="deleteConfirmation({{$dato->id}})">
+    <i class="fa fa-trash"></i>
+    </button>
+</td>
+ </tr> 
+ @endforeach
+</tbody>
+</table>
+</div>
+<div class="container-fluid">
+  <div class="text-right">
+    <div class="row">
+        <div class="col-12">
+          <a class="text-light" href="{{route('ciudad.create')}}">
+            <button id="btn" role="button" type="submit" class="button-7">
+        Agregar nueva</a></button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{-- Código para eliminar --}}
+<script type="text/javascript">
+  function deleteConfirmation(id) {
+      swal.fire({
+          title: "Eliminar?",
+          icon: 'question',
+          text: "¿Estas seguro que desea eliminar este registro?",
+          type: "warning",
+          showCancelButton: !0,
+          confirmButtonText: "Si",
+          cancelButtonText: "No",
+          reverseButtons: !0
+      }).then(function (e) {
+
+          if (e.value === true) {
+              let token = $('meta[name="csrf-token"]').attr('content');
+              let _url = `/ciudad/${id}`;
+              
+              $.ajax({
+                  type: 'DELETE',
+                  url: _url,
+                  data: {_token: token},
+                  success: function (resp) {
+                      if (resp.success) {
+                          swal.fire("Realizado!", resp.message, "success");
+                      } else {
+                          swal.fire("Error!", resp.error, "error");
+                      }
+                  },
+                  error: function (resp) {
+                      swal.fire("Error!", 'Something went wrong.', "error");
+                  }
+              });
+
+          } else {
+              e.dismiss;
+          }
+
+      }, function (dismiss) {
+          return false;
+      })
+  }
+</script> 
 @endsection
+
+
+
+
