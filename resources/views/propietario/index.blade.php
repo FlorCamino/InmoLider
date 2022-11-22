@@ -39,31 +39,37 @@
    <td>{{$propietario->CP}}</td>
    <td>{{$propietario->descripcion}}</td>
    <td>{{$propietario->fechaDeCarga}}</td>
+   
    <td>
     <a href="{{route('propietario.show', $propietario)}}">
-      <button id="btn" type="submit" class="btn btn-primary btn-sm">Ver detalle</button>
+      <button type="button" class="btn btn-labeled btn-primary text-dark" style="background-color:  #498ad4 "><i class="fa fa-eye"></i></button>
     </a>
   </td>
    <td>
     <a href="{{route('propietario.edit', $propietario)}}">
-      <button id="btn" type="submit" class="btn btn-primary btn-sm">Editar</button>
+      <button type="button" class="btn btn-labeled btn-primary text-dark" style="background-color:  #2a74c9 "><i class="fa fa-pencil"></i></button>
     </a>
   </td>
    <td>
-     <button id="btn" type="submit" onclick="deleteConfirmation({{$propietario->id}})" class="btn btn-primary btn-sm">Eliminar</button>
- {{-- </form> --}}
+    <button type="button" class="btn btn-labeled btn-danger text-dark" onclick="deleteConfirmation({{$propietario->id}})"><i class="fa fa-trash"></i></button>
 </td>
-   @endforeach
  </tr> 
+ @endforeach
 </tbody>
-
 </table>
 </div>
-<div>
-  <a href="{{route('propietario.create')}}">
-    <button id="btn" type="submit" class="btn btn-primary btn-sm">Agregar</button>
-  </a>
-</div>
+<div class="container-fluid">
+  <div class="text-right">
+    <div class="row">
+        <div class="col-12">
+          <a class="text-dark" href="{{route('propietario.create')}}">
+            <button id="btn" type="submit" class="btn text-dark btn-primary ml-3" style="background-color: #1565c0">
+        Agregar nuevo</a></button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 <script type="text/javascript">

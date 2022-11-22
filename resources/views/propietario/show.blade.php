@@ -70,10 +70,16 @@
   </div>
       
         <!-- Submit button -->
-    <div class="container text-right">
-        <button id="btn" type="button" class="btn btn-lg">
-            <a class="text-dark" href="{{route('propietario.index')}}">Volver</a>
-        </button>
+        <div class="container-fluid">
+          <div class="text-right">
+            <div class="row">
+                <div class="col-12">
+                  <a href="{{route('propietario.create')}}">
+                    <button id="btn" type="submit" class="btn text-dark btn-primary ml-3" style="background-color: #1565c0 "> <a class="text-dark" href="{{route('propietario.index')}}">Volver</a></button>
+                  </a>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+  </div>
 @endsection
