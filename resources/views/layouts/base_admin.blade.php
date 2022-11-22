@@ -95,10 +95,10 @@
             </div>
           </div>
         </div>
-        <div class="px-3 py-3 border-bottom mb-3" style="background-color:#1565c0 ">
+        <div class="nav-user px-3 py-3 border-bottom mb-3">
           <div class="container d-flex flex-wrap justify-content-center">  
             <div class="col-12 text-end">
-              <a id="usuario" href="/">Hola, Nombre</a>
+              <a class="nav-user" href="/">Hola, Nombre</a>
               </div>
           </div>
         </div>
@@ -109,12 +109,12 @@
 
     {{-- Footer --}}
     <footer>
-        <div id="foot" class="container-fluid py-3">
+        <div class="foot container-fluid py-3">
             <div class="row">
                 <div class="text-center py-3">
                     © 2020 Copyright:
                     <strong> 
-                      <a id="footlink" href="{{route('propietario.index')}}"> InmoLider.com </a> 
+                      <a class="footlink" href="{{route('propietario.index')}}"> InmoLider.com </a> 
                     </strong>
                 </div>
             </div>

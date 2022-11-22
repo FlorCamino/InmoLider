@@ -5,8 +5,10 @@
 @section('content')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.1/sweetalert2.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.1/sweetalert2.all.min.js"></script>
+
+{{--Linea de código--}}
 <div class="container-fluid">
-<h2 id="h2">Listado de propietarios</h2>
+<h2 class="title">Listado de propietarios</h2>
 
 <table class="table table-striped table-hover">
  
@@ -42,16 +44,16 @@
    
    <td>
     <a href="{{route('propietario.show', $propietario)}}">
-      <button type="button" class="btn btn-labeled btn-primary text-dark" style="background-color:  #498ad4 "><i class="fa fa-eye"></i></button>
+      <button type="button" class="icon btn-labeled btn-primary"><i class="fa fa-eye"></i></button>
     </a>
   </td>
    <td>
     <a href="{{route('propietario.edit', $propietario)}}">
-      <button type="button" class="btn btn-labeled btn-primary text-dark" style="background-color:  #2a74c9 "><i class="fa fa-pencil"></i></button>
+      <button type="button" class="icon btn-labeled btn-primary"><i class="fa fa-pencil"></i></button>
     </a>
   </td>
    <td>
-    <button type="button" class="btn btn-labeled btn-danger text-dark" onclick="deleteConfirmation({{$propietario->id}})"><i class="fa fa-trash"></i></button>
+    <button type="button" class="icon btn-labeled btn-danger" onclick="deleteConfirmation({{$propietario->id}})"><i class="fa fa-trash"></i></button>
 </td>
  </tr> 
  @endforeach
@@ -62,16 +64,15 @@
   <div class="text-right">
     <div class="row">
         <div class="col-12">
-          <a class="text-dark" href="{{route('propietario.create')}}">
-            <button id="btn" type="submit" class="btn text-dark btn-primary ml-3" style="background-color: #1565c0">
+          <a class="text-light" href="{{route('propietario.create')}}">
+            <button id="btn" role="button" type="submit" class="button-7">
         Agregar nuevo</a></button>
           </a>
         </div>
       </div>
     </div>
   </div>
-
-
+  {{-- Código para eliminar --}}
 <script type="text/javascript">
   function deleteConfirmation(id) {
       swal.fire({

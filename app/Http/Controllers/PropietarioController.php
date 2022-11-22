@@ -103,7 +103,7 @@ class PropietarioController extends Controller
             'nombre' => 'required',
         ]);
         $propietario->fill($request->post())->save();
-        return redirect()->route('propietario.index')->with('Exitoso', 'La ciudad ha sido editada con exito.');
+        return redirect()->route('propietario.index')->with('Exitoso', 'La propiedad ha sido editada con exito.');
     }
 
     /**
@@ -117,9 +117,9 @@ class PropietarioController extends Controller
         $cantPropiedadesDePropietario = count($propietario->Propiedades()->get());
         if ($cantPropiedadesDePropietario == 0) {
             $propietario->delete();
-            return response()->json(['success' => 'El Propietario ' . $propietario->nombre . ' ha sido eliminado con exito']);
+            return response()->json(['success' => 'El propietario ' . $propietario->nombre . ' ha sido eliminado con exito']);
         } else {
-            return response()->json(['error' => 'El Propietario ' . $propietario->nombre . ' no puede ser eliminado porque contiene propiedades a su nombre.']);
+            return response()->json(['error' => 'El propietario ' . $propietario->nombre . ' no puede ser eliminado porque contiene propiedades a su nombre.']);
         }
     }
 }
