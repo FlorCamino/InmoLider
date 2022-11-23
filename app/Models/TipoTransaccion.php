@@ -9,7 +9,14 @@ class TipoTransaccion extends Model
 {
     use HasFactory;
 
+    protected $table = 'tipotransaccion';
+    public $timestamps = false;
     protected $fillable = [
-        'idTipoTransaccion', 'name', 'descripcion'
+        'name', 'descripcion'
     ];
+
+    public function Propiedades()
+    {
+        return $this->hasMany(Propiedad::class, 'idTipoTransaccion');
+    }
 }

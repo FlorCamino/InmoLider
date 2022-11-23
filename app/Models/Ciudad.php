@@ -11,7 +11,7 @@ class Ciudad extends Model
 
     protected $table = 'ciudad';
     public $timestamps = false;
-    protected $fillable = ['nombre'];
+    protected $fillable = ['nombre', 'descripcion'];
 
     public function Propietarios()
     {

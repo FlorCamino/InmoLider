@@ -8,8 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class EstadoPropiedad extends Model
 {
     use HasFactory;
-
+    protected $table = 'estadopropiedad';
+    public $timestamps = false;
     protected $fillable = [
-        'idEstadoPropiedad', 'name', 'descripcion'
+        'name', 'descripcion'
     ];
+    public function Propiedades()
+    {
+        return $this->hasMany(Propiedad::class, 'idEstadoPropiedad');
+    }
 }
