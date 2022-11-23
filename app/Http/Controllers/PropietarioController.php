@@ -100,7 +100,15 @@ class PropietarioController extends Controller
     public function update(Request $request, Propietario $propietario)
     {
         $request->validate([
-            'nombre' => 'required',
+            'nombre' => 'required', 'alpha',
+            'apellido' => 'required', 'alpha',
+            'dni' => 'required', 'numeric',
+            'fechaNacimiento' => 'required',
+            'email' => 'required', 'email',
+            'telefono' => 'required', 'anumeric',
+            'domicilio;' => 'required', 'alpha numeric',
+            'CP' => 'required', 'alpha numeric',
+            'idCiudad' => 'required'
         ]);
         $propietario->fill($request->post())->save();
         return redirect()->route('propietario.index')->with('Exitoso', 'La propiedad ha sido editada con exito.');
