@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ciudad;
+use App\Models\Propiedad;
+use App\Models\Propietario;
 use Illuminate\Http\Request;
 
 class CiudadController extends Controller
@@ -27,7 +29,10 @@ class CiudadController extends Controller
      */
     public function create()
     {
-        return view('ciudad.create');
+        $ciudades = Ciudad::all();
+        return view('ciudad.create', [
+            'ciudades' => $ciudades
+        ]);
     }
 
     /**
@@ -42,9 +47,10 @@ class CiudadController extends Controller
             'nombre' => 'required',
         ]);
 
-        $ciudad = Ciudad::create([
-            'nombre' => $request->nombre
-        ]);
+        $ciudades = new Ciudad();
+        $ciudades->nombre = $request->nombre;
+
+        $ciudades->save();
 
 
         return redirect()->route('ciudad.index')->with('Exitoso', 'La ciudad ha sido creada con exito.');
@@ -69,7 +75,8 @@ class CiudadController extends Controller
      */
     public function edit(Ciudad $ciudad)
     {
-        return view('ciudad.editar', compact('ciudad'));
+        $ciudades = Ciudad::all();
+        return view('ciudad.edit', compact('ciudad'));
     }
 
     /**
@@ -96,7 +103,22 @@ class CiudadController extends Controller
      */
     public function destroy(Ciudad $ciudad)
     {
-        $ciudad->delete();
-        return redirect()->route('ciudad.index')->with('Exitoso', 'La ciudad ha sido eliminada con exito.');
+        $cantPropiedadesDeCiudad = count($ciudad->Propiedades()->get());
+        $cantPropietariosDeCiudad = count($ciudad->Propietarios()->get());
+        $cantUsuariosDeCiudad = count($ciudad->Usuarios()->get());
+        if ($cantPropiedadesDeCiudad == 0 && $cantPropietariosDeCiudad == 0 && $cantUsuariosDeCiudad == 0) {
+            $ciudad->delete();
+            return response()->json(['success' => 'La ciudad ' . $ciudad->nombre . ' ha sido eliminado con exito']);
+        } else {
+            if ($cantPropiedadesDeCiudad > 0) {
+                return response()->json(['error' => 'La ciudad ' . $ciudad->nombre . ' no puede ser eliminado porque contiene propiedades relacionadas.']);
+            }
+            if ($cantPropietariosDeCiudad > 0) {
+                return response()->json(['error' => 'La ciudad ' . $ciudad->nombre . ' no puede ser eliminado porque contiene propietarios relacionados.']);
+            }
+            if ($cantUsuariosDeCiudad > 0) {
+                return response()->json(['error' => 'La ciudad ' . $ciudad->nombre . ' no puede ser eliminado porque contiene usuarios relacionados.']);
+            }
+        }
     }
 }
