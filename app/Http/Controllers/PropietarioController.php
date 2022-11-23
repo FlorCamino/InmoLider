@@ -45,7 +45,15 @@ class PropietarioController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre' => 'required',
+            'nombre' => 'required', 'alpha',
+            'apellido' => 'required', 'alpha',
+            'dni' => 'required', 'numeric',
+            'fechaNacimiento' => 'required',
+            'email' => 'required', 'email',
+            'telefono' => 'required', 'anumeric',
+            'domicilio;' => 'required', 'alpha numeric',
+            'CP' => 'required', 'alpha numeric',
+            'idCiudad' => 'required'
         ]);
 
         $propietario = new Propietario();
@@ -74,6 +82,7 @@ class PropietarioController extends Controller
      */
     public function show(Propietario $propietario)
     {
+
         return view('propietario.show', compact('propietario'));
     }
 
@@ -111,7 +120,7 @@ class PropietarioController extends Controller
             'idCiudad' => 'required'
         ]);
         $propietario->fill($request->post())->save();
-        return redirect()->route('propietario.index')->with('Exitoso', 'La propiedad ha sido editada con exito.');
+        return redirect()->route('propietario.index')->with('Exitoso', 'El propietario ha sido editada con exito.');
     }
 
     /**

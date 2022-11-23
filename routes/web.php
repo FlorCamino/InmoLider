@@ -3,6 +3,7 @@
 use App\Http\Controllers\CiudadController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PropiedadController;
 use App\Http\Controllers\PropietarioController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
@@ -29,6 +30,8 @@ Route::resource('login', LoginController::class)
     ->only('index', 'store');
 
 Route::post('logout', [LoginController::class, 'destroy']);
+
+Route::resource('propiedad', PropiedadController::class);
 
 Route::resource('propietario', PropietarioController::class);
 
