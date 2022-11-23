@@ -1,67 +1,129 @@
 @extends('layouts.base_admin')
 
-@section('name', 'InmoLider')
+@section('name', 'InmoLíder')
 
+@section('content')
+{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.1/sweetalert2.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.1/sweetalert2.all.min.js"></script> --}}
 
-@section ('content')
-    <h1 class="text-center">Usuarios</h1>
-    <table class="table" style="border: solid 1 px black">
-        <thead class="table-secondary text-dark">
-            <tr>
-                <th scope="col-3">Identificación</th>
-                <th scope="col-3">Descripción</th>
-                <th scope="col-2">Fecha de registro</th>
-                <th scope="col-2">Dirección</th>
-                <th scope="col-2">Barrio</th>
-                <th scope="col-2">Ciudad</th>
-                <th scope="col-2">Código postal</th>
-                <th scope="col-2">Propietario</th>
-                <th scope="col-2">Cantidad de habitaciones</th>
-                <th scope="col-2">Cantidad de baños</th>
-                <th scope="col-2">Estacionamiento</th>
-                <th scope="col-2">Acepta mascotas</th>
-                <th scope="col-2">Amoblado</th>
-                <th scope="col-2">Tipo de transacción</th>
-                <th scope="col-2">Período</th>
-                <th scope="col-2">Costo</th>
-                <th scope="col-2">Estado de propiedad</th>
-            </tr>
-        </thead>
-        <tbody class="table-group-divider">
-            @foreach ($propiedades as $propiedad)
-                <tr>
-                    <th scope="row">{{ $propiedad->id }}</th>
-                    <td>{{ $propiedad->descripcion }}</td>
-                    <td>{{ $propiedad->fechaCreacion }}</td>
-                    <td>{{ $propiedad->direccion }}</td>
-                    <td>{{ $propiedad->barrio }}</td>
-                    <td>{{ $propiedad->ciudad }}</td>
-                    <td>{{ $propiedad->CP }}</td>
-                    <td>{{ $propiedad->propietario }}</td>
-                    <td>{{ $propiedad->cantHab }}</td>
-                    <td>{{ $propiedad->cantBanios }}</td>
-                    <td>{{ $propiedad->estacionamiento }}</td>
-                    <td>{{ $propiedad->aceptaMascotas }}</td>
-                    <td>{{ $propiedad->amoblado }}</td>
-                    <td>{{ $propiedad->idTipoTransaccion }}</td>
-                    <td>{{ $propiedad->idPeriodo }}</td> 
-                    <td>{{ $propiedad->costo }}</td>
-                    <td>{{ $propiedad->idEstadoPropiedad }}</td> 
-                    <td><a href="{{ route('inicio.show', $propiedad) }}"><button type="submit"
-                                class="btn btn-primary btn-sm">Ver
-                                detalle</button></a></td>
-                    <td><a href="{{ route('inicio.edit', $propiedad) }}"><button type="submit"
-                                class="btn btn-primary btn-sm">Editar</button></a></td>
-                    <td>
-                        <form method="post" action="{{ route('inicio.destroy', $propiedad->id) }}">
-                            @method('delete')
-                            @csrf
-                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                        </form>
-                    </td>
-            @endforeach
-            </tr>
-        </tbody> 
-    </table>
-    <a href="{{ route('inicio.create') }}"><button type="submit" class="btn btn-primary btn-sm">Agregar nueva</button></a>
-    @endsection
+{{--Linea de código--}}
+<div class="container-fluid">
+<h2 class="title">Listado de propiedades</h2>
+
+<table class="table table-striped table-hover">
+ 
+  <thead class="justify-content-center">
+    <tr>
+        <th scope="col-3">Identificación</th>
+        <th scope="col-3">Descripción</th>
+        <th scope="col-2">Fecha de registro</th>
+        <th scope="col-2">Dirección</th>
+        <th scope="col-2">Barrio</th>
+        <th scope="col-2">Ciudad</th>
+        <th scope="col-2">Código postal</th>
+        <th scope="col-2">Propietario</th>
+        <th scope="col-2">Cantidad de habitaciones</th>
+        <th scope="col-2">Cantidad de baños</th>
+        <th scope="col-2">Estacionamiento</th>
+        <th scope="col-2">Acepta mascotas</th>
+        <th scope="col-2">Amoblado</th>
+        <th scope="col-2">Tipo de transacción</th>
+        <th scope="col-2">Período</th>
+        <th scope="col-2">Costo</th>
+        <th scope="col-2">Estado de propiedad</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    @foreach ($propiedades as $propiedad)
+ <tr>
+   <td>{{$propiedad->id}}</td>
+   <td>{{$propiedad->descripcion}}</td>
+   <td>{{$propiedad->fechaCreacion}}</td>
+   <td>{{$propiedad->direccion}}</td>
+   <td>{{$propiedad->barrio}}</td>
+   <td>{{$propiedad->Ciudad->nombre}}</td>
+   <td>{{$propiedad->CP}}</td>
+   <td>{{$propiedad->Propietario->nombre}}</td>
+   <td>{{$propiedad->cantHab}}</td>
+   <td>{{$propiedad->cantBanios}}</td>
+   <td>{{$propiedad->estacionamiento}}</td>
+   <td>{{$propiedad->aceptaMascotas}}</td>
+   <td>{{$propiedad->amoblado }}</td>
+   <td>{{$propiedad->TipoTransaccion->nombre }}</td>
+   <td>{{$propiedad->Periodo ? $propiedad->Periodo->nombre : '' }}</td> 
+   <td>{{$propiedad->costo }}</td>
+   <td>{{$propiedad->EstadoPropiedad->nombre }}</td> 
+   <td>
+    <a href="{{route('propiedad.show', $propiedad)}}">
+      <button type="button" class="icon btn-labeled btn-primary"><i class="fa fa-eye"></i></button>
+    </a>
+  </td>
+   <td>
+    <a href="{{route('propiedad.edit', $propiedad)}}">
+      <button type="button" class="icon btn-labeled btn-primary"><i class="fa fa-pencil"></i></button>
+    </a>
+  </td>
+   <td>
+    <button type="button" class="icon btn-labeled btn-danger" onclick="deleteConfirmation({{$propiedad->id}})"><i class="fa fa-trash"></i></button>
+</td>
+ </tr> 
+ @endforeach
+</tbody>
+</table>
+</div>
+<div class="container-fluid">
+  <div class="text-right">
+    <div class="row">
+        <div class="col-12">
+          <a class="text-light" href="{{route('propiedad.create')}}">
+            <button id="btn" role="button" type="submit" class="button-7">
+        Agregar nuevo</a></button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{-- Código para eliminar --}}
+<script type="text/javascript">
+  function deleteConfirmation(id) {
+      swal.fire({
+          title: "Eliminar?",
+          icon: 'question',
+          text: "¿Estas seguro que desea eliminar este registro?",
+          type: "warning",
+          showCancelButton: !0,
+          confirmButtonText: "Si",
+          cancelButtonText: "No",
+          reverseButtons: !0
+      }).then(function (e) {
+
+          if (e.value === true) {
+              let token = $('meta[name="csrf-token"]').attr('content');
+              let _url = `/propiedad/${id}`;
+              
+              $.ajax({
+                  type: 'DELETE',
+                  url: _url,
+                  data: {_token: token},
+                  success: function (resp) {
+                      if (resp.success) {
+                          swal.fire("Realizado!", resp.message, "success");
+                      } else {
+                          swal.fire("Error!", resp.error, "error");
+                      }
+                  },
+                  error: function (resp) {
+                      swal.fire("Error!", 'Something went wrong.', "error");
+                  }
+              });
+
+          } else {
+              e.dismiss;
+          }
+
+      }, function (dismiss) {
+          return false;
+      })
+  }
+</script>
+@endsection
