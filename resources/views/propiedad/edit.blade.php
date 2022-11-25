@@ -21,9 +21,18 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
+                    <strong>Titulo de propiedad:</strong>
+                    <input class="form-control" id="titulo" type="text" name="titulo" value="{{ $propiedad->titulo }}" class="form-control"
+                        placeholder="Título">
+                    @error('titulo')
+                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                    @enderror
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
                     <strong>Descripción:</strong>
-                    <input class="form-control" id="descripcion" type="text" name="descripcion" value="{{ $propiedad->descripcion }}" class="form-control"
-                        placeholder="Descripción">
+                    <textarea class="form-control" id="descripcion" name="descripcion" rows="4">{{$propiedad->descripcion}}</textarea>
                     @error('descripcion')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
@@ -58,7 +67,7 @@
                         @endforeach
                     </select>
                     @error('idCiudad')
-                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                    <div class="alert text-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
                 </div>
             </div>
@@ -77,7 +86,7 @@
                     <strong>Propietario:</strong>
                         <select class="form-control" name="idPropietario" id="idPropietario">
                             @foreach($propietarios as $propietario )
-                               <option value="{{$propietario->id}}" {{ $propietario->id == $propiedad->idPropietario ? 'selected':'' }} >{{ $propietario->nombre }}</option>
+                               <option value="{{$propietario->id}}" {{ $propietario->id == $propiedad->idPropietario ? 'selected':'' }} >{{ $propietario->apellido . " " . $propietario->nombre}}</option>
                             @endforeach
                         </select>
                     @error('idPropietario')
@@ -165,7 +174,7 @@
                 <div class="form-group">
                     <strong>Costo:</strong>
                     <input class="form-control" id="costo" type="text" name="costo" value="{{ $propiedad->costo }}" class="form-control"
-                        placeholder="CP">
+                        placeholder="Costo">
                     @error('costo')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
@@ -174,12 +183,12 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Estado de propiedad:</strong>
-                    <select class="form-control" name="idTipoTransaccion" id="idTipoTransaccion">
+                    <select class="form-control" name="idEstadoPropiedad" id="idEstadoPropiedad">
                         @foreach($estadosPropiedad as $estadoPropiedad )
                            <option value="{{$estadoPropiedad->id}}" {{ $estadoPropiedad->id == $propiedad->idEstadoPropiedad ? 'selected':'' }} >{{ $estadoPropiedad->nombre }}</option>
                         @endforeach
                     </select>
-                    @error('idPeriodo')
+                    @error('idEstadoPropiedad')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
                 </div>

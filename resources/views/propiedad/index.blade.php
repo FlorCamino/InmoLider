@@ -3,8 +3,8 @@
 @section('name', 'InmoLíder')
 
 @section('content')
-{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.1/sweetalert2.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.1/sweetalert2.all.min.js"></script> --}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.1/sweetalert2.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.1/sweetalert2.all.min.js"></script> 
 
 {{--Linea de código--}}
 <div class="container-fluid">
@@ -15,18 +15,12 @@
   <thead class="justify-content-center">
     <tr>
         <th scope="col-3">Identificación</th>
-        <th scope="col-3">Descripción</th>
-        <th scope="col-2">Fecha de registro</th>
+        <th scope="col-3">Título</th>
+        <th scope="col-2">Fecha de alta</th>
         <th scope="col-2">Dirección</th>
         <th scope="col-2">Barrio</th>
         <th scope="col-2">Ciudad</th>
-        <th scope="col-2">Código postal</th>
         <th scope="col-2">Propietario</th>
-        <th scope="col-2">Cantidad de habitaciones</th>
-        <th scope="col-2">Cantidad de baños</th>
-        <th scope="col-2">Estacionamiento</th>
-        <th scope="col-2">Acepta mascotas</th>
-        <th scope="col-2">Amoblado</th>
         <th scope="col-2">Tipo de transacción</th>
         <th scope="col-2">Período</th>
         <th scope="col-2">Costo</th>
@@ -37,18 +31,12 @@
     @foreach ($propiedades as $propiedad)
  <tr>
    <td>{{$propiedad->id}}</td>
-   <td>{{$propiedad->descripcion}}</td>
+   <td>{{$propiedad->titulo}}</td>
    <td>{{$propiedad->fechaCreacion}}</td>
    <td>{{$propiedad->direccion}}</td>
    <td>{{$propiedad->barrio}}</td>
    <td>{{$propiedad->Ciudad->nombre}}</td>
-   <td>{{$propiedad->CP}}</td>
-   <td>{{$propiedad->Propietario->nombre}}</td>
-   <td>{{$propiedad->cantHab}}</td>
-   <td>{{$propiedad->cantBanios}}</td>
-   <td>{{$propiedad->estacionamiento}}</td>
-   <td>{{$propiedad->aceptaMascotas}}</td>
-   <td>{{$propiedad->amoblado }}</td>
+   <td>{{$propiedad->Propietario->nombre . " " . $propiedad->Propietario->apellido}}</td>
    <td>{{$propiedad->TipoTransaccion->nombre }}</td>
    <td>{{$propiedad->Periodo ? $propiedad->Periodo->nombre : '' }}</td> 
    <td>{{$propiedad->costo }}</td>
@@ -83,7 +71,7 @@
       </div>
     </div>
   </div>
-  {{-- Código para eliminar --}}
+   {{-- Código para eliminar --}}
 <script type="text/javascript">
   function deleteConfirmation(id) {
       swal.fire({

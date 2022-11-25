@@ -17,18 +17,17 @@
         </div>
         </div>
       </div>
-      
         <div class="row mb-4">
             <div class="col mb-4">
               <div class="form-outline"  style="margin-bottom: 0px">
-                <input type="text" class="form-control" disabled value="{{$propiedad->descripcion}}" />
-                <label class="form-label" for="form6Example1">Descripción</label>
+                <input type="text" class="form-control" disabled value="{{$propiedad->titulo}}" />
+                <label class="form-label" for="form6Example1">Título</label>
               </div>
             </div>
             <div class="col mb-4">
               <div class="form-outline"  style="margin-bottom: 0px">
-                <input type="date" class="form-control" disabled value="{{$propiedad->fechaCreacion}}" />
-                <label class="form-label" for="form6Example2">Fecha de registro</label>
+                <input type="datetime" class="form-control" disabled value="{{$propiedad->fechaCreacion}}" />
+                <label class="form-label" for="form6Example2">Fecha de alta</label>
               </div>
             </div>
         </div>
@@ -81,33 +80,75 @@
           </div>
       </div>
       <div class="row mb-4">
-        <div class="col mb-4">
+        <div class="col mb-4 justify-content-center">
           <div class="form-outline"  style="margin-bottom: 0px">
             <label class="form-label" for="form6Example1">¿Acepta Mascotas?</label>
             @if ($propiedad->aceptaMascotas == true)
-             <span style="font-family:sans-serif"> Si </span>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="aceptaMascotas" id="flexRadioDefault1" disabled checked/>
+              <label class="form-check-label" for="flexRadioDefault1"> Si</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="aceptaMascotas" id="flexRadioDefault1" disabled/>
+              <label class="form-check-label" for="flexRadioDefault1"> No </label>
+            </div>
              @else 
-              <span style="font-family:sans-serif"> No </span>
+             <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="aceptaMascotas" id="flexRadioDefault1" disabled/>
+              <label class="form-check-label" for="flexRadioDefault1"> Si</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="aceptaMascotas" id="flexRadioDefault1" disabled checked/>
+              <label class="form-check-label" for="flexRadioDefault1"> No </label>
+            </div>
             @endif
           </div>
         </div>
-        <div class="col mb-4">
+        <div class="col mb-4 text-center">
           <div class="form-outline"  style="margin-bottom: 0px">
             <label class="form-label" for="form6Example2">Amoblado:</label>
             @if ($propiedad->amoblado == true)
-             <span style="font-family:sans-serif"> Si </span>
-             @else 
-             <span style="font-family:sans-serif"> No </span>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="amoblado" id="flexRadioDefault2" disabled checked/>
+              <label class="form-check-label" for="flexRadioDefault1"> Si</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="amoblado" id="flexRadioDefault2" disabled/>
+              <label class="form-check-label" for="flexRadioDefault1"> No </label>
+            </div>
+            @else 
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="amoblado" id="flexRadioDefault2" disabled/>
+              <label class="form-check-label" for="flexRadioDefault1"> Si</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="amoblado" id="flexRadioDefault2" disabled checked/>
+              <label class="form-check-label" for="flexRadioDefault1"> No </label>
+            </div>
             @endif
           </div>
         </div>
-        <div class="col mb-4">
+        <div class="col mb-4 text-center">
           <div class="form-outline"  style="margin-bottom: 0px">
             <label class="form-label" for="form6Example1">Estacionamiento:</label>
             @if ($propiedad->estacionamiento == true)
-            <span style="font-family:sans-serif"> Si </span>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="estacionamiento" id="flexRadioDefault3" disabled checked/>
+              <label class="form-check-label" for="flexRadioDefault1"> Si</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="estacionamiento" id="flexRadioDefault3" disabled/>
+              <label class="form-check-label" for="flexRadioDefault1"> No </label>
+            </div>
             @else 
-            <span style="font-family:sans-serif"> No </span>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="estacionamiento" id="flexRadioDefault3" disabled/>
+              <label class="form-check-label" for="flexRadioDefault1"> Si</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="estacionamiento" id="flexRadioDefault3" disabled checked/>
+              <label class="form-check-label" for="flexRadioDefault1"> No </label>
+            </div>
            @endif
           </div>
         </div>
@@ -137,7 +178,15 @@
           <label class="form-label" for="form6Example1">Estado de la propiedad</label>
         </div>
         </div>
-    </div>   
+      </div>
+        <div class="row mb-4">
+          <div class="col mb-4">
+          <div class="form-outline" style="margin-bottom: 0px">
+            <textarea class="form-control" id="descripcion" name="descripcion" disabled rows="4">{{$propiedad->descripcion}}</textarea>
+              <label class="form-label" for="form6Example1">Descripción</label>
+          </div>
+          </div>
+        </div>
         <!-- Submit button -->
         <div class="container-fluid">
           <div class="text-right">

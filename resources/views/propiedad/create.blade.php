@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="mb-2">
-                <h2 class="title">Agregar propietario</h2>
+                <h2 class="title">Agregar propiedad</h2>
             </div>
         </div>
     </div>
@@ -21,8 +21,15 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
+                    <strong>Título:</strong>
+                    <input type="text" name="titulo" class="form-control" placeholder="Título">
+                    @error('titulo')
+                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                    @enderror
+            </div>
+                <div class="form-group">
                         <strong>Descripción:</strong>
-                        <input type="text" name="descripcion" class="form-control" placeholder="Descripción">
+                        <textarea type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Escriba aquí los detalles de la propiedad" rows="4"></textarea>
                         @error('descripcion')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
@@ -46,7 +53,7 @@
                     <strong>Ciudad:</strong>
                     <select class="form-control" name="idCiudad" id="idCiudad">
                         @foreach($ciudades as $ciudad )
-                           <option value="{{$ciudad->id}}" {{ $ciudad->id == $propiedad->idCiudad ? 'selected':'' }} >{{ $ciudad->nombre }}</option>
+                        <option value="{{$ciudad->id}}">{{ $ciudad->nombre }}</option>
                         @endforeach
                     </select>
                         @error('idCiudad')
@@ -136,7 +143,7 @@
                     @enderror 
                 </div>
                 <div class="form-group">
-                    <strong>Estado de propiedad-:</strong>
+                    <strong>Estado de propiedad:</strong>
                         <select class="form-control" name="idEstadoPropiedad" id="idEstadoPropiedad">
                         @foreach($estadosPropiedad as $estadoPropiedad )
                         <option value="{{$estadoPropiedad->id}}">{{ $estadoPropiedad->nombre }}</option>
