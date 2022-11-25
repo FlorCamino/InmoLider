@@ -34,7 +34,7 @@ class Propiedad extends Model
     }
     public function Transacciones()
     {
-        return $this->hasMany(Transaccion::class, 'idTransaccion');
+        return $this->hasMany(Transaccion::class, 'idPropiedad');
     }
     public function TipoTransaccion()
     {

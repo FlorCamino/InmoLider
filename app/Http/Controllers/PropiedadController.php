@@ -8,6 +8,7 @@ use App\Models\Periodo;
 use App\Models\Propiedad;
 use App\Models\Propietario;
 use App\Models\TipoTransaccion;
+use App\Models\Transaccion;
 use Illuminate\Http\Request;
 
 class PropiedadController extends Controller
@@ -34,9 +35,15 @@ class PropiedadController extends Controller
     {
         $ciudades = Ciudad::all();
         $propietarios = Propietario::all();
-        return view('propietario.create', [
+        $tiposTransaccion = TipoTransaccion::all();
+        $periodos = Periodo::all();
+        $estadosPropiedad = EstadoPropiedad::all();
+        return view('propiedad.create', [
             'ciudades' => $ciudades,
-            'propietario' => $propietarios
+            'propietarios' => $propietarios,
+            'tiposTransaccion' => $tiposTransaccion,
+            'periodos' => $periodos,
+            'estadosPropiedad' => $estadosPropiedad
         ]);
     }
 
@@ -48,24 +55,26 @@ class PropiedadController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'descripcion' => 'required', 'alpha',
-            'direccion' => 'required', 'numeric',
-            'barrio' => 'required',
-            'CP' => 'required', 'email',
-            'idPropietario' => 'required', 'anumeric',
-            'cantHab;' => 'required', 'alpha numeric',
-            'cantBanios' => 'required', 'alpha numeric',
-            'estacionamiento' => 'required', 'boolean',
-            'aceptaMascotas' => 'required', 'boolean',
-            'amoblado' => 'required', 'boolean',
-            'idTipoTransaccion' => 'required',
-            'costo' => 'required',
-            'idEstadoPropiedad' => 'required',
-            'idCiudad' => 'required'
-        ]);
+        // $request->validate([
+        //     'titulo' => ['required', 'alpha_num'],
+        //     'descripcion' => ['required', 'alpha_num'],
+        //     'direccion' => ['required', 'alpha_num'],
+        //     'barrio' => ['alpha', 'nullable'],
+        //     'CP' => ['required', 'alpha_num'],
+        //     'idPropietario' => ['required', 'numeric'],
+        //     'cantHab;' => ['required', 'numeric'],
+        //     'cantBanios' => ['required', 'numeric'],
+        //     'estacionamiento' => ['boolean', 'nullable'],
+        //     'aceptaMascotas' => ['boolean', 'nullable'],
+        //     'amoblado' => ['boolean', 'nullable'],
+        //     'idTipoTransaccion' => ['required', 'numeric'],
+        //     'costo' => ['required', 'numeric'],
+        //     'idEstadoPropiedad' => ['required', 'numeric'],
+        //     'idCiudad' => ['required', 'numeric']
+        // ]);
 
         $propiedad = new Propiedad();
+        $propiedad->titulo = $request->titulo;
         $propiedad->descripcion = $request->descripcion;
         $propiedad->direccion = $request->direccion;
         $propiedad->barrio = $request->barrio;
@@ -75,7 +84,7 @@ class PropiedadController extends Controller
         $propiedad->cantBanios = $request->cantBanios;
         $propiedad->estacionamiento = $request->estacionamiento;
         $propiedad->aceptaMascotas = $request->aceptaMascotas;
-        $propiedad->fechaDeCarga = date('y-m-d h:i:s');
+        $propiedad->fechaCreacion = date('y-m-d h:i:s');
         $propiedad->amoblado = $request->amoblado;
         $propiedad->idTipoTransaccion = $request->idTipoTransaccion;
         $propiedad->idPeriodo = $request->idPeriodo;
@@ -107,6 +116,7 @@ class PropiedadController extends Controller
      */
     public function edit(Propiedad $propiedad)
     {
+        // dd($propiedad);
         $ciudades = Ciudad::all();
         $propietarios = Propietario::all();
         $tiposTransaccion = TipoTransaccion::all();
@@ -131,24 +141,47 @@ class PropiedadController extends Controller
      */
     public function update(Request $request, Propiedad $propiedad)
     {
-        $request->validate([
-            'descripcion' => 'required', 'alpha',
-            'direccion' => 'required', 'numeric',
-            'barrio' => 'required',
-            'CP' => 'required', 'email',
-            'idPropietario' => 'required', 'anumeric',
-            'cantHab;' => 'required', 'alpha numeric',
-            'cantBanios' => 'required', 'alpha numeric',
-            'estacionamiento' => 'required', 'boolean',
-            'aceptaMascotas' => 'required', 'boolean',
-            'amoblado' => 'required', 'boolean',
-            'idTipoTransaccion' => 'required',
-            'idPeriodo' => 'required',
-            'costo' => 'required',
-            'idEstadoPropiedad' => 'required',
-            'idCiudad' => 'required'
-        ]);
-        $propiedad->fill($request->post())->save();
+
+        // $request->validate([
+        //     'titulo' => ['required', 'alpha_num'],
+        //     'descripcion' => ['required', 'alpha_num'],
+        //     'direccion' => ['required', 'alpha_num'],
+        //     'barrio' => ['alpha', 'nullable'],
+        //     'CP' => ['required', 'alpha_num'],
+        //     'idPropietario' => ['required', 'numeric'],
+        //     'cantHab;' => ['required', 'numeric'],
+        //     'cantBanios' => ['required', 'numeric'],
+        //     'estacionamiento' => ['boolean', 'nullable'],
+        //     'aceptaMascotas' => ['boolean', 'nullable'],
+        //     'amoblado' => ['boolean', 'nullable'],
+        //     'idTipoTransaccion' => ['required', 'numeric'],
+        //     'costo' => ['required', 'numeric'],
+        //     'idEstadoPropiedad' => ['required', 'numeric'],
+        //     'idCiudad' => ['required', 'numeric']
+        // ]);
+
+        // dd($request);
+        // $propiedad->fill($request->post())->save();
+
+        // dd($request);
+        $propiedad->titulo = $request->titulo;
+        $propiedad->descripcion = $request->descripcion;
+        $propiedad->direccion = $request->direccion;
+        $propiedad->barrio = $request->barrio;
+        $propiedad->CP = $request->CP;
+        $propiedad->idPropietario = $request->idPropietario;
+        $propiedad->cantHab = $request->cantHab;
+        $propiedad->cantBanios = $request->cantBanios;
+        $propiedad->estacionamiento = $request->estacionamiento;
+        $propiedad->aceptaMascotas = $request->aceptaMascotas;
+        $propiedad->amoblado = $request->amoblado;
+        $propiedad->idTipoTransaccion = $request->idTipoTransaccion;
+        $propiedad->idPeriodo = $request->idPeriodo;
+        $propiedad->costo = $request->costo;
+        $propiedad->idEstadoPropiedad = $request->idEstadoPropiedad;
+        $propiedad->idCiudad = $request->idCiudad;
+
+        $propiedad->save();
         return redirect()->route('propiedad.index')->with('Exitoso', 'La propiedad ha sido editada con exito.');
     }
 
@@ -160,12 +193,12 @@ class PropiedadController extends Controller
      */
     public function destroy(Propiedad $propiedad)
     {
-        $cantTransaccionesDePropiedad = count($Transaccion->Propiedades()->get());
+        $cantTransaccionesDePropiedad = count($propiedad->Transacciones()->get());
         if ($cantTransaccionesDePropiedad == 0) {
             $propiedad->delete();
-            return response()->json(['success' => 'La propiedad ' . $propietario->id . ' ha sido eliminado con exito']);
+            return response()->json(['success' => 'La propiedad ' . $propiedad->id . ' ha sido eliminado con exito']);
         } else {
-            return response()->json(['error' => 'La propiedad ' . $propietario->id . ' no puede ser eliminado porque contiene transacciones.']);
+            return response()->json(['error' => 'La propiedad ' . $propiedad->id . ' no puede ser eliminado porque contiene transacciones.']);
         }
     }
 }
