@@ -82,7 +82,6 @@ class PropietarioController extends Controller
      */
     public function show(Propietario $propietario)
     {
-
         return view('propietario.show', compact('propietario'));
     }
 
@@ -94,7 +93,6 @@ class PropietarioController extends Controller
      */
     public function edit(Propietario $propietario)
     {
-
         $ciudades = Ciudad::all();
         return view('propietario.edit', compact('propietario', 'ciudades'));
     }
