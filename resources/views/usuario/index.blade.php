@@ -8,7 +8,7 @@
 
 {{--Linea de código--}}
 <div class="container-fluid">
-<h2 class="title">Listado de propietarios</h2>
+<h2 class="title">Listado de usuarios</h2>
 
 <table class="table table-striped table-hover">
  
@@ -16,6 +16,7 @@
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Nombre y apellido</th>
+      <th scope="col">Rol</th>
       <th scope="col">DNI</th>
       <th scope="col">Fecha de Nacimiento</th>
       <th scope="col">Email</th>
@@ -31,6 +32,7 @@
  <tr>
    <td>{{$usuario->id}}</td>
    <td>{{$usuario->nombre}} {{$usuario->apellido}}</td>
+   <td>{{$usuario->Rol->nombre}}</td>
    <td>{{$usuario->dni}}</td>
    <td>{{$usuario->fechaNacimiento}}</td>
    <td>{{$usuario->usuario}}</td>
@@ -45,11 +47,12 @@
       <button type="button" class="icon btn-labeled btn-primary"><i class="fa fa-eye"></i></button>
     </a>
   </td>
-   <td>
+  {{-- Código para editar--}}
+   {{-- <td>
     <a href="{{route('usuario.edit', $usuario)}}">
       <button type="button" class="icon btn-labeled btn-primary"><i class="fa fa-pencil"></i></button>
     </a>
-  </td>
+  </td> --}}
    <td>
     <button type="button" class="icon btn-labeled btn-danger" onclick="deleteConfirmation({{$usuario->id}})"><i class="fa fa-trash"></i></button>
 </td>
@@ -58,7 +61,8 @@
 </tbody>
 </table>
 </div>
-<div class="container-fluid">
+ {{-- Código para crear --}}
+{{-- <div class="container-fluid">
   <div class="text-right">
     <div class="row">
         <div class="col-12">
@@ -69,7 +73,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
   {{-- Código para eliminar --}}
 <script type="text/javascript">
   function deleteConfirmation(id) {
