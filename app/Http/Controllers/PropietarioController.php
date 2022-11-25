@@ -44,17 +44,17 @@ class PropietarioController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nombre' => 'required', 'alpha',
-            'apellido' => 'required', 'alpha',
-            'dni' => 'required', 'numeric',
-            'fechaNacimiento' => 'required',
-            'email' => 'required', 'email',
-            'telefono' => 'required', 'anumeric',
-            'domicilio;' => 'required', 'alpha numeric',
-            'CP' => 'required', 'alpha numeric',
-            'idCiudad' => 'required'
-        ]);
+        // $request->validate([
+        //     'nombre' => ['required', 'alpha'],
+        //     'apellido' => ['required', 'alpha'],
+        //     'dni' => ['required', 'numeric'],
+        //     'fechaNacimiento' => ['required', 'date'],
+        //     'email' => ['required', 'email'],
+        //     'telefono' => ['required', 'numeric'],
+        //     'domicilio' => ['required', 'alpha_num'],
+        //     'CP' => ['required', 'alpha_num'],
+        //     'idCiudad' => ['required', 'numeric']
+        // ]);
 
         $propietario = new Propietario();
         $propietario->nombre = $request->nombre;
@@ -108,17 +108,17 @@ class PropietarioController extends Controller
      */
     public function update(Request $request, Propietario $propietario)
     {
-        $request->validate([
-            'nombre' => 'required', 'alpha',
-            'apellido' => 'required', 'alpha',
-            'dni' => 'required', 'numeric',
-            'fechaNacimiento' => 'required',
-            'email' => 'required', 'email',
-            'telefono' => 'required', 'anumeric',
-            'domicilio;' => 'required', 'alpha numeric',
-            'CP' => 'required', 'alpha numeric',
-            'idCiudad' => 'required'
-        ]);
+        // $request->validate([
+        //     'nombre' => ['required', 'alpha'],
+        //     'apellido' => ['required', 'alpha'],
+        //     'dni' => ['required', 'numeric'],
+        //     'fechaNacimiento' => ['required', 'date'],
+        //     'email' => ['required', 'email'],
+        //     'telefono' => ['required', 'numeric'],
+        //     'domicilio' => ['required', 'alpha_num'],
+        //     'CP' => ['required', 'alpha_num'],
+        //     'idCiudad' => ['required', 'numeric']
+        // ]);
         $propietario->fill($request->post())->save();
         return redirect()->route('propietario.index')->with('Exitoso', 'El propietario ha sido editada con exito.');
     }
