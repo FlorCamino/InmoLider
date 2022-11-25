@@ -23,13 +23,12 @@ class Usuario extends Model
     {
         return $this->belongsTo(Ciudad::class, 'idCiudad');
     }
-
     public function Rol()
     {
         return $this->belongsTo(Rol::class, 'idRol');
     }
-    public function Usuarios()
+    public function Transacciones()
     {
-        return $this->belongsTo(Transaccion::class, 'idUsuario');
+        return $this->hasMany(Transaccion::class, 'idUsuario');
     }
 }
