@@ -11,5 +11,25 @@ class Usuario extends Model
 
     protected $table = 'usuario';
     public $timestamps = false;
-    protected $fillable = ['nombre'];
+
+    protected $guarded = ['id'];
+
+    protected $fillable = [
+        'id', 'fechaCreacion', 'nombre', 'apellido', 'telefono', 'dni',
+        'fechaNacimiento', 'direccion', 'idCiudad', 'CP', 'urlFoto', 'idRol',
+        'usuario', 'contrasenia'
+    ];
+    public function Ciudad()
+    {
+        return $this->belongsTo(Ciudad::class, 'idCiudad');
+    }
+
+    public function Rol()
+    {
+        return $this->belongsTo(Rol::class, 'idRol');
+    }
+    public function Usuarios()
+    {
+        return $this->belongsTo(Transaccion::class, 'idUsuario');
+    }
 }

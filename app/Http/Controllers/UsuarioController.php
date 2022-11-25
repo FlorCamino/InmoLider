@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ciudad;
+use App\Models\Rol;
+use App\Models\Usuario;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
@@ -13,7 +16,10 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+        $usuarios = Usuario::all();
+        return view('usuario.index', [
+            'usuarios' => $usuarios,
+        ]);
     }
 
     /**
@@ -23,7 +29,12 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        //
+        $ciudades = Ciudad::all();
+        $roles = Rol::all();
+        return view('usuario.create', [
+            'ciudades' => $ciudades,
+            'roles' => $roles
+        ]);
     }
 
     /**
@@ -34,7 +45,28 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $propiedad = new Propiedad();
+        $propiedad->titulo = $request->titulo;
+        $propiedad->descripcion = $request->descripcion;
+        $propiedad->direccion = $request->direccion;
+        $propiedad->barrio = $request->barrio;
+        $propiedad->CP = $request->CP;
+        $propiedad->idPropietario = $request->idPropietario;
+        $propiedad->cantHab = $request->cantHab;
+        $propiedad->cantBanios = $request->cantBanios;
+        $propiedad->estacionamiento = $request->estacionamiento;
+        $propiedad->aceptaMascotas = $request->aceptaMascotas;
+        $propiedad->fechaCreacion = date('y-m-d h:i:s');
+        $propiedad->amoblado = $request->amoblado;
+        $propiedad->idTipoTransaccion = $request->idTipoTransaccion;
+        $propiedad->idPeriodo = $request->idPeriodo;
+        $propiedad->costo = $request->costo;
+        $propiedad->idEstadoPropiedad = $request->idEstadoPropiedad;
+        $propiedad->idCiudad = $request->idCiudad;
+
+        $propiedad->save();
+
+        return redirect()->route('propiedad.index')->with('Exitoso', 'La propiedad ha sido creada con exito.');
     }
 
     /**
