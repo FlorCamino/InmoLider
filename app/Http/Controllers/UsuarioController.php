@@ -45,28 +45,22 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        $propiedad = new Propiedad();
-        $propiedad->titulo = $request->titulo;
-        $propiedad->descripcion = $request->descripcion;
-        $propiedad->direccion = $request->direccion;
-        $propiedad->barrio = $request->barrio;
-        $propiedad->CP = $request->CP;
-        $propiedad->idPropietario = $request->idPropietario;
-        $propiedad->cantHab = $request->cantHab;
-        $propiedad->cantBanios = $request->cantBanios;
-        $propiedad->estacionamiento = $request->estacionamiento;
-        $propiedad->aceptaMascotas = $request->aceptaMascotas;
-        $propiedad->fechaCreacion = date('y-m-d h:i:s');
-        $propiedad->amoblado = $request->amoblado;
-        $propiedad->idTipoTransaccion = $request->idTipoTransaccion;
-        $propiedad->idPeriodo = $request->idPeriodo;
-        $propiedad->costo = $request->costo;
-        $propiedad->idEstadoPropiedad = $request->idEstadoPropiedad;
-        $propiedad->idCiudad = $request->idCiudad;
+        $usuario = new Usuario();
+        $usuario->nombre = $request->nombre;
+        $usuario->apellido = $request->apellido;
+        $usuario->dni = $request->dni;
+        $usuario->fechaNacimiento = $request->fechaNacimiento;
+        $usuario->email = $request->email;
+        $usuario->telefono = $request->telefono;
+        $usuario->direccion = $request->direccion;
+        $usuario->CP = $request->CP;
+        $usuario->fechaCreacion = date('y-m-d h:i:s');
+        $usuario->idCiudad = $request->idCiudad;
+        $usuario->idRol = $request->idRol;
 
-        $propiedad->save();
+        $usuario->save();
 
-        return redirect()->route('propiedad.index')->with('Exitoso', 'La propiedad ha sido creada con exito.');
+        return redirect()->route('usuario.index')->with('Exitoso', 'El usuario ha sido creado con exito.');
     }
 
     /**
@@ -75,9 +69,9 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Usuario $usuario)
     {
-        //
+        return view('usuario.show', compact('usuario'));
     }
 
     /**
@@ -86,9 +80,12 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Usuario $usuario)
     {
-        //
+
+        $ciudades = Ciudad::all();
+        $roles = Rol::all();
+        return view('usuario.edit', compact('usuario', 'ciudades', 'roles'));
     }
 
     /**
@@ -98,9 +95,10 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Usuario $usuario)
     {
-        //
+        $usuario->fill($request->post())->save();
+        return redirect()->route('usuario.index')->with('Exitoso', 'El usuario ha sido editado con exito.');
     }
 
     /**
@@ -109,8 +107,14 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Usuario $usuario)
     {
-        //
+        $cantTransaccionesDeUsuario = count($usuario->Transacciones()->get());
+        if ($cantTransaccionesDeUsuario == 0) {
+            $usuario->delete();
+            return response()->json(['success' => 'El usuario ' . $usuario->nombre . ' ha sido eliminado con exito']);
+        } else {
+            return response()->json(['error' => 'El usuario ' . $usuario->nombre . ' no puede ser eliminado porque contiene propiedades a su nombre.']);
+        }
     }
 }

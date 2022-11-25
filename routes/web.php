@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PropiedadController;
 use App\Http\Controllers\PropietarioController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UsuarioController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -37,4 +38,4 @@ Route::resource('propietario', PropietarioController::class);
 
 Route::resource('ciudad', CiudadController::class);
 
-Route::resource('usuario', UserController::class);
+Route::resource('usuario', UsuarioController::class);
