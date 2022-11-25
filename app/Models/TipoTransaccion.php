@@ -12,11 +12,15 @@ class TipoTransaccion extends Model
     protected $table = 'tipotransaccion';
     public $timestamps = false;
     protected $fillable = [
-        'name', 'descripcion'
+        'id', 'name', 'descripcion'
     ];
-
+    protected $guarded = ['id'];
     public function Propiedades()
     {
         return $this->hasMany(Propiedad::class, 'idTipoTransaccion');
+    }
+    public function Transacciones()
+    {
+        return $this->belongsTo(Transaccion::class, 'idTipoTransaccion');
     }
 }

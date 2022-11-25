@@ -12,18 +12,18 @@ class Propiedad extends Model
 
     protected $table = 'propiedad';
     public $timestamps = false;
+    protected $guarded = ['id'];
 
     protected $fillable = [
         'id', 'descripcion', 'fechaCreacion', 'direccion', 'barrio', 'CP',
         'idPropietario', 'cantHab', 'cantBanios', 'estacionamiento', 'idCiudad',
         'cantHab', 'cantBanios', 'aceptaMascotas', 'amoblado', 'idTipoTransaccion',
-        'idEstadoPropiedad', 'costo'
+        'idEstadoPropiedad', 'costo', 'titulo'
     ];
     public function Ciudad()
     {
         return $this->belongsTo(Ciudad::class, 'idCiudad');
     }
-
     public function EstadoPropiedad()
     {
         return $this->belongsTo(EstadoPropiedad::class, 'idEstadoPropiedad');
@@ -32,9 +32,9 @@ class Propiedad extends Model
     {
         return $this->belongsTo(Propietario::class, 'idPropietario');
     }
-    public function Transaccion()
+    public function Transacciones()
     {
-        return $this->belongsTo(Transaccion::class, 'idTransaccion');
+        return $this->hasMany(Transaccion::class, 'idTransaccion');
     }
     public function TipoTransaccion()
     {
