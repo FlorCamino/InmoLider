@@ -41,25 +41,25 @@
     
               <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                 <li>
-                  <a href="#" class="nav-link text-dark">
+                  <a href="{{route('propiedad.index')}}" class="nav-link text-dark">
                     <span class="iconify bi d-block mx-auto mb-1" data-icon="mdi:home-city" data-width="30" data-height="30"></span>
                     Propiedades
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="nav-link text-dark">
+                  <a href="{{route('propietario.index')}}" class="nav-link text-dark">
                     <span class="iconify bi d-block mx-auto mb-1" data-icon="arcticons:simplefilemanager" data-width="30" data-height="30"></span>
                     Propietarios
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="nav-link text-dark"> 
+                  <a href="{{route('usuario.index')}}" class="nav-link text-dark"> 
                     <span class="iconify bi d-block mx-auto mb-1" data-icon="mdi:account-group" data-width="30" data-height="30"></span>
                     Usuarios
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="nav-link text-dark">
+                  <a href="{{route('ciudad.index')}}" class="nav-link text-dark">
                     <span class="iconify bi d-block mx-auto mb-1" data-icon="arcticons:city-transit" data-width="30" data-height="30"></span>
                     Ciudades
                   </a>
@@ -90,7 +90,7 @@
                 <div class="text-center py-3">
                     © 2020 Copyright:
                     <strong> 
-                      <a class="footlink" href="{{route('propietario.index')}}"> InmoLider.com </a> 
+                      <a class="footlink" href="{{route('propiedad.index')}}"> InmoLider.com </a> 
                     </strong>
                 </div>
             </div>
