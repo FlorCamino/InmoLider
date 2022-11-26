@@ -22,7 +22,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Nombre:</strong>
-                    <input type="text" name="nombre" class="form-control" placeholder="Nombre">
+                    <input type="text" name="nombre" class="form-control">
                     @error('nombre')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror

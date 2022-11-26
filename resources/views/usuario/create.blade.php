@@ -32,14 +32,14 @@ $(function() {
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                         <strong>Nombre/s:</strong>
-                        <input type="text" name="nombre" class="form-control" placeholder="Nombre">
+                        <input type="text" name="nombre" class="form-control">
                         @error('nombre')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
                 </div>
                 <div class="form-group">
                     <strong>Apellido/s:</strong>
-                        <input type="text" name="apellido" class="form-control" placeholder="Apellido">
+                        <input type="text" name="apellido" class="form-control">
                         @error('apellido')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}
                         </div>
@@ -47,35 +47,35 @@ $(function() {
                 </div>
                 <div class="form-group">
                     <strong>DNI:</strong>
-                        <input type="text" name="dni" class="form-control" placeholder="DNI">
+                        <input type="text" name="dni" class="form-control" >
                         @error('dni')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror 
                 </div>
                 <div class="form-group">
                     <strong>Fecha de Nacimiento:</strong>
-                        <input type="text" name="fechaNacimiento" id="fechaNacimiento" class="form-control" placeholder="Fecha nacimiento">
+                        <input type="text" name="fechaNacimiento" id="fechaNacimiento" class="form-control">
                         @error('fechaNacimiento')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror 
                 </div>
                 <div class="form-group">
                     <strong>Email:</strong>
-                        <input type="text" name="usuario" class="form-control" placeholder="Usuario">
+                        <input type="text" name="usuario" class="form-control">
                         @error('usuario')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror 
                 </div>
                 <div class="form-group">
                     <strong>Teléfono:</strong>
-                        <input type="text" name="telefono" class="form-control" placeholder="telefono">
+                        <input type="text" name="telefono" class="form-control">
                         @error('telefono')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror 
                 </div>
                 <div class="form-group">
                     <strong>Dirección:</strong>
-                        <input type="text" name="direccion" class="form-control" placeholder="Dirección">
+                        <input type="text" name="direccion" class="form-control">
                         @error('direccion')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror 
@@ -93,7 +93,7 @@ $(function() {
                 </div>
                 <div class="form-group">
                     <strong>Código Postal:</strong>
-                    <input type="text" name="CP" class="form-control" placeholder="CP">
+                    <input type="text" name="CP" class="form-control">
                     @error('CP')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror 

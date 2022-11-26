@@ -36,7 +36,7 @@
                 </div>
                 <div class="form-group">
                     <strong>Dirección:</strong>
-                        <input type="text" name="direccion" class="form-control" placeholder="Dirección">
+                        <input type="text" name="direccion" class="form-control">
                         @error('direccion')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}
                         </div>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="form-group">
                     <strong>Barrio:</strong>
-                        <input type="text" name="barrio" class="form-control" placeholder="Barrio">
+                        <input type="text" name="barrio" class="form-control">
                         @error('barrio')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror 
@@ -62,7 +62,7 @@
                 </div>
                 <div class="form-group">
                     <strong>Código Postal:</strong>
-                        <input type="text" name="CP" class="form-control" placeholder="CP">
+                        <input type="text" name="CP" class="form-control">
                         @error('CP')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror 
@@ -80,35 +80,35 @@
                 </div>
                 <div class="form-group">
                     <strong>Cantidad de habitaciones:</strong>
-                        <input type="number" name="cantHab" class="form-control" placeholder="Habitaciones">
+                        <input type="number" name="cantHab" class="form-control">
                         @error('cantHab')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror 
                 </div>
                 <div class="form-group">
                     <strong>Cantidad de baños:</strong>
-                        <input type="text" name="cantBanios" class="form-control" placeholder="Baños">
+                        <input type="text" name="cantBanios" class="form-control">
                         @error('cantBanios')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror 
                 </div>
                 <div class="form-group">
                     <strong>Estacionamiento:</strong>
-                        <input type="text" name="estacionamiento" class="form-control" placeholder="Estacionamiento">
+                        <input type="text" name="estacionamiento" class="form-control">
                         @error('estacionamiento')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror 
                 </div>
                 <div class="form-group">
                     <strong>Acepta mascotas:</strong>
-                        <input type="text" name="aceptaMascotas" class="form-control" placeholder="Acepta mascotas">
+                        <input type="text" name="aceptaMascotas" class="form-control">
                         @error('aceptaMascotas')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror 
                 </div>
                 <div class="form-group">
                     <strong>Amoblado:</strong>
-                        <input type="text" name="amoblado" class="form-control" placeholder="Amoblado">
+                        <input type="text" name="amoblado" class="form-control">
                         @error('amoblado')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror 
@@ -137,7 +137,7 @@
                 </div>
                 <div class="form-group">
                     <strong>Costo:</strong>
-                    <input type="text" name="costo" class="form-control" placeholder="Costo">
+                    <input type="text" name="costo" class="form-control">
                     @error('costo')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror 

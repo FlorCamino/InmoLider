@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="container bg-primary">
+<div class="container">
     <h2 class="title">Propietario</h2>
     
     <form style="position: relative">
