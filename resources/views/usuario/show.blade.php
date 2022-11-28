@@ -30,13 +30,13 @@
           </div>
           <div class="col">
             <div class="form-outline"  style="margin-bottom: 0px">
-              <input type="date" class="form-control" disabled value="{{$usuario->fechaNacimiento}}" />
+              <input type="datetime" class="form-control" disabled value="{{$usuario->fechaNacimiento}}" />
               <label class="form-label" for="form6Example2">Fecha de Nacimiento</label>
             </div>
           </div>
       </div>
         <div class="form-outline mb-4"  style="margin-bottom: 0px">
-          <input type="email" id="form6Example1" class="form-control" disabled value="{{$usuario->usuario}}"/>
+          <input type="email" id="form6Example1" class="form-control" disabled value="{{$usuario->email}}"/>
           <label class="form-label" for="form6Example1">Email</label>
         </div>
       

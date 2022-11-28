@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ciudad;
 use App\Models\Rol;
+use App\Models\Users;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $usuarios = Usuario::all();
+        $usuarios = Users::all();
         return view('usuario.index', [
             'usuarios' => $usuarios,
         ]);
@@ -45,7 +46,7 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        $usuario = new Usuario();
+        $usuario = new Users();
         $usuario->nombre = $request->nombre;
         $usuario->apellido = $request->apellido;
         $usuario->dni = $request->dni;
@@ -69,7 +70,7 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Usuario $usuario)
+    public function show(Users $usuario)
     {
         return view('usuario.show', compact('usuario'));
     }
@@ -80,7 +81,7 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Usuario $usuario)
+    public function edit(Users $usuario)
     {
 
         $ciudades = Ciudad::all();
@@ -95,7 +96,7 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Usuario $usuario)
+    public function update(Request $request, Users $usuario)
     {
         $usuario->fill($request->post())->save();
         return redirect()->route('usuario.index')->with('Exitoso', 'El usuario ha sido editado con exito.');
@@ -107,7 +108,7 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Usuario $usuario)
+    public function destroy(Users $usuario)
     {
         $cantTransaccionesDeUsuario = count($usuario->Transacciones()->get());
         if ($cantTransaccionesDeUsuario == 0) {

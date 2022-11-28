@@ -25,6 +25,6 @@ class Ciudad extends Model
 
     public function Usuarios()
     {
-        return $this->hasMany(Usuario::class, 'idCiudad');
+        return $this->hasMany(Users::class, 'idCiudad');
     }
 }

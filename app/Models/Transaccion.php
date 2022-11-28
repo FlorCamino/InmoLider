@@ -19,7 +19,7 @@ class Transaccion extends Model
     }
     public function Usuario()
     {
-        return $this->belongsTo(Usuario::class, 'idUsuario');
+        return $this->belongsTo(Users::class, 'idUsuario');
     }
     public function Propiedad()
     {

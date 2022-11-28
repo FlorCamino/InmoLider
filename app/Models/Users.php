@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Usuario extends Model
+class Users extends Model
 {
     use HasFactory;
 
-    protected $table = 'usuario';
+    protected $table = 'users';
     public $timestamps = false;
 
     protected $guarded = ['id'];
 
     protected $fillable = [
-        'id', 'fechaCreacion', 'nombre', 'apellido', 'telefono', 'dni',
+        'id', 'fechaDeCreacion', 'nombre', 'apellido', 'telefono', 'dni',
         'fechaNacimiento', 'direccion', 'idCiudad', 'CP', 'urlFoto', 'idRol',
-        'usuario', 'contrasenia'
+        'email', 'password'
     ];
     public function Ciudad()
     {

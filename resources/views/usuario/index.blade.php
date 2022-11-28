@@ -35,12 +35,12 @@
    <td>{{$usuario->Rol->nombre}}</td>
    <td>{{$usuario->dni}}</td>
    <td>{{$usuario->fechaNacimiento}}</td>
-   <td>{{$usuario->usuario}}</td>
+   <td>{{$usuario->email}}</td>
    <td>{{$usuario->telefono}}</td>
    <td>{{$usuario->direccion}}</td>
    <td>{{$usuario->Ciudad->nombre}}</td>
    <td>{{$usuario->CP}}</td>
-   <td>{{$usuario->fechaCreacion}}</td>
+   <td>{{$usuario->fechaDeCreacion}}</td>
    
    <td>
     <a href="{{route('usuario.show', $usuario)}}">
