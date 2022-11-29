@@ -10,7 +10,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="{{ asset('css/base_user.css') }}"> 
 <link rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=Tagerine,serif">
+  href="https://fonts.googleapis.com/css?family=Tangerine">
 <!--Icons-->
 <script src="https://code.iconify.design/3/3.0.0/iconify.min.js"></script>
 <!-- Favicons -->
@@ -28,7 +28,7 @@
       <div class="navbar navbar-default">
         <div class="container-relative navbar-nav navbar-center">
             <ul>
-              <li>
+              <li class="nav-list">
                 <a href="#" class="nav-link">
                     <span class="iconify d-block mx-auto mb-1" data-icon="material-symbols:home-app-logo" data-width="30" data-height="30"></span>
                     Inicio
@@ -40,19 +40,31 @@
                     Servicios
                 </a>
               </li>
+              <li>
+                <a href="#" class="nav-link">
+                  <span class="iconify d-block mx-auto mb-1" data-icon="ic:baseline-contact-phone" data-width="30" data-height="30"></span>
+                  Contacto
+                </a>
+              </li>
               <li class="icon">
                   <img class="bi me-2" width="80" height="60" role="img" src="{{ asset('img/logo.jpg') }}" alt="logo">  
               </li>
               <li>
                 <a href="#" class="nav-link"> 
                   <span class="iconify d-block mx-auto mb-1" data-icon="mdi:information-outline" data-width="30" data-height="30"></span>
-                  ¿Quienes somos?
+                  Nosotros
                 </a>
               </li>
               <li>
                 <a href="#" class="nav-link">
-                  <span class="iconify d-block mx-auto mb-1" data-icon="ic:baseline-contact-phone" data-width="30" data-height="30"></span>
-                  Contacto
+                  <span class="iconify d-block mx-auto mb-1" data-icon="arcticons:maps" data-width="30" data-height="30"></span>
+                  Ubicación
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link">
+                  <span class="iconify d-block mx-auto mb-1" data-icon="tabler:brand-gravatar" data-width="30" data-height="30"></span>
+                  Bienvenido/a
                 </a>
               </li>
             </ul>
@@ -91,7 +103,7 @@
 
         <div>
           <i class="fa fa-phone"></i>
-          <p>+1.555.555.5555</p>
+          <p>+542964423654</p>
         </div>
 
         <div>
@@ -104,8 +116,10 @@
       <div class="footer-right">
 
         <p class="footer-company-about">
-          <span>InmoLider</span>
-          Pasión, Obsesión, Adicción y Obstinación por acompañarlos en la elección de su hogar. ¡NO HAY OTRA! Concretando operaciones con esfuerzos y sitisfacción. 
+          <span>¿Porque InmoLider?</span>
+          Por nuestra trayectoria, pasión y entusiasmo. 
+          Brindamos a nuestros clientes asesoramiento 
+          profesional y atención cordial.  
         </p>
 
       </div>
