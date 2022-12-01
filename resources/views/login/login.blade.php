@@ -16,24 +16,21 @@
   </head>
 <body>
     <main >
-        <div class="container-relative text-center form-signin">
-            <div class="hijo">
+        <div class="container form-signin">
             <form class="text-center">
-                <img class="mb-4" src="{{asset('img/logo.jpg')}}" alt="Logo" width="100" height="70">
+                <img class="mb-4" src="{{asset('img/logo.jpg')}}" alt="Logo" width="120" height="90">
                 <h1 class="h3 mb-3 fw-normal">Bienvenido! Por favor, inicie sesión</h1>
-
-                <div class="container-fixed mb-3 form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Ingrese su email</label>
+                <div class="mb-3 form-floating">
+                <input type="email" class="form-control form-control-orange" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email</label>
                 </div>
-                <div class="container-fixed mb-3 form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Ingrese su contraseña</label>
+                <div class="mb-3 form-floating">
+                <input type="password" class="form-control form-control-orange" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Contraseña</label>
                 </div>
-                <button class="btn" type="submit">Ingresar</button>
-                <p class="mt-5 mb-3 text-muted">InmoLider  &copy; 2022</p>
+                <button class="btn-form-control form-control" type="submit">Ingresar</button>
+                <p class="mt-5 text-muted">InmoLider &copy; 2022</p>
             </form>
-        </div>
         </div>
     </main>
 
