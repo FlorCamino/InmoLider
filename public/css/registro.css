@@ -13,17 +13,9 @@ form {
     margin-top: -5px 0 0 -5px;
 }
 
-.row {
-    margin-bottom: 15px;
-}
-
-.subtitle {
-    margin-bottom: 15px;
-}
-
 label {
-    display: flex !important;
-    margin-left: 10px !important;
+    display: flex;
+    margin-left: 0 !important;
     font-family: Tahoma;
     padding-bottom: 0 !important;
 }
@@ -32,10 +24,9 @@ label {
     box-shadow: none;
 }
 
-.btn-form-control-registro {
-    background-color: #f55d26;
-    width: 10%;
-    color: white;
+body {
+    font-family: tahoma;
+    background-color: #fef4ea;
 }
 
 .form-login {

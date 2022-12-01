@@ -1,8 +1,9 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>InmoLider</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/"> 
 
@@ -17,7 +18,7 @@
 <body>
     <main >
         <div class="container form-signin">
-            <form class="text-center">
+            <form class="form-login text-center">
                 <img class="mb-4" src="{{asset('img/logo.jpg')}}" alt="Logo" width="120" height="90">
                 <h1 class="h3 mb-3 fw-normal">Bienvenido! Por favor, inicie sesión</h1>
                 <div class="mb-3 form-floating">
