@@ -32,10 +32,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $ciudades = Ciudad::all();
-        return view('login.registro', [
-            'ciudades' => $ciudades
-        ]);
+        // $ciudades = Ciudad::all();
+        // return view('login.registro', [
+        //     'ciudades' => $ciudades
+        // ]);
+        return view('login.login');
     }
 
     /**

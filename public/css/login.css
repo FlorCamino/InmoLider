@@ -25,6 +25,8 @@ img {
     margin-bottom: 15px;
     text-align: start !important;
     font-family: serif;
+    font-size: 2rem !important;
+    text-align: center !important;
 }
 label {
     display: flex !important;
@@ -87,4 +89,8 @@ label {
     background-color: #f55d26;
     color: white;
     box-shadow: none;
+}
+
+p {
+    margin-top: 30px !important;
 }
