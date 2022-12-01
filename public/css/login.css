@@ -1,5 +1,5 @@
 body {
-    font-family: tahoma;
+    font-family: serif;
     background-color: #fef4ea;
 }
 
@@ -13,19 +13,28 @@ form {
     margin-top: -5px 0 0 -5px;
 }
 
+img {
+    margin-bottom: 40px !important;
+}
+
 .row {
     margin-bottom: 15px;
 }
 
 .subtitle {
     margin-bottom: 15px;
+    text-align: start !important;
+    font-family: serif;
 }
-
 label {
     display: flex !important;
     margin-left: 10px !important;
-    font-family: Tahoma;
+    font-family: serif;
     padding-bottom: 0 !important;
+}
+
+.form-floating {
+    margin-bottom: 15px !important;
 }
 
 .form-control:hover .form-select:hover {
@@ -34,8 +43,18 @@ label {
 
 .btn-form-control-registro {
     background-color: #f55d26;
-    width: 10%;
+    width: 15%;
     color: white;
+    display: inline-block !important;
+    margin-inline-end: 0 !important;
+    justify-content: end !important;
+}
+
+.btn-form-control-registro:focus {
+    border-color: black;
+    background-color: #f55d26;
+    color: white;
+    box-shadow: none;
 }
 
 .form-login {
@@ -60,6 +79,7 @@ label {
     background-color: #f55d26;
     width: 100%;
     color: white;
+    font-weight: bold;
 }
 
 .btn-form-control:focus {
