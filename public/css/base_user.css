@@ -1,11 +1,11 @@
 * {
-    font-family: tahoma;
+    font-family: serif;
 }
 
 body {
     background-image: url("https://www.arquitecturaydiseno.es/medio/2018/12/14/interior-con-estructura-suelo-y-mobiliario-de-madera-vista_44e43395_1500x1030.jpg");
     background-size: cover;
-    font-family: tahoma;
+    font-family: serif;
     margin-top: 80px;
     padding: 30px;
     position: relative;
@@ -15,50 +15,44 @@ body {
     box-sizing: border-box;
 }
 
-main {
-    color: white;
-}
-
-header {
+.navbar {
     background-color: #fef4ea !important;
     color: orangered;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
     height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border-bottom: 1px solid black;
     -webkit-box-shadow: 2px 2px 5px black;
+    text-align: center !important;
+    justify-content: center !important;
 }
 
 header * {
-    display: inline;
+    display: inline-block;
 }
 
-header li {
-    margin: 20px;
+ul {
+    margin-top: 0 !important;
+    margin-bottom: auto;
+    padding-left: 0 !important;
 }
 
 header li a {
-    padding-bottom: 5px;
-    align-content: center;
     color: orangered;
     text-decoration: none;
     text-shadow: 2px 2px 8px hwb(0 1% 19%);
-    text-align: center;
+}
+
+.navbar-link {
+    vertical-align: auto;
+    align-items: center;
 }
 
 .bi {
-    -moz-border-radius: 10px; /*increase the value to make it more round*/
-    -webkit-border-radius: 10px;
-    border-radius: 25px;
-    -moz-background-clipping: padding-box;
-    -webkit-background-clipping: padding-box;
-    background-clip: padding-box;
-    height: 70px;
+    border-color: black;
+    margin-top: 10px !important;
     -webkit-box-shadow: 2px 2px 5px hwb(0 1% 19%);
     -moz-box-shadow: 2px 2px 5px hwb(0 1% 19%);
     filter: shadow(color=orangered, direction=135, strength=2);

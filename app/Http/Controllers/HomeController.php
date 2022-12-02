@@ -36,7 +36,7 @@ class HomeController extends Controller
         // return view('login.registro', [
         //     'ciudades' => $ciudades
         // ]);
-        return view('login.login');
+        return view('inicio.inicio');
     }
 
     /**
