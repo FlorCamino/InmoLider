@@ -7,74 +7,58 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>InmoLider</title>
     <!-- Bootstrap CSS -->
-    <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
-    <link rel="stylesheet" href="{{ asset('css/base_user.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/base_user.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-    <!--Icons-->
-    <script src="https://code.iconify.design/3/3.0.0/iconify.min.js"></script>
     <!-- Favicons -->
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 
 <body>
-
     <header>
-        <nav role="navigation" class="navbar navbar-expand-md">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <ul>
-                            <li class="navbar-brand">
-                                <a href="#" class="nav-link">
-                                    <span class="iconify" data-icon="material-symbols:home-app-logo" data-width="30"
-                                        data-height="30"></span>
-                                    Inicio
-                                </a>
+                <a class="navbarLogo" href="#">
+                    <img class="bi" width="90" height="70" role="img" src="{{ asset('img/logo.jpg') }}"
+                        alt="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">InmoLider</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">Inicio</a>
                             </li>
-                            <li>
-                                <a href="#" class="nav-link">
-                                    <span class="iconify" data-icon="material-symbols:format-list-bulleted-add-rounded"
-                                        data-width="30" data-height="30"></span>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Nosotros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contacto</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Ubicación</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
                                     Servicios
                                 </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link">
-                                    <span class="iconify" data-icon="ic:baseline-contact-phone" data-width="30"
-                                        data-height="30"></span>
-                                    Contacto
-                                </a>
-                            </li>
-
-                            <li class="icon">
-                                <img class="bi" width="80" height="60" role="img"
-                                    src="{{ asset('img/logo.jpg') }}" alt="logo">
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link">
-                                    <span class="iconify" data-icon="mdi:information-outline" data-width="30"
-                                        data-height="30"></span>
-                                    Nosotros
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link">
-                                    <span class="iconify" data-icon="arcticons:maps" data-width="30"
-                                        data-height="30"></span>
-                                    Ubicación
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link">
-                                    <span class="iconify" data-icon="tabler:brand-gravatar" data-width="30"
-                                        data-height="30"></span>
-                                    Bienvenido/a
-                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Alquiler</a></li>
+                                    <li><a class="dropdown-item" href="#">Venta</a></li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
@@ -83,6 +67,7 @@
         </nav>
     </header>
 
+    @yield('content')
 
     <footer class="footer-distributed">
 
@@ -99,7 +84,7 @@
 
             <div>
                 <i class="fa fa-map-marker"></i>
-                <p><span>Islas Malvinas 1834</span> Rio Grande, AeIAS</p>
+                <p><span></span>Islas Malvinas 1834, Río Grande</p>
             </div>
 
             <div>
@@ -138,29 +123,3 @@
 </body>
 
 </html>
-{{-- 
-<!-- example 5 left and center only with empty space right -->
-<nav class="navbar navbar-expand-sm navbar-dark bg-primary flex-sm-nowrap flex-wrap">
-  <div class="container-fluid">
-      <button class="navbar-toggler flex-grow-sm-1 flex-grow-0 me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbar5">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <span class="navbar-brand flex-grow-1">Navbar 5</span>
-      <div class="navbar-collapse collapse flex-grow-1 justify-content-center" id="navbar5">
-          <ul class="navbar-nav mx-auto">
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Codeply</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-              </li>
-          </ul>
-      </div>
-      <div class="flex-grow-1">
-          <!--spacer-->
-      </div>
-  </div>
-</nav> --}}

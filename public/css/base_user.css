@@ -1,10 +1,13 @@
+/* Body */
+
 * {
     font-family: serif;
 }
 
 body {
-    background-image: url("https://www.arquitecturaydiseno.es/medio/2018/12/14/interior-con-estructura-suelo-y-mobiliario-de-madera-vista_44e43395_1500x1030.jpg");
+    background-image: url("../img/img-background-body.jpg") !important;
     background-size: cover;
+    width: 100%;
     font-family: serif;
     margin-top: 80px;
     padding: 30px;
@@ -12,8 +15,9 @@ body {
     min-height: 100vh !important;
     margin: 0;
     padding-bottom: 100px;
-    box-sizing: border-box;
 }
+
+/* Navbar */
 
 .navbar {
     background-color: #fef4ea !important;
@@ -25,12 +29,18 @@ body {
     height: 80px;
     border-bottom: 1px solid black;
     -webkit-box-shadow: 2px 2px 5px black;
-    text-align: center !important;
     justify-content: center !important;
+    word-spacing: 10%;
+    font-family: serif;
+    font-size: 1.3rem;
 }
 
-header * {
+.navbarLogo {
     display: inline-block;
+    margin-left: 8%;
+    vertical-align: middle !important;
+    filter: drop-shadow(0 2px 5px rgba(201, 70, 4, 0.7));
+    box-shadow: 0 0 10px rgba(215, 93, 49, 0.7);
 }
 
 ul {
@@ -39,46 +49,30 @@ ul {
     padding-left: 0 !important;
 }
 
-header li a {
-    color: orangered;
-    text-decoration: none;
-    text-shadow: 2px 2px 8px hwb(0 1% 19%);
-}
-
-.navbar-link {
+.nav-link {
     vertical-align: auto;
     align-items: center;
+    color: #f85d25;
 }
 
-.bi {
-    border-color: black;
-    margin-top: 10px !important;
-    -webkit-box-shadow: 2px 2px 5px hwb(0 1% 19%);
-    -moz-box-shadow: 2px 2px 5px hwb(0 1% 19%);
-    filter: shadow(color=orangered, direction=135, strength=2);
-}
+/* Footer */
 
 .footer-distributed {
     position: absolute !important;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-    box-sizing: border-box;
     text-align: left;
-    font: bold 12px Tahoma;
+    font: bold 15px serif;
     padding: 3px 50px;
     background-color: #f85d25;
     bottom: 0 !important;
     width: 100% !important;
     left: 0;
-    -webkit-box-shadow: 2px 2px 5px orangered;
-    -moz-box-shadow: 2px 2px 5px orangered;
-    filter: shadow(color=orangered, direction=135, strength=2);
 }
 
 .footer-distributed .footer-left,
 .footer-distributed .footer-center,
 .footer-distributed .footer-right {
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
 }
 
 /* Footer left */
@@ -92,33 +86,19 @@ header li a {
 .footer-distributed h3 {
     font-family: "Tangerine";
     font-size: 46px;
-    text-shadow: 4px 4px 4px #9b2c04;
-    color: #ffffff;
-    margin: 0;
+    color: black;
+    margin-left: 10px;
+    word-spacing: 8px;
 }
 
 .footer-distributed h3 span {
-    color: #ffffff;
+    color: black;
 }
 
 /* Footer links */
 
-.footer-distributed .footer-links {
-    color: #ffffff;
-    margin: 20px 0 12px;
-    padding: 0;
-}
-
-.footer-distributed .footer-links a {
-    display: inline-block;
-    line-height: 1.8;
-    font-weight: 400;
-    text-decoration: none;
-    color: inherit;
-}
-
 .footer-distributed .footer-company-name {
-    color: #ffffff;
+    color: black;
     font-size: 14px;
     font-weight: normal;
     margin: 0;
@@ -131,14 +111,14 @@ header li a {
 }
 
 .footer-distributed .footer-center i {
-    color: #ffffff;
+    color: black;
     font-size: 25px;
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    text-align: center;
+    text-align: left;
     line-height: 42px;
-    margin: 10px 15px;
+    margin: 0;
     vertical-align: middle;
 }
 
@@ -149,7 +129,7 @@ header li a {
 
 .footer-distributed .footer-center p {
     display: inline-block;
-    color: #ffffff;
+    color: black;
     font-weight: 400;
     vertical-align: middle;
     margin: 0;
@@ -164,21 +144,7 @@ header li a {
 
 .footer-distributed .footer-center p a {
     text-decoration: none;
-    color: #ffffff;
-}
-
-.footer-distributed .footer-links a:before {
-    content: "|";
-    font-weight: 300;
-    font-size: 20px;
-    left: 0;
-    color: #ffffff;
-    display: inline-block;
-    padding-right: 5px;
-}
-
-.footer-distributed .footer-links .link-1:before {
-    content: none;
+    color: black;
 }
 
 /* Footer Right */
@@ -189,15 +155,16 @@ header li a {
 
 .footer-distributed .footer-company-about {
     line-height: 20px;
-    color: #ffffff;
+    color: black;
     font-size: 13px;
     font-weight: normal;
     margin: 0;
+    text-align: center;
 }
 
 .footer-distributed .footer-company-about span {
     display: block;
-    color: #ffffff;
+    color: black;
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -216,7 +183,7 @@ header li a {
     border-radius: 2px;
 
     font-size: 20px;
-    color: #ffffff;
+    color: black;
     text-align: center;
     line-height: 35px;
 
@@ -224,11 +191,11 @@ header li a {
     margin-bottom: 5px;
 }
 
-/* If you don't want the footer to be responsive, remove these media queries */
+/*  Footer responsive */
 
 @media (max-width: 880px) {
     .footer-distributed {
-        font: bold 14px Tahoma;
+        font: bold 15px serif;
     }
 
     .footer-distributed .footer-left,
