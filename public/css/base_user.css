@@ -22,10 +22,10 @@ body {
 .navbar {
     background-color: #fef4ea !important;
     color: orangered;
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
-    right: 0px;
+    right: 0px !important;
     height: 80px;
     border-bottom: 1px solid black;
     -webkit-box-shadow: 2px 2px 5px black;
@@ -38,9 +38,15 @@ body {
 .navbarLogo {
     display: inline-block;
     margin-left: 8%;
+    border: solid 0.5px orangered;
     vertical-align: middle !important;
     filter: drop-shadow(0 2px 5px rgba(201, 70, 4, 0.7));
     box-shadow: 0 0 10px rgba(215, 93, 49, 0.7);
+    border-radius: 15px;
+}
+
+.bi {
+    border-radius: 15px;
 }
 
 ul {
