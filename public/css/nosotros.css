@@ -5,12 +5,25 @@
     color: black;
 }
 
+/* Estilos body*/
+
+body {
+    position: relative;
+    min-height: 100vh !important;
+    margin: 0;
+    padding-bottom: 100px;
+}
+
 .nos-container {
     margin-top: 150px;
 }
 
 .carousel-item {
     height: 300px;
+}
+
+.carousel-inner {
+    border: solid black 1px;
 }
 
 .img-carrusel {
@@ -20,12 +33,43 @@
 }
 
 .title-carrousel {
-    font-size: 2.8rem;
-    color: white;
+    font-size: 3.8rem;
+    font-family: "Tangerine";
 }
 
 .text-carrousel {
-    font-size: 1.2rem;
-    color: white;
+    font-size: 2rem;
+    font-family: "Tangerine";
     justify-content: center !important;
+}
+
+.lead {
+    justify-content: center !important;
+    text-indent: 2em !important;
+    text-align: justify !important;
+    font-family: serif;
+    font-size: 0.8rem;
+}
+
+hr {
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.featurette-heading {
+    text-align: center;
+    font-family: serif;
+}
+
+.img-nos {
+    border-radius: 15px;
+    width: 400px;
+    height: 300px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.featurette-all {
+    background-color: #fef4ea;
+    border-radius: 15px;
 }
