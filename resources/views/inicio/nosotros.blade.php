@@ -6,7 +6,7 @@
 
         <main>
             <div class="container nos-container">
-                <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div id="myCarousel" class="carousel slide carousel-dark" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
                             aria-current="true" aria-label="Slide 1"></button>
@@ -17,18 +17,18 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="img-carrusel" role="img" src="{{ asset('img/carrusel1.jpg') }}" alt="logo">
+                            <img class="img-carrusel" role="img" src="{{ asset('img/carrusel_1.jpg') }}" alt="logo">
 
                             <div class="container">
                                 <div class="carousel-caption text-start">
-                                    <h1>InmoLider</h1>
-                                    <p>Una empresa dedicada pura y exclusivamente al servicio del cliente. </p>
+                                    <h1 class="title-carrousel">InmoLider</h1>
+                                    <p class="text-carrousel">Una empresa dedicada pura y exclusivamente al servicio del
+                                        cliente. </p>
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img class="img-carrusel" role="img" src="{{ asset('img/imgcarrusel2.jpg') }}"
-                                alt="logo">
+                            <img class="img-carrusel" role="img" src="{{ asset('img/carrusel_2.jpg') }}" alt="logo">
 
                             <div class="container">
                                 <div class="carousel-caption">
@@ -38,13 +38,12 @@
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img class="img-carrusel" role="img" src="{{ asset('img/imgcarrusel3.jpg') }}"
-                                alt="logo">
+                            <img class="img-carrusel" role="img" src="{{ asset('img/carrusel_3.jpg') }}" alt="logo">
 
                             <div class="container">
                                 <div class="carousel-caption text-end">
-                                    <h1>Relajate</h1>
-                                    <p>Deja las preocupaciones en manos de expertos.</p>
+                                    <h1 class="title-carrousel">Relajate</h1>
+                                    <p class="text-carrousel">Deja las preocupaciones en manos de expertos.</p>
                                 </div>
                             </div>
                         </div>
@@ -62,11 +61,11 @@
 
                 <!-- START THE FEATURETTES -->
 
-                <hr class="featurette-divider">
+                <hr>
 
-                <div class="row featurette">
-                    <div class="col-md-7">
-                        <h2 class="featurette-heading fw-normal lh-1">InmoLider&copy;. <span class="text-muted">Cumpliendo
+                <div class="row featurette-all">
+                    <div class="col-md-7 featurette">
+                        <h2 class="featurette-heading">InmoLider&copy;. <span class="text-muted">Cumpliendo
                                 sueños!</span></h2>
                         <p class="lead">Somos una empresa transparente y sólida en la localidad de Río Grande,
                             Tierra del Fuego, que cuenta con más de 40 años de experiencia en la actividad inmobiliaria.
@@ -81,8 +80,7 @@
                         </p>
                     </div>
                     <div class="col-md-5">
-                        <img class="bi" width="500" height="300" role="img"
-                            src="{{ asset('img/img-rio-grande.jpg') }}" alt="logo">
+                        <img class="img-nos" role="img" src="{{ asset('img/img-rio-grande.jpg') }}" alt="logo">
 
                     </div>
                 </div>
