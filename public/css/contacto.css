@@ -1,0 +1,61 @@
+/* General */
+
+* {
+    font-family: serif;
+    color: black;
+}
+
+.v-line {
+    border-left: 1px solid orangered;
+    height: 60%;
+    left: 38%;
+    position: absolute;
+}
+
+.v-line1 {
+    border-left: 1px solid orangered;
+    height: 60%;
+    left: 62%;
+    position: absolute;
+}
+.marketing {
+    margin-top: 150px;
+    margin-bottom: 100px;
+    background-color: #fef4ea;
+    border-radius: 15px;
+}
+
+.img-cont {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: solid 1px black;
+    margin-left: 25%;
+    margin-top: 50px;
+}
+
+.name {
+    margin-left: 25%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-family: serif;
+}
+
+p {
+    text-align: center;
+}
+
+.cont-list {
+    text-align: center;
+    word-spacing: 10px;
+    margin-left: 20px;
+    margin-right: 10px;
+    list-style: none;
+    display: inline-block !important;
+}
+
+li {
+    margin-right: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}

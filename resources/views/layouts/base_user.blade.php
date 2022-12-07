@@ -12,11 +12,15 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/base_user.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/inicio.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/nosotros.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/contacto.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
     <!-- Favicons -->
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <!-- icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="https://code.iconify.design/3/3.0.1/iconify.min.js"></script>
+
+
 </head>
 
 <body>
