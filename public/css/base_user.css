@@ -33,6 +33,7 @@ body {
     word-spacing: 10%;
     font-family: serif;
     font-size: 1.3rem;
+    z-index: 9999 !important;
 }
 
 .navbarLogo {
