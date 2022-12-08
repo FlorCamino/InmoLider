@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PropiedadRequest;
+use App\Http\Requests\PropietarioRequest;
 use App\Models\Ciudad;
 use App\Models\Propietario;
-use Illuminate\Http\Request;
-
-use Validator;
 
 class PropietarioController extends Controller
 {
@@ -42,20 +41,9 @@ class PropietarioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PropietarioRequest $request)
     {
-        // $request->validate([
-        //     'nombre' => ['required', 'alpha'],
-        //     'apellido' => ['required', 'alpha'],
-        //     'dni' => ['required', 'numeric'],
-        //     'fechaNacimiento' => ['required', 'date'],
-        //     'email' => ['required', 'email'],
-        //     'telefono' => ['required', 'numeric'],
-        //     'domicilio' => ['required', 'alpha_num'],
-        //     'CP' => ['required', 'alpha_num'],
-        //     'idCiudad' => ['required', 'numeric']
-        // ]);
-
+        // dd($request);
         $propietario = new Propietario();
         $propietario->nombre = $request->nombre;
         $propietario->apellido = $request->apellido;
@@ -104,19 +92,8 @@ class PropietarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Propietario $propietario)
+    public function update(PropiedadRequest $request, Propietario $propietario)
     {
-        // $request->validate([
-        //     'nombre' => ['required', 'alpha'],
-        //     'apellido' => ['required', 'alpha'],
-        //     'dni' => ['required', 'numeric'],
-        //     'fechaNacimiento' => ['required', 'date'],
-        //     'email' => ['required', 'email'],
-        //     'telefono' => ['required', 'numeric'],
-        //     'domicilio' => ['required', 'alpha_num'],
-        //     'CP' => ['required', 'alpha_num'],
-        //     'idCiudad' => ['required', 'numeric']
-        // ]);
         $propietario->fill($request->post())->save();
         return redirect()->route('propietario.index')->with('Exitoso', 'El propietario ha sido editada con exito.');
     }
