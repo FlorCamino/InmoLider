@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TransaccionRequest;
 use App\Models\EstadoPropiedad;
 use App\Models\Propiedad;
 use App\Models\TipoTransaccion;
 use App\Models\Transaccion;
-use App\Models\User;
 use App\Models\Users;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class TransaccionController extends Controller
@@ -50,7 +49,7 @@ class TransaccionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TransaccionRequest $request)
     {
         $idEstadoPropiedad = 0;
         switch ($request->idTipoTransaccion) {
@@ -114,7 +113,7 @@ class TransaccionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Transaccion $transaccion, EstadoPropiedad $estadoPropiedad)
+    public function update(TransaccionRequest $request, Transaccion $transaccion, EstadoPropiedad $estadoPropiedad)
     {
         $transaccion->fill($request->post())->save();
         return redirect()->route('transaccion.index')->with('Exitoso', 'L transacción ha sido editado con exito.');
