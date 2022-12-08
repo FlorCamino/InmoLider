@@ -11,7 +11,7 @@ class Transaccion extends Model
     protected $table = 'transaccion';
     public $timestamps = false;
     protected $fillable = [
-        'id', 'name', 'descripcion'
+        'id', 'idPropiedad', 'idUsuario', 'fechaCreacion', 'valor', 'descripcion'
     ];
     public function TipoTransaccion()
     {

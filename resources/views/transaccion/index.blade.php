@@ -8,54 +8,46 @@
 
     {{-- Linea de código --}}
     <div class="container-fluid">
-        <h2 class="title">Listado de propiedades</h2>
+        <h2 class="title">Listado de transacciones</h2>
 
         <table class="table table-striped table-hover">
 
             <thead class="justify-content-center">
                 <tr>
-                    <th scope="col-3">Identificación</th>
-                    <th scope="col-3">Título</th>
-                    <th scope="col-2">Fecha de alta</th>
-                    <th scope="col-2">Dirección</th>
-                    <th scope="col-2">Barrio</th>
-                    <th scope="col-2">Ciudad</th>
-                    <th scope="col-2">Propietario</th>
-                    <th scope="col-2">Tipo de transacción</th>
-                    <th scope="col-2">Período</th>
-                    <th scope="col-2">Costo</th>
-                    <th scope="col-2">Estado de propiedad</th>
+                    <th scope="col-3">Id de transacción</th>
+                    <th scope="col-3">Id - titulo de propiedad</th>
+                    <th scope="col-2">Usuario</th>
+                    <th scope="col-2">Condición</th>
+                    <th scope="col-2">Fecha de creación</th>
+                    <th scope="col-2">Valor</th>
+                    <th scope="col-2">Descripción</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider">
-                @foreach ($propiedades as $propiedad)
+                @foreach ($transacciones as $transaccion)
                     <tr>
-                        <td>{{ $propiedad->id }}</td>
-                        <td>{{ $propiedad->titulo }}</td>
-                        <td>{{ $propiedad->fechaCreacion }}</td>
-                        <td>{{ $propiedad->direccion }}</td>
-                        <td>{{ $propiedad->barrio }}</td>
-                        <td>{{ $propiedad->Ciudad->nombre }}</td>
-                        <td>{{ $propiedad->Propietario->nombre . ' ' . $propiedad->Propietario->apellido }}</td>
-                        <td>{{ $propiedad->TipoTransaccion->nombre }}</td>
-                        <td>{{ $propiedad->Periodo ? $propiedad->Periodo->nombre : '' }}</td>
-                        <td>{{ $propiedad->costo }}</td>
-                        <td>{{ $propiedad->EstadoPropiedad->nombre }}</td>
+                        <td>{{ $transaccion->id }}</td>
+                        <td>{{ $transaccion->idPropiedad . ' - ' . $transaccion->Propiedad->titulo }}</td>
+                        <td>{{ $transaccion->Usuario->nombre . ' ' . $transaccion->Usuario->apellido }}</td>
+                        <td>{{ $transaccion->TipoTransaccion ? $transaccion->TipoTransaccion->nombre : '' }}</td>
+                        <td>{{ $transaccion->fechaCreacion }}</td>
+                        <td>{{ $transaccion->valor }}</td>
+                        <td>{{ $transaccion->descripcion }}</td>
                         <td>
-                            <a href="{{ route('propiedad.show', $propiedad) }}">
+                            <a href="{{ route('transaccion.show', $transaccion) }}">
                                 <button type="button" class="icon btn-labeled btn-primary"><i
                                         class="fa fa-eye"></i></button>
                             </a>
                         </td>
                         <td>
-                            <a href="{{ route('propiedad.edit', $propiedad) }}">
+                            <a href="{{ route('transaccion.edit', $transaccion) }}">
                                 <button type="button" class="icon btn-labeled btn-primary"><i
                                         class="fa fa-pencil"></i></button>
                             </a>
                         </td>
                         <td>
                             <button type="button" class="icon btn-labeled btn-danger"
-                                onclick="deleteConfirmation({{ $propiedad->id }})"><i class="fa fa-trash"></i></button>
+                                onclick="deleteConfirmation({{ $transaccion->id }})"><i class="fa fa-trash"></i></button>
                         </td>
                     </tr>
                 @endforeach
@@ -66,7 +58,7 @@
         <div class="text-right">
             <div class="row">
                 <div class="col-12">
-                    <a class="text-light" href="{{ route('propiedad.create') }}">
+                    <a class="text-light" href="{{ route('transaccion.create') }}">
                         <button id="btn" role="button" type="submit" class="button-7">
                             Agregar nuevo</a></button>
                     </a>
@@ -80,7 +72,7 @@
             swal.fire({
                 title: "Eliminar?",
                 icon: 'question',
-                text: "¿Estas seguro que desea eliminar este registro?",
+                text: "¿Estas seguro que deseas eliminar esta transacción?",
                 type: "warning",
                 showCancelButton: !0,
                 confirmButtonText: "Si",
@@ -90,7 +82,7 @@
 
                 if (e.value === true) {
                     let token = $('meta[name="csrf-token"]').attr('content');
-                    let _url = `/propiedad/${id}`;
+                    let _url = `/transaccion/${id}`;
 
                     $.ajax({
                         type: 'DELETE',

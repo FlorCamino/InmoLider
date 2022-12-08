@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PropiedadController;
 use App\Http\Controllers\PropietarioController;
+use App\Http\Controllers\TransaccionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UsuarioController;
 use App\Models\User;
@@ -39,3 +40,5 @@ Route::resource('propietario', PropietarioController::class);
 Route::resource('ciudad', CiudadController::class);
 
 Route::resource('usuario', UsuarioController::class);
+
+Route::resource('transaccion', TransaccionController::class);
