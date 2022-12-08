@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FormDataRequest;
 use App\Models\Ciudad;
 use App\Models\Rol;
 use App\Models\Users;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
 class UsuarioController extends Controller
 {
@@ -44,8 +47,9 @@ class UsuarioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormDataRequest $request)
     {
+
         $usuario = new Users();
         $usuario->nombre = $request->nombre;
         $usuario->apellido = $request->apellido;
@@ -55,15 +59,14 @@ class UsuarioController extends Controller
         $usuario->telefono = $request->telefono;
         $usuario->direccion = $request->direccion;
         $usuario->CP = $request->CP;
-        $usuario->fechaCreacion = date('y-m-d h:i:s');
+        $usuario->fechaDeCreacion = date('y-m-d h:i:s');
         $usuario->idCiudad = $request->idCiudad;
         $usuario->idRol = $request->idRol;
+        // $usuario->password = '1234'
 
         $usuario->save();
-
         return redirect()->route('usuario.index')->with('Exitoso', 'El usuario ha sido creado con exito.');
     }
-
     /**
      * Display the specified resource.
      *
