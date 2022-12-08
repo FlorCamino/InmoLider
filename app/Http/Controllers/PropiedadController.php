@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PropiedadRequest;
 use App\Models\Ciudad;
 use App\Models\EstadoPropiedad;
 use App\Models\Periodo;
 use App\Models\Propiedad;
 use App\Models\Propietario;
 use App\Models\TipoTransaccion;
-use App\Models\Transaccion;
-use Illuminate\Http\Request;
+
 
 class PropiedadController extends Controller
 {
@@ -53,25 +53,8 @@ class PropiedadController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PropiedadRequest $request)
     {
-        // $request->validate([
-        //     'titulo' => ['required', 'alpha_num'],
-        //     'descripcion' => ['required', 'alpha_num'],
-        //     'direccion' => ['required', 'alpha_num'],
-        //     'barrio' => ['alpha', 'nullable'],
-        //     'CP' => ['required', 'alpha_num'],
-        //     'idPropietario' => ['required', 'numeric'],
-        //     'cantHab;' => ['required', 'numeric'],
-        //     'cantBanios' => ['required', 'numeric'],
-        //     'estacionamiento' => ['boolean', 'nullable'],
-        //     'aceptaMascotas' => ['boolean', 'nullable'],
-        //     'amoblado' => ['boolean', 'nullable'],
-        //     'idTipoTransaccion' => ['required', 'numeric'],
-        //     'costo' => ['required', 'numeric'],
-        //     'idEstadoPropiedad' => ['required', 'numeric'],
-        //     'idCiudad' => ['required', 'numeric']
-        // ]);
 
         $propiedad = new Propiedad();
         $propiedad->titulo = $request->titulo;
@@ -139,31 +122,8 @@ class PropiedadController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Propiedad $propiedad)
+    public function update(PropiedadRequest $request, Propiedad $propiedad)
     {
-
-        // $request->validate([
-        //     'titulo' => ['required', 'alpha_num'],
-        //     'descripcion' => ['required', 'alpha_num'],
-        //     'direccion' => ['required', 'alpha_num'],
-        //     'barrio' => ['alpha', 'nullable'],
-        //     'CP' => ['required', 'alpha_num'],
-        //     'idPropietario' => ['required', 'numeric'],
-        //     'cantHab;' => ['required', 'numeric'],
-        //     'cantBanios' => ['required', 'numeric'],
-        //     'estacionamiento' => ['boolean', 'nullable'],
-        //     'aceptaMascotas' => ['boolean', 'nullable'],
-        //     'amoblado' => ['boolean', 'nullable'],
-        //     'idTipoTransaccion' => ['required', 'numeric'],
-        //     'costo' => ['required', 'numeric'],
-        //     'idEstadoPropiedad' => ['required', 'numeric'],
-        //     'idCiudad' => ['required', 'numeric']
-        // ]);
-
-        // dd($request);
-        // $propiedad->fill($request->post())->save();
-
-        // dd($request);
         $propiedad->titulo = $request->titulo;
         $propiedad->descripcion = $request->descripcion;
         $propiedad->direccion = $request->direccion;
