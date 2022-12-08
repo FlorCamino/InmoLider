@@ -6,10 +6,7 @@ use App\Http\Requests\FormDataRequest;
 use App\Models\Ciudad;
 use App\Models\Rol;
 use App\Models\Users;
-use App\Models\Usuario;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\ValidationException;
 
 class UsuarioController extends Controller
 {
