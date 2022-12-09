@@ -11,6 +11,7 @@ use App\Models\Propietario;
 use App\Models\TipoTransaccion;
 
 
+
 class PropiedadController extends Controller
 {
     /**
@@ -26,6 +27,7 @@ class PropiedadController extends Controller
         ]);
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -33,16 +35,16 @@ class PropiedadController extends Controller
      */
     public function create()
     {
+
+
         $ciudades = Ciudad::all();
         $propietarios = Propietario::all();
         $tiposTransaccion = TipoTransaccion::all();
-        $periodos = Periodo::all();
         $estadosPropiedad = EstadoPropiedad::all();
         return view('propiedad.create', [
             'ciudades' => $ciudades,
             'propietarios' => $propietarios,
             'tiposTransaccion' => $tiposTransaccion,
-            'periodos' => $periodos,
             'estadosPropiedad' => $estadosPropiedad
         ]);
     }
@@ -103,14 +105,12 @@ class PropiedadController extends Controller
         $ciudades = Ciudad::all();
         $propietarios = Propietario::all();
         $tiposTransaccion = TipoTransaccion::all();
-        $periodos = Periodo::all();
         $estadosPropiedad = EstadoPropiedad::all();
         return view('propiedad.edit', compact(
             'propiedad',
             'ciudades',
             'propietarios',
             'tiposTransaccion',
-            'periodos',
             'estadosPropiedad'
         ));
     }
@@ -160,5 +160,12 @@ class PropiedadController extends Controller
         } else {
             return response()->json(['error' => 'La propiedad ' . $propiedad->id . ' no puede ser eliminado porque contiene transacciones.']);
         }
+    }
+
+    public function getIdTipoTransaccion(Int $idPropiedad)
+    {
+
+        $propiedad = Propiedad::find($idPropiedad);
+        return $propiedad->idTipoTransaccion;
     }
 }

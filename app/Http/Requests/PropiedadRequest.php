@@ -35,6 +35,10 @@ class PropiedadRequest extends FormRequest
             'amoblado' => ['required'],
             'costo' => ['required', 'numeric'],
             'titulo' => ['required', 'alpha_dash'],
+            'idPropietario' => ['required'],
+            'idPeriodo' => [''],
+            'idCiudad' => ['required'],
+            'idTipoTransaccion' => ['required']
         ];
     }
     public function messages()
@@ -56,6 +60,9 @@ class PropiedadRequest extends FormRequest
             'costo.numeric' => 'El campo debe contener caracteres numéricos.',
             'titulo.required' => 'El título es obligatorio.',
             'titulo.alpha_dash' =>  'El titulo puede contener caracteres numéricos y alfabéticos.',
+            'idPropietario.required' => 'El campo es obligatorio.',
+            'idCiudad.required' => 'El campo es obligatorio.',
+            'idTipoTransaccion.required' => 'El campo es obligatorio.',
         ];
     }
 }
