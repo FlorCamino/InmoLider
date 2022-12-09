@@ -24,15 +24,21 @@ class TransaccionRequest extends FormRequest
     public function rules()
     {
         return [
+            'idPropiedad' => ['required'],
+            'idUsuario' => ['required'],
+            'idTipoTransaccion' => ['required'],
             'valor' => ['required', 'numeric'],
-            'descripcion' => ['nullable'],
+            'descripcion' => ['nullable']
         ];
     }
     public function messages()
     {
         return [
+            'idPropiedad.required' => 'El campo es obligatorio.',
+            'idUsuario.required' => 'El campo es obligatorio.',
+            'idTipoTransaccion.required' => 'El campo es obligatorio.',
             'valor.required' => 'El campo es obligatorio.',
-            'valor.numeric' => 'El campo debe contener caracteres numéricos.',
+            'valor.numeric' => 'El campo debe contener caracteres numéricos.'
         ];
     }
 }

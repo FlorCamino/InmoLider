@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\TransaccionRequest;
-use App\Models\EstadoPropiedad;
 use App\Models\Propiedad;
 use App\Models\TipoTransaccion;
 use App\Models\Transaccion;
@@ -113,10 +112,10 @@ class TransaccionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(TransaccionRequest $request, Transaccion $transaccion, EstadoPropiedad $estadoPropiedad)
+    public function update(TransaccionRequest $request, Transaccion $transaccion)
     {
         $transaccion->fill($request->post())->save();
-        return redirect()->route('transaccion.index')->with('Exitoso', 'L transacción ha sido editado con exito.');
+        return redirect()->route('transaccion.index')->with('Exitoso', 'La transacción ha sido editado con exito.');
     }
 
     /**
@@ -127,6 +126,10 @@ class TransaccionController extends Controller
      */
     public function destroy(Transaccion $transaccion)
     {
+        DB::table('propiedad')
+            ->where('id', $transaccion->idPropiedad)
+            ->update(['idEstadoPropiedad' => 1]);
+
         if ($transaccion->delete() == true) {
             return response()->json(['success' => 'La transaccion ' . $transaccion->id . ' ha sido eliminada con exito']);
         } else {

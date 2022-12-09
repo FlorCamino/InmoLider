@@ -8,6 +8,7 @@ use App\Http\Controllers\PropietarioController;
 use App\Http\Controllers\TransaccionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UsuarioController;
+use App\Models\Propiedad;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -42,3 +43,6 @@ Route::resource('ciudad', CiudadController::class);
 Route::resource('usuario', UsuarioController::class);
 
 Route::resource('transaccion', TransaccionController::class);
+
+
+Route::get('propiedad/getIdTipoTransaccion/{idPropiedad}', [PropiedadController::class, 'getIdTipoTransaccion']);
