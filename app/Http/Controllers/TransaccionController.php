@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\TransaccionRequest;
+use App\Models\Periodo;
 use App\Models\Propiedad;
 use App\Models\TipoTransaccion;
 use App\Models\Transaccion;
@@ -34,10 +35,12 @@ class TransaccionController extends Controller
         $propiedades = DB::table('propiedad')->where('idEstadoPropiedad', '1')->get();
 
         $usuarios = Users::all();
+        $periodos = Periodo::all();
         $tiposTransaccion = TipoTransaccion::all();
         return view('transaccion.create', [
             'propiedades' => $propiedades,
             'usuarios' => $usuarios,
+            'periodos' => $periodos,
             'tiposTransaccion' => $tiposTransaccion,
         ]);
     }
@@ -97,9 +100,11 @@ class TransaccionController extends Controller
         $propiedades = Propiedad::all();
         $usuarios = Users::all();
         $tiposTransaccion = TipoTransaccion::all();
+        $periodos = Periodo::all();
         return view('transaccion.edit', [
             'transaccion' => $transaccion,
             'propiedades' => $propiedades,
+            'periodos' => $periodos,
             'usuarios' => $usuarios,
             'tiposTransaccion' => $tiposTransaccion,
         ]);

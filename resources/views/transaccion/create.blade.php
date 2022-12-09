@@ -1,6 +1,27 @@
 @extends('layouts.base_admin')
 
 @section('content')
+
+{{-- datetimepiker --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#desde').datetimepicker({
+            format: 'YYYY-MM-DD'
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+        $('#hasta').datetimepicker({
+            format: 'YYYY-MM-DD'
+        });
+    });
+</script>
+
 <div class="container mt-2">
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -53,6 +74,26 @@
                 @error('idTipoTransaccion')
                 <div class="text-danger">{{ $message }}</div>
                 @enderror
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <strong>Desde:</strong>
+                        <input type="text" name="desde" id="desde" class="form-control">
+                        @error('desde')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <strong>Hasta:</strong>
+                        <input type="text" name="hasta" id="hasta" class="form-control">
+                        @error('hasta')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
             </div>
             <div class="form-group">
                 <strong>Valor:</strong>

@@ -1,6 +1,25 @@
 @extends('layouts.base_admin')
 
 @section('content')
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#desde').datetimepicker({
+            format: 'YYYY-MM-DD'
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+        $('#hasta').datetimepicker({
+            format: 'YYYY-MM-DD'
+        });
+    });
+</script>
 <div class="container mt-2">
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -67,7 +86,29 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <strong>Desde:</strong>
+                        <input type="text" name="desde" id="desde" class="form-control"
+                            value="{{ $transaccion->desde }}">
+                        @error('desde')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <strong>Hasta:</strong>
+                        <input type="text" name="desde" id="desde" class="form-control"
+                            value="{{ $transaccion->hasta }}">
+                        @error('desde')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
                 <div class="form-group">
                     <strong>Valor:</strong>
                     <input class="form-control" id="valor" type="text" name="valor" value="{{ $transaccion->valor }}"
