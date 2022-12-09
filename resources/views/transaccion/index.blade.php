@@ -38,11 +38,11 @@
                         <button type="button" class="icon btn-labeled btn-primary"><i class="fa fa-eye"></i></button>
                     </a>
                 </td>
-                <td>
+                <!-- <td>
                     <a href="{{ route('transaccion.edit', $transaccion) }}">
                         <button type="button" class="icon btn-labeled btn-primary"><i class="fa fa-pencil"></i></button>
                     </a>
-                </td>
+                </td> -->
                 <td>
                     <button type="button" class="icon btn-labeled btn-danger"
                         onclick="deleteConfirmation({{ $transaccion->id }})"><i class="fa fa-trash"></i></button>

@@ -22,6 +22,7 @@
                 <div class="form-group">
                     <strong>Propiedad:</strong>
                     <select class="form-control" name="idPropiedad" id="idPropiedad">
+                        <option value="">- Seleccionar -</option>
                         @foreach ($propiedades as $propiedad)
                         <option value="{{ $propiedad->id }}" {{ $propiedad->id == $propiedad->idPropiedad ? 'selected' :
                             '' }}>
@@ -37,6 +38,7 @@
                 <div class="form-group">
                     <strong>Usuario:</strong>
                     <select class="form-control" name="idUsuario" id="idUsuario">
+                        <option value="">- Seleccionar -</option>
                         @foreach ($usuarios as $usuario)
                         <option value="{{ $usuario->id }}" {{ $usuario->id == $usuario->idUsuario ? 'selected' : '' }}>
                             {{ $usuario->nombre . ' ' . $usuario->apellido }}
@@ -52,6 +54,7 @@
                 <div class="form-group">
                     <strong>Tipo de transacción:</strong>
                     <select class="form-control" name="idUsuario" id="idUsuario">
+                        <option value="">- Seleccionar -</option>
                         @foreach ($tiposTransaccion as $tipoTransaccion)
                         <option value="{{ $tipoTransaccion->id }}" {{ $tipoTransaccion->id ==
                             $tipoTransaccion->idTipoTransaccion ? 'selected' : '' }}>
