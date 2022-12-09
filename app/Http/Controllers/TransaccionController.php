@@ -72,6 +72,8 @@ class TransaccionController extends Controller
         $transaccion->fechaCreacion = date('y-m-d h:i:s');
         $transaccion->valor = $request->valor;
         $transaccion->descripcion = $request->descripcion;
+        $transaccion->desde = $request->desde;
+        $transaccion->hasta = $request->hasta;
         $transaccion->save();
 
         return redirect()->route('transaccion.index')->with('Exitoso', 'La transacción ha sido creada con exito.');

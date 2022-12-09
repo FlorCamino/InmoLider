@@ -28,7 +28,9 @@ class TransaccionRequest extends FormRequest
             'idUsuario' => ['required'],
             'idTipoTransaccion' => ['required'],
             'valor' => ['required', 'numeric'],
-            'descripcion' => ['nullable']
+            'descripcion' => ['nullable'],
+            'desde' => ['nullable', 'date'],
+            'hasta' => ['nullable', 'date']
         ];
     }
     public function messages()
@@ -38,7 +40,9 @@ class TransaccionRequest extends FormRequest
             'idUsuario.required' => 'El campo es obligatorio.',
             'idTipoTransaccion.required' => 'El campo es obligatorio.',
             'valor.required' => 'El campo es obligatorio.',
-            'valor.numeric' => 'El campo debe contener caracteres numéricos.'
+            'valor.numeric' => 'El campo debe contener caracteres numéricos.',
+            'desde.date' => 'Solo admite fecha',
+            'hasta.date' => 'Solo admite fecha'
         ];
     }
 }
