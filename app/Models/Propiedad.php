@@ -11,7 +11,9 @@ class Propiedad extends Model
     use HasFactory;
 
     protected $table = 'propiedad';
+
     public $timestamps = false;
+
     protected $guarded = ['id'];
 
     protected $fillable = [
@@ -39,9 +41,5 @@ class Propiedad extends Model
     public function TipoTransaccion()
     {
         return $this->belongsTo(TipoTransaccion::class, 'idTipoTransaccion');
-    }
-    public function Periodo()
-    {
-        return $this->belongsTo(Periodo::class, 'idPeriodo');
     }
 }

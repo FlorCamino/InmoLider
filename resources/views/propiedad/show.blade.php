@@ -79,8 +79,8 @@
                 </div>
             </div>
         </div>
-        <div class="row mb-4">
-            <div class="col mb-4 justify-content-center">
+        <div class="row text-center mb-4">
+            <div class="col-4">
                 <div class="form-outline" style="margin-bottom: 0px">
                     <label class="form-label" for="form6Example1">¿Acepta Mascotas?</label>
                     @if ($propiedad->aceptaMascotas == true)
@@ -108,7 +108,7 @@
                     @endif
                 </div>
             </div>
-            <div class="col mb-4 text-center">
+            <div class="col-4">
                 <div class="form-outline" style="margin-bottom: 0px">
                     <label class="form-label" for="form6Example2">Amoblado:</label>
                     @if ($propiedad->amoblado == true)
@@ -136,7 +136,7 @@
                     @endif
                 </div>
             </div>
-            <div class="col mb-4 text-center">
+            <div class="col-4 mb-4">
                 <div class="form-outline" style="margin-bottom: 0px">
                     <label class="form-label" for="form6Example1">Estacionamiento:</label>
                     @if ($propiedad->estacionamiento == true)
@@ -200,14 +200,10 @@
         <!-- Submit button -->
         <div class="container-fluid">
             <div class="text-right">
-                <div class="row">
-                    <div class="col-12">
-                        <a href="{{ route('propiedad.create') }}">
-                            <button type="submit" class="button-7 ml-3"> <a class="text-light"
-                                    href="{{ route('propiedad.index') }}">Volver</a></button>
-                        </a>
-                    </div>
-                </div>
+                <a href="{{ route('propiedad.create') }}">
+                    <button type="submit" class="button-7 ml-3"> <a class="text-light"
+                            href="{{ route('propiedad.index') }}">Volver</a></button>
+                </a>
             </div>
         </div>
 </div>

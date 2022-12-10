@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PropiedadRequest;
 use App\Models\Ciudad;
-use App\Models\EstadoPropiedad;
 use App\Models\Propiedad;
 use App\Models\Propietario;
 use App\Models\TipoTransaccion;
@@ -123,11 +122,10 @@ class PropiedadController extends Controller
         $propiedad->idPropietario = $request->idPropietario;
         $propiedad->cantHab = $request->cantHab;
         $propiedad->cantBanios = $request->cantBanios;
-        $propiedad->estacionamiento = $request->estacionamiento;
-        $propiedad->aceptaMascotas = $request->aceptaMascotas;
-        $propiedad->amoblado = $request->amoblado;
+        $propiedad->estacionamiento = ($request->estacionamiento = 'on') ? 1 : 0;
+        $propiedad->aceptaMascotas = ($request->aceptaMascotas = 'on') ? 1 : 0;
+        $propiedad->amoblado = ($request->amoblado = 'on') ? 1 : 0;
         $propiedad->idTipoTransaccion = $request->idTipoTransaccion;
-        $propiedad->idPeriodo = $request->idPeriodo;
         $propiedad->costo = $request->costo;
         $propiedad->idCiudad = $request->idCiudad;
 

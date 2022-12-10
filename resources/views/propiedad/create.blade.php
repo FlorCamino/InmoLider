@@ -88,9 +88,9 @@
                 </div>
             </div>
         </div>
-        <div class="row mb-3 mt-3">
+        <div class="row text-center mb-3 mt-3">
             <div class="col-4">
-                <div class="form-check justify-content-center form-switch">
+                <div class="form-check form-switch">
                     <input class="form-check-input" name="estacionamiento" type="checkbox" role="switch">
                     <label class="form-check-label" for="flexSwitchCheckChecked">Estacionamiento</label>
                 </div>
@@ -99,7 +99,7 @@
                 @enderror
             </div>
             <div class="col-4">
-                <div class="form-check justify-content-center form-switch">
+                <div class="form-check form-switch">
                     <input class="form-check-input" name="aceptaMascotas" type="checkbox" role="switch">
                     <label class="form-check-label" for="flexSwitchCheckChecked">Acepta Mascota</label>
                 </div>
@@ -108,7 +108,7 @@
                 @enderror
             </div>
             <div class="col-4">
-                <div class="form-check justify-content-center form-switch">
+                <div class="form-check form-switch">
                     <input class="form-check-input" name="amoblado" type="checkbox" role="switch">
                     <label class="form-check-label" for="flexSwitchCheckChecked">Amoblado</label>
                 </div>
