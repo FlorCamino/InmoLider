@@ -30,8 +30,8 @@ class PropietarioRequest extends FormRequest
             'fechaNacimiento' => ['required', 'date'],
             'email' => ['required', 'email'],
             'telefono' => ['required', 'numeric'],
-            'domicilio' => ['required', 'alpha_dash'],
-            'CP' => ['required', 'alpha_dash'],
+            'domicilio' => ['required'],
+            'CP' => ['required'],
             'descripcion' => ['nullable']
         ];
     }
@@ -51,9 +51,7 @@ class PropietarioRequest extends FormRequest
             'telefono.required' => 'El teléfono es obligatorio.',
             'telefono.numeric' => 'El teléfono  debe contener valores numéricos.',
             'domicilio.required' => 'El domicilio es obligatorio.',
-            'domicilio.alpha_dash' => 'El domicilio puede contener letras o números.',
             'CP.required' => 'El Código postal es obligatorio.',
-            'CP.alpha_dash' => 'El Código postal puede contener letras o números.'
         ];
     }
 }
