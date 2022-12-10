@@ -69,7 +69,7 @@ class TransaccionController extends Controller
         $transaccion->idPropiedad = $request->idPropiedad;
         $transaccion->idUsuario = $request->idUsuario;
         $transaccion->idTipoTransaccion = $request->idTipoTransaccion;
-        $transaccion->fechaCreacion = date('y-m-d h:i:s');
+        $transaccion->fechaDeCreacion = date('y-m-d h:m:s');
         $transaccion->valor = $request->valor;
         $transaccion->descripcion = $request->descripcion;
         $transaccion->desde = $request->desde;

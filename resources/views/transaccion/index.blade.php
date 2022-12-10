@@ -26,11 +26,13 @@
         <tbody class="table-group-divider">
             @foreach ($transacciones as $transaccion)
             <tr>
+                {{ $date = \Carbon\Carbon::parse($transaccion->fechaDeCreacion)->format('d-m-y');}}
+
                 <td>{{ $transaccion->id }}</td>
                 <td>{{ $transaccion->idPropiedad . ' - ' . $transaccion->Propiedad->titulo }}</td>
                 <td>{{ $transaccion->Usuario->nombre . ' ' . $transaccion->Usuario->apellido }}</td>
                 <td>{{ $transaccion->TipoTransaccion ? $transaccion->TipoTransaccion->nombre : '' }}</td>
-                <td>{{ $transaccion->fechaCreacion }}</td>
+                <td>{{ $date }}</td>
                 <td>{{ $transaccion->valor }}</td>
                 <td>{{ $transaccion->descripcion }}</td>
                 <td>
