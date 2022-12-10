@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PropiedadRequest;
 use App\Models\Ciudad;
 use App\Models\EstadoPropiedad;
-use App\Models\Periodo;
 use App\Models\Propiedad;
 use App\Models\Propietario;
 use App\Models\TipoTransaccion;
@@ -35,17 +34,13 @@ class PropiedadController extends Controller
      */
     public function create()
     {
-
-
         $ciudades = Ciudad::all();
         $propietarios = Propietario::all();
         $tiposTransaccion = TipoTransaccion::all();
-        $estadosPropiedad = EstadoPropiedad::all();
         return view('propiedad.create', [
             'ciudades' => $ciudades,
             'propietarios' => $propietarios,
-            'tiposTransaccion' => $tiposTransaccion,
-            'estadosPropiedad' => $estadosPropiedad
+            'tiposTransaccion' => $tiposTransaccion
         ]);
     }
 
@@ -57,7 +52,6 @@ class PropiedadController extends Controller
      */
     public function store(PropiedadRequest $request)
     {
-
         $propiedad = new Propiedad();
         $propiedad->titulo = $request->titulo;
         $propiedad->descripcion = $request->descripcion;
@@ -67,14 +61,13 @@ class PropiedadController extends Controller
         $propiedad->idPropietario = $request->idPropietario;
         $propiedad->cantHab = $request->cantHab;
         $propiedad->cantBanios = $request->cantBanios;
-        $propiedad->estacionamiento = $request->estacionamiento;
-        $propiedad->aceptaMascotas = $request->aceptaMascotas;
+        $propiedad->estacionamiento = ($request->estacionamiento = 'on') ? 1 : 0;
+        $propiedad->aceptaMascotas = ($request->aceptaMascotas = 'on') ? 1 : 0;
         $propiedad->fechaCreacion = date('y-m-d h:i:s');
-        $propiedad->amoblado = $request->amoblado;
+        $propiedad->amoblado = ($request->amoblado = 'on') ? 1 : 0;
         $propiedad->idTipoTransaccion = $request->idTipoTransaccion;
-        $propiedad->idPeriodo = $request->idPeriodo;
         $propiedad->costo = $request->costo;
-        $propiedad->idEstadoPropiedad = $request->idEstadoPropiedad;
+        $propiedad->idEstadoPropiedad = 1;
         $propiedad->idCiudad = $request->idCiudad;
 
         $propiedad->save();
@@ -105,13 +98,11 @@ class PropiedadController extends Controller
         $ciudades = Ciudad::all();
         $propietarios = Propietario::all();
         $tiposTransaccion = TipoTransaccion::all();
-        $estadosPropiedad = EstadoPropiedad::all();
         return view('propiedad.edit', compact(
             'propiedad',
             'ciudades',
             'propietarios',
             'tiposTransaccion',
-            'estadosPropiedad'
         ));
     }
 
@@ -138,7 +129,6 @@ class PropiedadController extends Controller
         $propiedad->idTipoTransaccion = $request->idTipoTransaccion;
         $propiedad->idPeriodo = $request->idPeriodo;
         $propiedad->costo = $request->costo;
-        $propiedad->idEstadoPropiedad = $request->idEstadoPropiedad;
         $propiedad->idCiudad = $request->idCiudad;
 
         $propiedad->save();

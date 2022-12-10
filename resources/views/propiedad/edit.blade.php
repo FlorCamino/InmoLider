@@ -121,7 +121,8 @@
                 <div class="form-group">
                     <strong>Estacionamiento:</strong>
                     <input class="form-control" type="text" id="estacionamiento" name="estacionamiento"
-                        value="{{ $propiedad->estacionamiento }}" class="form-control" placeholder="Estacionamiento">
+                        value="{{ ($propiedad->estacionamiento == 1) ? 'on' : '' }}" class="form-control"
+                        placeholder="Estacionamiento">
                     @error('estacionamiento')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
@@ -131,7 +132,8 @@
                 <div class="form-group">
                     <strong>Acepta Mascotas:</strong>
                     <input class="form-control" type="text" id="aceptaMascotas" name="aceptaMascotas"
-                        value="{{ $propiedad->aceptaMascotas }}" class="form-control" placeholder="Acepta Mascotas">
+                        value="{{ ($propiedad->aceptaMascotas == 1) ? 'on' : '' }}" class="form-control"
+                        placeholder="Acepta Mascotas">
                     @error('aceptaMascotas')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
@@ -141,7 +143,8 @@
                 <div class="form-group">
                     <strong>amoblado:</strong>
                     <input class="form-control" type="text" id="amoblado" name="amoblado"
-                        value="{{ $propiedad->amoblado }}" class="form-control" placeholder="Estacionamiento">
+                        value="{{ ($propiedad->amoblado == 1) ? 'on' : '' }}" class="form-control"
+                        placeholder="Estacionamiento">
                     @error('amoblado')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
