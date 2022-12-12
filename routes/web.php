@@ -1,15 +1,12 @@
 <?php
 
 use App\Http\Controllers\CiudadController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InicioController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PropiedadController;
 use App\Http\Controllers\PropietarioController;
 use App\Http\Controllers\TransaccionController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\UsuarioController;
-use App\Models\Propiedad;
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,7 +24,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('inicio', HomeController::class);
+Route::resource('inicio', InicioController::class);
 
 Route::resource('login', LoginController::class)
     ->only('index', 'store');
