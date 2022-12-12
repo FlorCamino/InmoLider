@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CiudadRequest;
 use App\Models\Ciudad;
-use App\Models\Propiedad;
-use App\Models\Propietario;
-use Illuminate\Http\Request;
+
 
 class CiudadController extends Controller
 {
@@ -41,12 +40,8 @@ class CiudadController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CiudadRequest $request)
     {
-        $request->validate([
-            'nombre' => 'required',
-        ]);
-
         $ciudades = new Ciudad();
         $ciudades->nombre = $request->nombre;
 
@@ -86,11 +81,8 @@ class CiudadController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ciudad $ciudad)
+    public function update(CiudadRequest $request, Ciudad $ciudad)
     {
-        $request->validate([
-            'nombre' => 'required',
-        ]);
         $ciudad->fill($request->post())->save();
         return redirect()->route('ciudad.index')->with('Exitoso', 'La ciudad ha sido editada con exito.');
     }
