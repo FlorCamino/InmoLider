@@ -17,6 +17,49 @@ body {
     padding-bottom: 100px;
 }
 
+/* Styles to Navbar */
+.navbar {
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 0 !important;
+}
+
+.logo {
+    display: flex;
+    text-align: left !important;
+}
+
+.nav-li {
+    display: inline-block;
+}
+
+.nav-link {
+    color: black;
+}
+a:hover {
+    background-color: #1565c0;
+}
+
+.group-list {
+    padding-left: 50px !important;
+    word-spacing: 15px;
+    list-style: none;
+    margin-bottom: 2px !important;
+    margin-top: 2px !important;
+}
+
+.nav-user {
+    color: white;
+    background-color: #1565c0;
+    margin-bottom: 3px;
+    height: 15px;
+}
+
+/* Styles to footer */
 .footlink {
     color: white;
     font-family: sans-serif;
@@ -33,11 +76,7 @@ body {
     margin-bottom: 0 !important;
 }
 
-.nav-user {
-    color: white;
-    background-color: #1565c0;
-}
-
+/* Estilos a botones generales (propiedades-propietarios-usuarios-ciudad-transacción) */
 .button-7 {
     color: white;
     background-color: #1565c0 !important;
@@ -78,7 +117,7 @@ body {
     box-shadow: none;
 }
 
-/* Title*/
+/* Titulo*/
 
 .title {
     font-style: normal;
@@ -88,7 +127,7 @@ body {
     font-size: 3rem;
     padding: 10px;
 }
-/* Styles to show/owner */
+/* Estilos a show/propietario */
 .container {
     font-family: sans-serif !important;
     font-size: 1.5rem !important;
@@ -110,7 +149,7 @@ body {
     margin-bottom: 0px !important;
 }
 
-/* Styles to edit/propierties */
+/* Estilos a editar/propiedades */
 
 .input {
     font-family: sans-serif;
@@ -118,7 +157,7 @@ body {
     font-style: oblique;
 }
 
-/* Styles to index/propierties */
+/* Estilos a index/propiedades */
 
 .icon {
     background-color: #1565c0;

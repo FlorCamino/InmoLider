@@ -32,69 +32,55 @@
 <body>
     <nav>
         {{-- Barra de navegación --}}
-        <header>
-            <div class="px-3 py-2 text-dark">
-                <div class="container">
-                    <div
-                        class="container-relative ms-auto d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                        <a href="/"
-                            class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                            <img class="bi me-2" width="80" height="60" role="img"
-                                src="{{ asset('img/logo1.jpg') }}" alt="logo">
-                        </a>
-
-                        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                            <li>
-                                <a href="{{ route('propiedad.index') }}" class="nav-link text-dark">
-                                    <span class="iconify bi d-block mx-auto mb-1" data-icon="mdi:home-city"
-                                        data-width="30" data-height="30"></span>
-                                    Propiedades
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('propietario.index') }}" class="nav-link text-dark">
-                                    <span class="iconify bi d-block mx-auto mb-1"
-                                        data-icon="arcticons:simplefilemanager" data-width="30" data-height="30"></span>
-                                    Propietarios
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('usuario.index') }}" class="nav-link text-dark">
-                                    <span class="iconify bi d-block mx-auto mb-1" data-icon="mdi:account-group"
-                                        data-width="30" data-height="30"></span>
-                                    Usuarios
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('ciudad.index') }}" class="nav-link text-dark">
-                                    <span class="iconify bi d-block mx-auto mb-1" data-icon="arcticons:city-transit"
-                                        data-width="30" data-height="30"></span>
-                                    Ciudades
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('transaccion.index') }}" class="nav-link text-dark">
-                                    <span class="iconify bi d-block mx-auto mb-1" data-icon="fluent:form-new-48-regular"
-                                        data-width="30" data-height="30"></span>
-                                    Transacción
-                                </a>
-                            </li>
-                        </ul>
-                        {{-- <div class="container-fluid d-flex text-end justify-content-end" style="left: 365px">
-                            <a href="#" class="nav-link text-dark">
-                                <span class="iconify bi d-block text-end mx-auto mb-1" data-icon="icon-park:avatar"
-                                    data-width="30" data-height="30"></span>
-                                ¡Hola, nombre!
+        <div class="container">
+            <div class="row navbar">
+                <div class="col logo">
+                    <img class="bi me-2" width="80" height="60" role="img" src="{{ asset('img/logo1.jpg') }}"
+                        alt="logo">
+                </div>
+                <div class="col-8">
+                    <ul class="group-list">
+                        <li class="nav-li">
+                            <a href="{{ route('propiedad.index') }}" class="nav-link">
+                                <span class="iconify bi d-block mx-auto mb-1" data-icon="mdi:home-city" data-width="30"
+                                    data-height="30"></span>
+                                Propiedades
                             </a>
-                        </div> --}}
-                    </div>
+                        </li>
+                        <li class="nav-li">
+                            <a href="{{ route('propietario.index') }}" class="nav-link">
+                                <span class="iconify bi d-block mx-auto mb-1" data-icon="arcticons:simplefilemanager"
+                                    data-width="30" data-height="30"></span>
+                                Propietarios
+                            </a>
+                        </li>
+                        <li class="nav-li">
+                            <a href="{{ route('usuario.index') }}" class="nav-link">
+                                <span class="iconify bi d-block mx-auto mb-1" data-icon="mdi:account-group"
+                                    data-width="30" data-height="30"></span>
+                                Usuarios
+                            </a>
+                        </li>
+                        <li class="nav-li">
+                            <a href="{{ route('ciudad.index') }}" class="nav-link">
+                                <span class="iconify bi d-block mx-auto mb-1" data-icon="arcticons:city-transit"
+                                    data-width="30" data-height="30"></span>
+                                Ciudades
+                            </a>
+                        </li>
+                        <li class="nav-li">
+                            <a href="{{ route('transaccion.index') }}" class="nav-link">
+                                <span class="iconify bi d-block mx-auto mb-1" data-icon="fluent:form-new-48-regular"
+                                    data-width="30" data-height="30"></span>
+                                Transacción
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="nav-user px-3 py-4 border-bottom mb-3">
-                <div class="container ">
-                </div>
-            </div>
-        </header>
+        </div>
+        <div class="nav-user">
+        </div>
     </nav>
 
     @yield('content')
@@ -115,10 +101,10 @@
     {{-- JavaScript --}}
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
         integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
-    </script>
+        </script>
 </body>
 
 </html>
