@@ -92,7 +92,7 @@ class PropietarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(PropiedadRequest $request, Propietario $propietario)
+    public function update(PropietarioRequest $request, Propietario $propietario)
     {
         $propietario->fill($request->post())->save();
         return redirect()->route('propietario.index')->with('Exitoso', 'El propietario ha sido editada con exito.');
