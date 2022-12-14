@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PropiedadRequest;
 use App\Models\Ciudad;
 use App\Models\Propiedad;
+use App\Models\PropiedadImagenes;
 use App\Models\Propietario;
 use App\Models\TipoTransaccion;
-
-
+use Illuminate\Support\Facades\File;
 
 class PropiedadController extends Controller
 {
@@ -70,6 +70,57 @@ class PropiedadController extends Controller
         $propiedad->idCiudad = $request->idCiudad;
 
         $propiedad->save();
+
+        $destinationPath = 'public/propiedad_imagenes/';
+        if ($files = $request->file('image1')) {
+            //delete old file
+            File::delete('public/propiedad_imagenes/' . $request->hidden_image);
+            $path = $files->store($destinationPath);
+
+            $propiedadImagenes = new PropiedadImagenes();
+            $propiedadImagenes->idPropiedad = $propiedad->id;
+            $propiedadImagenes->urlImg = $path;
+            $propiedadImagenes->fechaDeCarga =  date('y-m-d h:i:s');
+
+            $propiedadImagenes->save();
+        }
+
+        if ($files = $request->file('image2')) {
+            //delete old file
+            File::delete('public/propiedad_imagenes/' . $request->hidden_image);
+            $path = $files->store($destinationPath);
+
+            $propiedadImagenes = new PropiedadImagenes();
+            $propiedadImagenes->idPropiedad = $propiedad->id;
+            $propiedadImagenes->urlImg = $path;
+            $propiedadImagenes->fechaDeCarga =  date('y-m-d h:i:s');
+
+            $propiedadImagenes->save();
+        }
+        if ($files = $request->file('image3')) {
+            //delete old file
+            File::delete('public/propiedad_imagenes/' . $request->hidden_image);
+            $path = $files->store($destinationPath);
+
+            $propiedadImagenes = new PropiedadImagenes();
+            $propiedadImagenes->idPropiedad = $propiedad->id;
+            $propiedadImagenes->urlImg = $path;
+            $propiedadImagenes->fechaDeCarga =  date('y-m-d h:i:s');
+
+            $propiedadImagenes->save();
+        }
+        if ($files = $request->file('image4')) {
+            //delete old file
+            File::delete('public/propiedad_imagenes/' . $request->hidden_image);
+            $path = $files->store($destinationPath);
+
+            $propiedadImagenes = new PropiedadImagenes();
+            $propiedadImagenes->idPropiedad = $propiedad->id;
+            $propiedadImagenes->urlImg = $path;
+            $propiedadImagenes->fechaDeCarga =  date('y-m-d h:i:s');
+
+            $propiedadImagenes->save();
+        }
 
         return redirect()->route('propiedad.index')->with('Exitoso', 'La propiedad ha sido creada con exito.');
     }
