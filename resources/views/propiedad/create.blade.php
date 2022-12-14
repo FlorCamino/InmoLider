@@ -15,7 +15,7 @@
         @csrf
         <div class="form-group">
             <strong>Título:</strong>
-            <input type="text" name="titulo" class="form-control" placeholder="Título">
+            <input type="text" name="titulo" class="form-control" placeholder="Título" value="{{ old('titulo') }}">
             @error('titulo')
             <div class="text-danger">{{ $message }}</div>
             @enderror
@@ -23,21 +23,21 @@
         <div class="form-group">
             <strong>Descripción:</strong>
             <textarea type="text" class="form-control" id="descripcion" name="descripcion"
-                placeholder="Escriba aquí los detalles de la propiedad" rows="4"></textarea>
+                rows="4">{{ old('descripcion') }}</textarea>
             @error('descripcion')
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="form-group">
             <strong>Dirección:</strong>
-            <input type="text" name="direccion" class="form-control">
+            <input type="text" name="direccion" class="form-control" value="{{ old('direccion') }}">
             @error('direccion')
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="form-group">
             <strong>Barrio:</strong>
-            <input type="text" name="barrio" class="form-control">
+            <input type="text" name="barrio" class="form-control" value="{{ old('barrio') }}">
             @error('barrio')
             <div class="text-danger">{{ $message }}</div>
             @enderror
@@ -56,14 +56,14 @@
         </div>
         <div class="form-group">
             <strong>Código Postal:</strong>
-            <input type="text" name="CP" class="form-control">
+            <input type="text" name="CP" class="form-control" value="{{ old('CP') }}">
             @error('CP')
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="form-group">
             <strong>Propietario:</strong>
-            <select class="form-control" name="idPropietario" id="idPropietario">
+            <select class="form-control" name="idPropietario" id="idPropietario" value="{{ old('idPropietario') }}">
                 <option value="">- Seleccionar -</option>
                 @foreach($propietarios as $propietario )
                 <option value="{{$propietario->id}}">{{ $propietario->nombre . ' ' . $propietario->apellido }}
@@ -78,7 +78,7 @@
             <div class="col-6">
                 <div class="form-group">
                     <strong>Cantidad de habitaciones:</strong>
-                    <input type="text" name="cantHab" class="form-control">
+                    <input type="text" name="cantHab" class="form-control" value="{{ old('cantHab') }}">
                     @error('cantHab')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -87,7 +87,7 @@
             <div class="col-6">
                 <div class="form-group">
                     <strong>Cantidad de baños:</strong>
-                    <input type="text" name="cantBanios" class="form-control">
+                    <input type="text" name="cantBanios" class="form-control" value="{{ old('cantBanios') }}">
                     @error('cantBanios')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -97,7 +97,8 @@
         <div class="row text-center mb-3 mt-3">
             <div class="col-4">
                 <div class="form-check form-switch">
-                    <input class="form-check-input" name="estacionamiento" type="checkbox" role="switch">
+                    <input class="form-check-input" name="estacionamiento" type="checkbox" role="switch"
+                        value="{{ old('estacionamiento') }}">
                     <label class="form-check-label" for="flexSwitchCheckChecked">Estacionamiento</label>
                 </div>
                 @error('estacionamiento')
@@ -115,7 +116,8 @@
             </div>
             <div class="col-4">
                 <div class="form-check form-switch">
-                    <input class="form-check-input" name="amoblado" type="checkbox" role="switch">
+                    <input class="form-check-input" name="amoblado" type="checkbox" role="switch"
+                        value="{{ old('amoblado') }}">
                     <label class="form-check-label" for="flexSwitchCheckChecked">Amoblado</label>
                 </div>
                 @error('amoblado')
@@ -125,7 +127,8 @@
         </div>
         <div class="form-group">
             <strong>Tipo de transacción:</strong>
-            <select class="form-control" name="idTipoTransaccion" id="idTipoTransaccion">
+            <select class="form-control" name="idTipoTransaccion" id="idTipoTransaccion"
+                value="{{ old('idTipoTransaccion') }}">
                 <option value="">- Seleccionar -</option>
                 @foreach($tiposTransaccion as $tipoTransaccion )
                 <option value="{{$tipoTransaccion->id}}">{{ $tipoTransaccion->nombre }}</option>
@@ -137,7 +140,7 @@
         </div>
         <div class="form-group">
             <strong>Costo:</strong>
-            <input type="text" name="costo" class="form-control">
+            <input type="text" name="costo" class="form-control" value="{{ old('costo') }}">
             @error('costo')
             <div class="text-danger">{{ $message }}</div>
             @enderror

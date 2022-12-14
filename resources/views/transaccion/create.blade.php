@@ -73,7 +73,7 @@
             <div class="col-6">
                 <div class="form-group">
                     <strong>Desde:</strong>
-                    <input type="text" name="desde" id="desde" class="form-control">
+                    <input type="text" name="desde" id="desde" class="form-control" value="{{old('desde')}}">
                     @error('desde')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -82,7 +82,7 @@
             <div class="col-6">
                 <div class="form-group">
                     <strong>Hasta:</strong>
-                    <input type="text" name="hasta" id="hasta" class="form-control">
+                    <input type="text" name="hasta" id="hasta" class="form-control" value="{{old('hasta')}}">
                     @error('hasta')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -91,7 +91,7 @@
         </div>
         <div class="form-group">
             <strong>Valor:</strong>
-            <input type="text" name="valor" class="form-control">
+            <input type="text" name="valor" class="form-control" value="{{old('valor')}}">
             @error('valor')
             <div class="text-danger">{{ $message }}
             </div>
@@ -100,7 +100,7 @@
         <div class="form-group">
             <strong>Descripción:</strong>
             <textarea type="text" class="form-control" id="descripcion" name="descripcion"
-                placeholder="Escriba aquí los detalles de la transacción" rows="4"></textarea>
+                placeholder="Escriba aquí los detalles de la transacción" rows="4"> {{old('descripcion')}}</textarea>
             @error('descripcion')
             <div class="text-danger">{{ $message }}</div>
             @enderror

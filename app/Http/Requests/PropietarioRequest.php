@@ -32,7 +32,7 @@ class PropietarioRequest extends FormRequest
             'telefono' => ['required', 'numeric'],
             'domicilio' => ['required'],
             'CP' => ['required'],
-            'descripcion' => ['nullable']
+            'idCiudad' => ['required']
         ];
     }
     public function messages()
@@ -52,6 +52,7 @@ class PropietarioRequest extends FormRequest
             'telefono.numeric' => 'El teléfono  debe contener valores numéricos.',
             'domicilio.required' => 'El domicilio es obligatorio.',
             'CP.required' => 'El Código postal es obligatorio.',
+            'idCiudad.required' => 'La ciudad es obligatoria.',
         ];
     }
 }

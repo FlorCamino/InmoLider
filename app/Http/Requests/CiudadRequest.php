@@ -30,7 +30,9 @@ class CiudadRequest extends FormRequest
 
     public function messages()
     {
-        'nombre.required' => 'El nombre es obligatorio.',
-        'nombre.alpha' => 'El nombre debe contener letras.'
+        return [
+            'nombre.required' => 'El nombre es obligatorio.',
+            'nombre.alpha' => 'El nombre debe contener letras.'
+        ];
     }
 }

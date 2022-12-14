@@ -28,14 +28,14 @@
         @csrf
         <div class="form-group">
             <strong>Nombre:</strong>
-            <input type="text" name="nombre" class="form-control">
+            <input type="text" name="nombre" class="form-control" value="{{ old('nombre') }}">
             @error('nombre')
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="form-group">
             <strong>Apellido:</strong>
-            <input type="text" name="apellido" class="form-control">
+            <input type="text" name="apellido" class="form-control" value="{{ old('apellido') }}">
             @error('apellido')
             <div class="text-danger">{{ $message }}
             </div>
@@ -43,35 +43,36 @@
         </div>
         <div class="form-group">
             <strong>DNI:</strong>
-            <input type="text" name="dni" class="form-control">
+            <input type="text" name="dni" class="form-control" value="{{ old('dni') }}">
             @error('dni')
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="form-group">
             <strong>Fecha de Nacimiento:</strong>
-            <input type="text" name="fechaNacimiento" id="fechaNacimiento" class="form-control">
+            <input type="text" name="fechaNacimiento" id="fechaNacimiento" class="form-control"
+                value="{{ old('fechaNacimiento') }}">
             @error('fechaNacimiento')
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="form-group">
             <strong>Email:</strong>
-            <input type="text" name="email" class="form-control">
+            <input type="text" name="email" class="form-control" value="{{ old('email') }}">
             @error('email')
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="form-group">
             <strong>Teléfono:</strong>
-            <input type="text" name="telefono" class="form-control">
+            <input type="text" name="telefono" class="form-control" value="{{ old('telefono') }}">
             @error('telefono')
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="form-group">
             <strong>Domicilio:</strong>
-            <input type="text" name="domicilio" class="form-control">
+            <input type="text" name="domicilio" class="form-control" value="{{ old('domicilio') }}">
             @error('domicilio')
             <div class="text-danger">{{ $message }}</div>
             @enderror
@@ -79,6 +80,7 @@
         <div class="form-group">
             <strong>Ciudad:</strong>
             <select class="form-control" name="idCiudad" id="idCiudad">
+                <option value="">- Seleccionar -</option>
                 @foreach($ciudades as $ciudad )
                 <option value="{{$ciudad->id}}">{{ $ciudad->nombre }}</option>
                 @endforeach
@@ -89,14 +91,15 @@
         </div>
         <div class="form-group">
             <strong>Código Postal:</strong>
-            <input type="text" name="CP" class="form-control">
+            <input type="text" name="CP" class="form-control" value="{{ old('CP') }}">
             @error('CP')
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="form-group">
             <strong>Descripción:</strong>
-            <input type="text" name="descripcion" class="form-control">
+            <textarea type="text" class="form-control" id="descripcion" name="descripcion"
+                rows="4">{{ old('descripcion') }}</textarea>
             @error('descripcion')
             <div class="text-danger">{{ $message }}</div>
             @enderror
