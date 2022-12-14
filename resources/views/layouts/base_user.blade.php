@@ -28,8 +28,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbarLogo" href="#">
-                    <img class="bi" width="90" height="70" role="img"
-                        src="{{ asset('img/favicon.ico') }}" alt="logo">
+                    <img class="bi" width="90" height="70" role="img" src="{{ asset('img/favicon.ico') }}" alt="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -39,8 +38,7 @@
                     aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">InmoLider</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
@@ -72,8 +70,7 @@
 
         <div class="footer-left">
 
-            <h3>InmoLider <img width="60" height="35" role="img" src="{{ asset('img/logo.jpg') }}"
-                    alt="logo"></h3>
+            <h3>InmoLider <img width="60" height="35" role="img" src="{{ asset('img/logo.jpg') }}" alt="logo"></h3>
 
 
             <p class="footer-company-name">InmoLider © Derechos reservados 2022</p>
@@ -114,10 +111,10 @@
     <!-- CDN Java Script -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-    </script>
+        </script>
 
 </body>
 

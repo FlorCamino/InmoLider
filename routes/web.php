@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\CiudadController;
+use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\NosotrosController;
 use App\Http\Controllers\PropiedadController;
 use App\Http\Controllers\PropietarioController;
 use App\Http\Controllers\TransaccionController;
@@ -41,5 +43,8 @@ Route::resource('usuario', UsuarioController::class);
 
 Route::resource('transaccion', TransaccionController::class);
 
+Route::get('/nosotros', [NosotrosController::class, 'index']);
+
+Route::get('/contacto', [ContactoController::class, 'index']);
 
 Route::get('propiedad/getIdTipoTransaccion/{idPropiedad}', [PropiedadController::class, 'getIdTipoTransaccion']);

@@ -42,4 +42,8 @@ class Propiedad extends Model
     {
         return $this->belongsTo(TipoTransaccion::class, 'idTipoTransaccion');
     }
+    public function PropiedadImagenes()
+    {
+        return $this->hasMany(PropiedadImagenes::class, 'idPropiedad');
+    }
 }

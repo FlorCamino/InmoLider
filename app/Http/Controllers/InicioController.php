@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Propiedad;
+use App\Models\PropiedadImagenes;
 use Illuminate\Http\Request;
 
 class InicioController extends Controller
@@ -13,7 +15,10 @@ class InicioController extends Controller
      */
     public function index()
     {
-        return view('inicio.inicio');
+        $propiedades = Propiedad::all();
+        return view('inicio.inicio', [
+            'propiedades' => $propiedades
+        ]);
     }
 
     /**
@@ -42,9 +47,14 @@ class InicioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Propiedad $propiedades)
     {
-        //
+        $propiedades = Propiedad::all();
+        $propiedadImagenes = PropiedadImagenes::all();
+        return view('inicio.inicio', [
+            'propiedades' => $propiedades,
+            'propiedadImagenes' => $propiedadImagenes,
+        ]);
     }
 
     /**
