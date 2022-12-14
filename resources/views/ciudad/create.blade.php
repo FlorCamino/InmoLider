@@ -1,8 +1,14 @@
 @extends('layouts.base_admin')
 
+<style>
+    #btn4 {
+        background-color: #1565c0;
+        color: white;
+    }
+</style>
 
-@section('content') 
- 
+@section('content')
+
 <div class="container mt-2">
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -35,6 +41,4 @@
         </div>
     </form>
 </div>
-@endsection 
-
-
+@endsection

@@ -1,5 +1,12 @@
 @extends('layouts.base_admin')
 
+<style>
+    #btn5 {
+        background-color: #1565c0;
+        color: white;
+    }
+</style>
+
 @section('content')
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>

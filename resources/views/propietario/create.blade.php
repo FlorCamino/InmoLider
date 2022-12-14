@@ -1,5 +1,11 @@
 @extends('layouts.base_admin')
 
+<style>
+    #btn2 {
+        background-color: #1565c0;
+        color: white;
+    }
+</style>
 
 @section('content')
 

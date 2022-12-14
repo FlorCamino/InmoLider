@@ -1,5 +1,12 @@
 @extends('layouts.base_admin')
 
+<style>
+    #btn1 {
+        background-color: #1565c0;
+        color: white;
+    }
+</style>
+
 @section('name', 'InmoLíder')
 
 @section('content')

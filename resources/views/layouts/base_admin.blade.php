@@ -41,35 +41,35 @@
                 <div class="col-8">
                     <ul class="group-list">
                         <li class="nav-li">
-                            <a href="{{ route('propiedad.index') }}" class="nav-link">
+                            <a href="{{ route('propiedad.index') }}" id="btn1" class="nav-link">
                                 <span class="iconify bi d-block mx-auto mb-1" data-icon="mdi:home-city" data-width="30"
                                     data-height="30"></span>
                                 Propiedades
                             </a>
                         </li>
                         <li class="nav-li">
-                            <a href="{{ route('propietario.index') }}" class="nav-link">
+                            <a href="{{ route('propietario.index') }}" id="btn2" class="nav-link">
                                 <span class="iconify bi d-block mx-auto mb-1" data-icon="arcticons:simplefilemanager"
                                     data-width="30" data-height="30"></span>
                                 Propietarios
                             </a>
                         </li>
                         <li class="nav-li">
-                            <a href="{{ route('usuario.index') }}" class="nav-link">
+                            <a href="{{ route('usuario.index') }}" id="btn3" class="nav-link">
                                 <span class="iconify bi d-block mx-auto mb-1" data-icon="mdi:account-group"
                                     data-width="30" data-height="30"></span>
                                 Usuarios
                             </a>
                         </li>
                         <li class="nav-li">
-                            <a href="{{ route('ciudad.index') }}" class="nav-link">
+                            <a href="{{ route('ciudad.index') }}" id="btn4" class="nav-link">
                                 <span class="iconify bi d-block mx-auto mb-1" data-icon="arcticons:city-transit"
                                     data-width="30" data-height="30"></span>
                                 Ciudades
                             </a>
                         </li>
                         <li class="nav-li">
-                            <a href="{{ route('transaccion.index') }}" class="nav-link">
+                            <a href="{{ route('transaccion.index') }}" id="btn5" class="nav-link">
                                 <span class="iconify bi d-block mx-auto mb-1" data-icon="fluent:form-new-48-regular"
                                     data-width="30" data-height="30"></span>
                                 Transacción

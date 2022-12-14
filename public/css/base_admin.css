@@ -40,9 +40,6 @@ body {
 .nav-link {
     color: black;
 }
-a:hover {
-    background-color: #1565c0;
-}
 
 .group-list {
     padding-left: 50px !important;
@@ -161,4 +158,16 @@ a:hover {
 
 .icon {
     background-color: #1565c0;
+}
+
+/* Estilos a create/propiedades */
+
+.img-group {
+    display: inline-flex;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.col-img {
+    left: 150px;
 }

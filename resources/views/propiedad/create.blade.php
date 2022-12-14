@@ -1,5 +1,11 @@
 @extends('layouts.base_admin')
 
+<style>
+    #btn1 {
+        background-color: #1565c0;
+        color: white;
+    }
+</style>
 
 @section('content')
 
@@ -136,11 +142,74 @@
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
+        <div class="row img-group">
+            <div class="col col-img">
+                <div class="form-group-img">
+                    <strong>Imagen 1:</strong>
+                    <input id="image1" class="form-input" type="file" name="image1" accept="image/*"
+                        onchange="readURL(this,null, 1);">
+                    <input type="hidden" class="form-input" name="hidden_image1" id="hidden_image1">
+                </div>
+                <div class="form-group-img">
+                    <img id="modal-preview1" src="https://via.placeholder.com/150" alt="Preview"
+                        class="form-group hidden" width="150" height="150">
+                </div>
+            </div>
+            <div class="col col-img">
+                <div class="form-group-img">
+                    <strong>Imagen 2:</strong>
+                    <input id="image2" type="file" name="image2" accept="image/*" onchange="readURL(this,null, 2);">
+                    <input type="hidden" name="hidden_image1" id="hidden_image2">
+                </div>
+                <div class="form-group-img">
+                    <img id="modal-preview2" src="https://via.placeholder.com/150" alt="Preview"
+                        class="form-group hidden" width="150" height="150">
+                </div>
+            </div>
+        </div>
+        <div class="row img-group">
+            <div class="col col-img">
+                <div class="form-group-img">
+                    <strong>Imagen 3:</strong>
+                    <input id="image1" type="file" name="image3" accept="image/*" onchange="readURL(this,null, 3);">
+                    <input type="hidden" name="hidden_image1" id="hidden_image3">
+                </div>
+                <div class="form-group-img">
+                    <img id="modal-preview3" src="https://via.placeholder.com/150" alt="Preview"
+                        class="form-group hidden" width="150" height="150">
+                </div>
+            </div>
+            <div class="col col-img">
+                <div class="form-group-img">
+                    <strong>Imagen 4:</strong>
+                    <input id="image4" type="file" name="image4" accept="image/*" onchange="readURL(this,null, 4);">
+                    <input type="hidden" name="hidden_image1" id="hidden_image4">
+                </div>
+                <div class="form-group-img">
+                    <img id="modal-preview4" src="https://via.placeholder.com/150" alt="Preview"
+                        class="form-group hidden" width="150" height="150">
+                </div>
+            </div>
+        </div>
         <div class="text-end">
             <a class="button-7" href="{{ route('propiedad.index') }}"> Volver</a>
             <button type="submit" class="button-7 ml-3">Guardar</button>
         </div>
     </form>
 </div>
+<script>
+    function readURL(input, id, index) {
+        id = id || '#modal-preview' + index;
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $(id).attr('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+            $('#modal-preview' + index).removeClass('hidden');
+            $('#start').hide();
+        }
+    }
+</script>
 
 @endsection
