@@ -15,28 +15,34 @@
 
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <form>
-        <main>
-            <div class="container">
-                <form>
+    <main>
+        <div class="container">
+            <div class="card-body">
+                <form method="POST" action="{{ route('validar-registro') }}">
+                    @csrf
                     <img src="{{ asset('img/logo.jpg') }}" alt="Logo" width="120" height="90">
                     <h3>Bienvenido! Por favor, complete sus datos.</h3>
                     <div class="row">
                         <h5 class="subtitle"> <strong> Datos personales </strong> </h5>
-                        <div class="col-sm-6 form-floating">
-                            <input type="text" class="form-control form-control-orange" id="nombre"
-                                placeholder="nombre">
+                        <div class="col-6 form-floating">
+                            <input type="text" class="form-control form-control-orange" id="nombre" placeholder="nombre"
+                                value="{{ old('nombre') }}">
                             <label for="nombre">Nombre/s</label>
                         </div>
-                        <div class="invalid-feedback">
-                            Nombre es un valor requerido.
-                        </div>
-                        <div class="col-sm-6 form-floating">
+                        @error('nombre')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                        <div class="col-6 form-floating">
                             <input type="text" class="form-control form-control-orange" id="apellido"
-                                placeholder="apellido">
+                                placeholder="apellido" value="{{ old('apellido') }}">
                             <label for="apellido">Apellidos/s</label>
                         </div>
                         <div class="invalid-feedback">
@@ -44,94 +50,152 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4 form-floating">
-                            <input type="text" class="form-control form-control-orange" id="dni"
-                                placeholder="dni">
-                            <label for="dni">DNI/DU/LE/LC/CI</label>
+                        <div class="col-6 form-floating">
+                            <input type="text" class="form-control form-control-orange" id="dni" placeholder="dni">
+                            <label for="dni" value="{{ old('dni') }}">DNI/DU/LE/LC/CI</label>
                         </div>
-                        <div class="invalid-feedback">
-                            DNI es un valor requerido.
-                        </div>
-                        <div class="col-sm-4 form-floating">
+                        @error('apellido')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                        <div class="col-6 form-floating">
                             <input type="date" class="form-control form-control-orange" id="fechaNacimiento"
-                                placeholder="fechaNaciemiento">
+                                placeholder="fechaNaciemiento" value="{{ old('fechaNaciemiento') }}">
                             <label for="apellido">Fecha de nacimiento</label>
                         </div>
-                        <div class="invalid-feedback">
-                            Fecha de nacimiento es un valor requerido.
-                        </div>
-                        <div class="col-sm-4 form-floating">
-                            <input type="number" class="form-control form-control-orange" id="edad"
-                                placeholder="edad">
-                            <label for="apellido">Edad</label>
-                        </div>
-                        <div class="invalid-feedback">
-                            Edad es un valor requerido.
-                        </div>
+                        @error('fechaNacimiento')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                     <div class="row">
                         <h5 class="subtitle"> <strong> Datos de contacto </strong></h5>
                         <div class="col-sm-6 form-floating">
-                            <input type="email" class="form-control form-control-orange" id="email"
-                                placeholder="email">
+                            <input type="email" class="form-control form-control-orange" id="email" placeholder="email"
+                                value="{{ old('email') }}">
                             <label for="email">Email</label>
                         </div>
-                        <div class="invalid-feedback">
-                            Email es un valor requerido.
-                        </div>
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                         <div class="col-sm-6 form-floating">
                             <input type="text" class="form-control form-control-orange" id="telefono"
-                                placeholder="telefono">
+                                placeholder="telefono" value="{{ old('telefono') }}">
                             <label for="telefono">Teléfono</label>
                         </div>
-                        <div class="invalid-feedback">
-                            Teléfono es un valor requerido.
-                        </div>
+                        @error('telefono')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                     <div class="row">
                         <h5 class="subtitle"> <strong>Datos de dirección </strong> </h5>
-                        <div class="col-sm-4 form-floating">
+                        <div class="col-4 form-floating">
                             <input type="direccion" class="form-control form-control-orange" id="direccion"
-                                placeholder="direccion">
+                                placeholder="direccion" value="{{ old('direccion') }}">
                             <label for="direccion">Dirección</label>
                         </div>
-                        <div class="invalid-feedback">
-                            Dirección es un valor requerido.
-                        </div>
-                        <div class="col-sm-4 form-floating">
+                        @error('direccion')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                        <div class="col-4 form-floating">
                             <select class="form-select form-control form-control-orange" id="ciudad" required>
                                 @foreach ($ciudades as $ciudad)
-                                    <option value="{{ $ciudad->id }}">{{ $ciudad->nombre }}</option>
+                                <option value="{{ $ciudad->id }}">{{ $ciudad->nombre }}</option>
                                 @endforeach
                             </select>
                             <label for="ciudad" class="form-label">Ciudad</label>
-                            <div class="invalid-feedback">
-                                Seleccionar una opción.
-                            </div>
+                            @error('idCiudad')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
-                        <div class="col-md-4 form-floating">
+                        <div class="col-4 form-floating">
                             <input type="text" class="form-control form-control-orange" id="CP"
-                                placeholder="name@example.com">
+                                placeholder="name@example.com" value="{{ old('CP') }}">
                             <label for="CP">Código postal</label>
                         </div>
-                        <div class="invalid-feedback">
-                            Código postal requerido.
+                        @error('CP')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                    <div class="row">
+                        <div class="col-6 form-floating">
+                            <input type="password" class="form-control form-control-orange" id="password"
+                                placeholder="Password">
+                            <label for="password">Contraseña</label>
+                        </div>
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+
+                        <div class="col-6 form-floating">
+                            <input type="password" class="form-control form-control-orange" id="password-confirm"
+                                placeholder="Confirmar contraseña" required autocomplete="new-password">
+                            <label for="password-confirm">Confirmar contraseña</label>
+                        </div>
+                        @error('password-confirm')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                    <div class="row align-left img-group">
+                        <div class="col col-img">
+                            <div class="form-group-img">
+                                <strong>Foto perfil:</strong>
+                                <input id="perfil-imagen" class="form-input" type="file" name="perfil-imagen"
+                                    accept="image/*" onchange="readURL(this,null, 1);">
+                                <input type="hidden" class="form-input" name="hidden_image1" id="hidden_image1">
+                            </div>
+                            <div class="form-group-img">
+                                <img id="modal-preview1" src="https://via.placeholder.com/150" alt="Preview"
+                                    class="form-group hidden" width="150" height="150">
+                            </div>
                         </div>
                     </div>
                     <div class="text-end">
-                        <button class="btn-form-control-registro form-control" type="submit">Crear cuenta</button>
+                        <button class="btn-form-control-registro form-control" type="submit">Crear
+                            cuenta</button>
                     </div>
             </div>
-        </main>
+    </main>
+    <script>
+        function readURL(input, id, index) {
+            id = id || '#modal-preview' + index;
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $(id).attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+                $('#modal-preview' + index).removeClass('hidden');
+                $('#start').hide();
+            }
+        }
+    </script>
+</body>
 
-        {{-- JS --}}
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-            integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous">
-        </script>
 
+{{-- JS --}}
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

@@ -31,8 +31,7 @@ class FormDataRequest extends FormRequest
             'dni' => ['required', 'numeric'],
             'fechaNacimiento' => ['required', 'date'],
             'direccion' => ['required'],
-            'domicilio' => ['required'],
-            'CP' => ['required', 'alpha_dash'],
+            'CP' => ['required'],
         ];
     }
     public function messages()
@@ -51,9 +50,7 @@ class FormDataRequest extends FormRequest
             'telefono.required' => 'El teléfono es obligatorio.',
             'telefono.numeric' => 'El teléfono  debe contener valores numéricos.',
             'direccion.required' => 'El domicilio es obligatorio.',
-            'direccion.alpha_dash' => 'El domicilio puede contener letras o números.',
             'CP.required' => 'El Código postal es obligatorio.',
-            'CP.alpha_dash' => 'El Código postal puede contener letras o números.'
         ];
     }
 }

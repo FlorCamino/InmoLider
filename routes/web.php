@@ -31,7 +31,11 @@ Route::resource('inicio', InicioController::class);
 Route::resource('login', LoginController::class)
     ->only('index', 'store');
 
-Route::post('logout', [LoginController::class, 'destroy']);
+Route::view('/login', 'login.login')->name('login');
+Route::get('/registro', [LoginController::class, 'index'])->name('registro');
+Route::post('/validar-registro', [LoginController::class, 'registro'])->name('validar-registro');
+Route::post('/inicia-sesion', [LoginController::class, 'login'])->name('inicia-sesion');
+Route::get('/logout', [LoginController::class, 'login'])->name('logout');
 
 Route::resource('propiedad', PropiedadController::class);
 

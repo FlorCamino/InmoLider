@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\PropiedadRequest;
 use App\Http\Requests\PropietarioRequest;
 use App\Models\Ciudad;
 use App\Models\Propietario;
