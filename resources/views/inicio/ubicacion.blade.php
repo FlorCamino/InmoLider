@@ -12,6 +12,14 @@
                         <div class="v-line1">
                             <h3 class="featurette-heading fw-normal lh-1">Sede Río Grande<span class="text-muted"></span></h3>
                             <p class="lead">Nuestra sede oficial de Rio Grande <hr>
+                            <br>
+                                  <ul class="list-group">
+                                        <li class="list-group-item">Direccion: Islas Malvinas</li>
+                                        <li class="list-group-item">Altura: 1834</li>
+                                        <li class="list-group-item">Esquina con: Guayaquill</li>
+                                        <li class="list-group-item">Lunes a Viernes: 10:00hs a 22:00hs</li>
+                                        <li class="list-group-item">Sabados: 15:00hs a 20:00hs</li>
+                                   </ul>                                    
                                 <!--podras acercarte presencialmente a realizar 
                                 cualquier consulta de interes o presentar tus quejas-->  </p>
                             </div>
