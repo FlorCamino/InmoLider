@@ -52,7 +52,7 @@
                                 <a class="nav-link" href="/contacto">Contacto</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Ubicación</a>
+                                <a class="nav-link" href="/ubicacion">Ubicación</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Bienvenido/a</a>
