@@ -22,14 +22,14 @@
         </div>
         <div class="col-lg-4">
             <img class="img-cont" role="img" src="{{ asset('img/Pablo.jpg') }}" alt="logo">
-            <h2 class="name">Perez Pablo</h2>
-            <p>Más de 2 años acompañandonos y brindando la mejor calidad de atención al cliente.</p>
-            <div class="col-4">
+            <h2 class="name"> &nbsp Perez Pablo</h2>
+            <p>Mas de 2 años acompañandonos y brindando <br> la mejor calidad de atención al cliente.</p>
+            <div class="col-7">
                 <ul class="cont-list">
                     <li class="cont-datos"><span class="iconify" data-icon="ic:baseline-whatsapp"></span>+542964425678
                     </li>
                     <li class="cont-datos"><span class="iconify"
-                            data-icon="material-symbols:alternate-email"></span>pabloinmolider@gmail.com
+                            data-icon="material-symbols:alternate-email"></span>pabloinmolider<br>@gmail.com
                     </li>
                     <li class="cont-datos"><span class="iconify" data-icon="mdi:instagram"></span>pabloinmolider</li>
                     <li class="cont-datos"><span class="iconify" data-icon="ic:baseline-facebook"></span>Pablo Perez
