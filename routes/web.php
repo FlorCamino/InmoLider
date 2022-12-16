@@ -8,6 +8,7 @@ use App\Http\Controllers\NosotrosController;
 use App\Http\Controllers\PropiedadController;
 use App\Http\Controllers\PropietarioController;
 use App\Http\Controllers\TransaccionController;
+use App\Http\Controllers\UbicacionController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
@@ -52,3 +53,5 @@ Route::get('propiedad/getIdTipoTransaccion/{idPropiedad}', [PropiedadController:
 Route::get('/nosotros', [NosotrosController::class, 'index']);
 
 Route::get('/contacto', [ContactoController::class, 'index']);
+
+Route::get('/ubicacion', [UbicacionController::class, 'index']);
