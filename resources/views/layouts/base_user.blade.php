@@ -55,7 +55,7 @@
                                 <a class="nav-link" href="/ubicacion">Ubicación</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Bienvenido/a</a>
+                                <a class="nav-link" href="/login">Bienvenido/a</a>
                             </li>
                         </ul>
                     </div>
