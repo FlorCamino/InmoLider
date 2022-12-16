@@ -79,7 +79,7 @@ class PropiedadController extends Controller
 
             $propiedadImagenes = new PropiedadImagenes();
             $propiedadImagenes->idPropiedad = $propiedad->id;
-            $propiedadImagenes->urlImg = $path;
+            $propiedadImagenes->urlImg = pathinfo($path)['basename'];
             $propiedadImagenes->fechaDeCarga =  date('y-m-d h:i:s');
 
             $propiedadImagenes->save();
@@ -92,7 +92,7 @@ class PropiedadController extends Controller
 
             $propiedadImagenes = new PropiedadImagenes();
             $propiedadImagenes->idPropiedad = $propiedad->id;
-            $propiedadImagenes->urlImg = $path;
+            $propiedadImagenes->urlImg = pathinfo($path)['basename'];
             $propiedadImagenes->fechaDeCarga =  date('y-m-d h:i:s');
 
             $propiedadImagenes->save();
@@ -104,7 +104,7 @@ class PropiedadController extends Controller
 
             $propiedadImagenes = new PropiedadImagenes();
             $propiedadImagenes->idPropiedad = $propiedad->id;
-            $propiedadImagenes->urlImg = $path;
+            $propiedadImagenes->urlImg = pathinfo($path)['basename'];
             $propiedadImagenes->fechaDeCarga =  date('y-m-d h:i:s');
 
             $propiedadImagenes->save();
@@ -116,7 +116,7 @@ class PropiedadController extends Controller
 
             $propiedadImagenes = new PropiedadImagenes();
             $propiedadImagenes->idPropiedad = $propiedad->id;
-            $propiedadImagenes->urlImg = $path;
+            $propiedadImagenes->urlImg = pathinfo($path)['basename'];
             $propiedadImagenes->fechaDeCarga =  date('y-m-d h:i:s');
 
             $propiedadImagenes->save();

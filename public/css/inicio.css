@@ -80,22 +80,9 @@ label {
 }
 
 /* Cards */
-.group-cards {
-    background-color: #fef4ea;
-    border-color: #080808;
-    border-radius: 15px;
-}
 
-.card {
-    width: 18rem !important;
-}
-
-.col {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-left: 50px;
-}
-
-.cards {
-    margin-bottom: 70px;
+.img-carousel {
+    display: block;
+    width: 410px !important;
+    height: 330px !important;
 }

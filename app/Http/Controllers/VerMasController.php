@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Propiedad;
-use App\Models\PropiedadImagenes;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
-class InicioController extends Controller
+class VerMasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +13,7 @@ class InicioController extends Controller
      */
     public function index()
     {
-
-        $propiedades = Propiedad::all();
-        return view('inicio.inicio', [
-            'propiedades' => $propiedades
-        ]);
+        //
     }
 
     /**
@@ -30,6 +23,7 @@ class InicioController extends Controller
      */
     public function create()
     {
+        //
     }
 
     /**
@@ -49,14 +43,9 @@ class InicioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Propiedad $propiedades)
+    public function show($id)
     {
-        $propiedades = Propiedad::all();
-        $propiedadImagenes = PropiedadImagenes::all();
-        return view('inicio.inicio', [
-            'propiedades' => $propiedades,
-            'propiedadImagenes' => $propiedadImagenes,
-        ]);
+        //
     }
 
     /**

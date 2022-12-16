@@ -53,161 +53,60 @@
             </div>
         </form>
     </div>
-    @foreach ($propiedades as $propiedad)
-    @foreach($propiedad->PropiedadImagenes()->get() as $img)
 
-    <img src="#" alt="">
-    @endforeach
-    @if($propiedad->PropiedadImagenes->get(0))
-    'hola'
+    <!-- Cards -->
 
-    @endif
-    @endforeach
-    <div class="container group-cards">
-        <div class="row cards">
-            <div class="col">
+    <div class="container">
+        @foreach($propiedades as $propiedad)
+        <div class="row">
+            <div class="col-4">
                 <div class="card">
-                    <svg class="imgCard" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"
-                        aria-label="Placeholder: Imagen" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Propiedad</title>
-                        <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                            dy=".3em">Imagen propiedad</text>
-                    </svg>
-                    <div class="card-body">
-                        <h3>Título</h3>
-                        <p class="card-text">This is a wider card with supporting text below as a
-                            natural
-                            lead-in to
-                            additional content. This content is a little bit longer.</p>
-                        <div>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm">Ver
-                                    mas...</button>
-                            </div>
-                            <small class="text-muted">valor</small>
-                        </div>
-                    </div>
+                    @if($propiedad->PropiedadImagenes()->get())
+                    <?php  $img = $propiedad->PropiedadImagenes()->get()->first()
+                    ?>
+                    <img class="img-card" src="{{asset('storage/propiedad_imagenes/'.$img->urlImg)}}" alt="First slide">
+                    @endif
                 </div>
             </div>
-            <div class="col">
-                <div class="card">
-                    <svg class="imgCard" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"
-                        aria-label="Placeholder: Imagen" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Propiedad</title>
-                        <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                            dy=".3em">Imagen propiedad</text>
-                    </svg>
-                    <div class="card-body">
-                        <h3>Título</h3>
-                        <p class="card-text">This is a wider card with supporting text below as a
-                            natural
-                            lead-in to
-                            additional content. This content is a little bit longer.</p>
-                        <div>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm">Ver
-                                    mas...</button>
-                            </div>
-                            <small class="text-muted">valor</small>
-                        </div>
+            <div class="card-body">
+                <h5 class="card-title">{{$propiedad->titulo}}</h5>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Ver mas</button>
                     </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <svg class="imgCard" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"
-                        aria-label="Placeholder: Imagen" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Propiedad</title>
-                        <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                            dy=".3em">Imagen propiedad</text>
-                    </svg>
-                    <div class="card-body">
-                        <h3>Título</h3>
-                        <p class="card-text">This is a wider card with supporting text below as a natural
-                            lead-in to
-                            additional content. This content is a little bit longer.</p>
-                        <div>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm">Ver
-                                    mas...</button>
-                            </div>
-                            <small class="text-muted">valor</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row cards">
-            <div class="col">
-                <div class="card">
-                    <svg class="imgCard" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"
-                        aria-label="Placeholder: Imagen" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Propiedad</title>
-                        <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                            dy=".3em">Imagen propiedad</text>
-                    </svg>
-                    <div class="card-body">
-                        <h3>Título</h3>
-                        <p class="card-text">This is a wider card with supporting text below as a natural
-                            lead-in to
-                            additional content. This content is a little bit longer.</p>
-                        <div>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm">Ver
-                                    mas...</button>
-                            </div>
-                            <small class="text-muted">valor</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <svg class="imgCard" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"
-                        aria-label="Placeholder: Imagen" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Propiedad</title>
-                        <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                            dy=".3em">Imagen propiedad</text>
-                    </svg>
-                    <div class="card-body">
-                        <h3>Título</h3>
-                        <p class="card-text">This is a wider card with supporting text below as a
-                            natural
-                            lead-in to
-                            additional content. This content is a little bit longer.</p>
-                        <div>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm">Ver
-                                    mas...</button>
-                            </div>
-                            <small class="text-muted">valor</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <svg class="imgCard" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"
-                        aria-label="Placeholder: Imagen" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Propiedad</title>
-                        <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                            dy=".3em">Imagen propiedad</text>
-                    </svg>
-                    <div class="card-body">
-                        <h3>Título</h3>
-                        <p class="card-text">This is a wider card with supporting text below as a natural
-                            lead-in to
-                            additional content. This content is a little bit longer.</p>
-                        <div>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm">Ver
-                                    mas...</button>
-                            </div>
-                            <small class="text-muted">valor</small>
-                        </div>
-                    </div>
+                    <small class="text-muted">{{$propiedad->valor}}</small>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+    @endforeach
+    </div>
+
+    <!--
+    <div class="container">
+        @foreach ($propiedades as $propiedad)
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner">
+                @foreach($propiedad->PropiedadImagenes()->get() as $img)
+                <div class="carousel-item active">
+                    <img src="{{asset('storage/propiedad_imagenes/'.$img->urlImg)}}" class="d-block w-100" alt="...">
+                </div>
+
+                @endforeach
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        @endforeach
+    </div> -->
+
+
+
 </main>

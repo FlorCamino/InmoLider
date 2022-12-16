@@ -43,8 +43,8 @@ Route::resource('usuario', UsuarioController::class);
 
 Route::resource('transaccion', TransaccionController::class);
 
+Route::get('propiedad/getIdTipoTransaccion/{idPropiedad}', [PropiedadController::class, 'getIdTipoTransaccion']);
+
 Route::get('/nosotros', [NosotrosController::class, 'index']);
 
 Route::get('/contacto', [ContactoController::class, 'index']);
-
-Route::get('propiedad/getIdTipoTransaccion/{idPropiedad}', [PropiedadController::class, 'getIdTipoTransaccion']);
