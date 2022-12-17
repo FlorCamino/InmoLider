@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\CiudadController;
 use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NosotrosController;
@@ -55,3 +57,7 @@ Route::get('/nosotros', [NosotrosController::class, 'index']);
 Route::get('/contacto', [ContactoController::class, 'index']);
 
 Route::get('/ubicacion', [UbicacionController::class, 'index']);
+
+Route::get('login/facebook',[FacebookController::class,'index']);
+
+Route::get('login/google',[GoogleController::class,'index']);
