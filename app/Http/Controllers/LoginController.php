@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
-use App\Http\Requests\UsersRequest;
+use App\Http\Requests\LoginRequest;
 use App\Models\Ciudad;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Users;
@@ -26,8 +25,13 @@ class LoginController extends Controller
             ['ciudades' => $ciudades]
         );
     }
-
-    public function registro(UsersRequest $request)
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(LoginRequest $request)
     {
 
         $users = new Users();
@@ -53,44 +57,15 @@ class LoginController extends Controller
         } else {
             $users->urlFoto = null;
         }
+
         $users->save();
 
         Auth::login($users);
 
-        return redirect(route('propiedad.index'));
-    }
-
-    public function login()
-    {
+        return redirect(route('usuario.index'));
     }
 
 
-    public function logout()
-    {
-    }
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        // if (Auth::attempt([
-        //     'email' => $request,
-        //     // ->post('username')
-        //     'password' => $request
-        //     // ->post('contrasenia')
-        // ])) {
-        //     $request->session()->regenerate();
-        //     return redirect()->intended(route('admin.index'));
-        // } else {
-        //     return back()->withErrors([
-        //         'username' => "El nombre de usuario/email no coincide con ningún registro",
-        //         'contrasenia' => "La contraseña no coincide con el nombre de usuario/email"
-        //     ]);
-        // }
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -98,9 +73,7 @@ class LoginController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(LoginRequest $request)
     {
-        // $request->session()->invalidate();
-        // return redirect(route('login.index'));
     }
 }

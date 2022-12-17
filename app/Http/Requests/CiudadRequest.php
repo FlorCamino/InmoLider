@@ -24,15 +24,14 @@ class CiudadRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => ['required', 'alpha'],
+            'nombre' => ['required'],
         ];
     }
 
     public function messages()
     {
         return [
-            'nombre.required' => 'El nombre es obligatorio.',
-            'nombre.alpha' => 'El nombre debe contener letras.'
+            'nombre.required' => 'El nombre es obligatorio.'
         ];
     }
 }

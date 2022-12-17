@@ -34,11 +34,7 @@ Route::resource('inicio', InicioController::class);
 Route::resource('login', LoginController::class)
     ->only('index', 'store');
 
-Route::view('/login', 'login.login')->name('login');
-Route::get('/registro', [LoginController::class, 'index'])->name('registro');
-Route::post('/validar-registro', [LoginController::class, 'registro'])->name('validar-registro');
-Route::post('/inicia-sesion', [LoginController::class, 'login'])->name('inicia-sesion');
-Route::get('/logout', [LoginController::class, 'login'])->name('logout');
+Route::post('logout', [LoginController::class, 'destroy']);
 
 Route::resource('propiedad', PropiedadController::class);
 
@@ -58,6 +54,6 @@ Route::get('/contacto', [ContactoController::class, 'index']);
 
 Route::get('/ubicacion', [UbicacionController::class, 'index']);
 
-Route::get('login/facebook',[FacebookController::class,'index']);
+// Route::get('login/facebook', [FacebookController::class, 'index']);
 
-Route::get('login/google',[GoogleController::class,'index']);
+// Route::get('login/google', [GoogleController::class, 'index']);
