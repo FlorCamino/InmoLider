@@ -34,6 +34,13 @@
                     <label for="floatingPassword">Contraseña</label>
                 </div>
                 <button class="btn-form-control form-control" type="submit">Ingresar</button>
+                    <p>-o-</p>
+
+                    <a href="login/facebook" class="btn btn-block btn-primary">  &nbsp &nbsp &nbsp Inicia sesion con Facebook &nbsp &nbsp &nbsp </a>
+                    <br>
+                    <br> 
+                    <a href="login/google" class="btn btn-block btn-danger">  &nbsp &nbsp &nbsp &nbsp Inicia sesion con Google &nbsp &nbsp &nbsp &nbsp</a>
+
                 <p class="text-muted">InmoLider &copy; Derechos reservados 2022</p>
             </form>
         </div>
