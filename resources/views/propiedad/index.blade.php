@@ -67,6 +67,15 @@
         </tbody>
     </table>
 </div>
+
+
+    <div class="btn-group">
+    <a href="/Riogrande" class="btn btn-primary active" aria-current="page">Rio Grande</a>
+    <a href="/Tolhuin" class="btn btn-primary">Tolhuin</a>
+    <a href="/Ushuaia" class="btn btn-primary">Ushuaia</a>
+    </div>
+
+
 <div class="container-fluid">
     <div class="text-right">
         <div class="row">
