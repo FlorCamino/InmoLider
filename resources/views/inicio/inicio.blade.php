@@ -57,7 +57,7 @@
 
     <!-- Cards -->
 
-    <div class="container">
+    <!--<div class="container">
         @foreach($propiedades as $propiedad)
         <div class="row">
             <div class="col-4">
@@ -83,7 +83,7 @@
     </div>
     @endforeach
     </div>
-
+-->
     <!--
     <div class="container">
         @foreach ($propiedades as $propiedad)
