@@ -10,11 +10,11 @@
                 sueño de una vivienda.</p>
             <div class="col-4">
                 <ul class="cont-list">
-                    <a href="https://wa.me/numero"><span class="iconify" data-icon="ic:baseline-whatsapp"></span>Ir</a>
-                    <a href="mailto:ejemplo@gmail.com"><span class="iconify"
-                            data-icon="material-symbols:alternate-email">Ir</a>
-                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i>Ir</a>
-                    <a href="https://www.facebook.com/"><span class="iconify" data-icon="ic:baseline-facebook">Ir</a>
+                    <a href="https://wa.me/numero"><span class="iconify" data-icon="ic:baseline-whatsapp"></span>2964568475</a>
+                    <a href="mailto:ejemplo@gmail.com"><span class="iconify" 
+                            data-icon="material-symbols:alternate-email">tubbromi@yahoo.com</a>
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i>@DaniRamirez</a>
+                    <a href="https://www.facebook.com/"><span class="iconify" data-icon="ic:baseline-facebook">@DaniRamirez</a>
                 </ul>
             </div>
         </div>
