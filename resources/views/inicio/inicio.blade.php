@@ -47,8 +47,7 @@
                 </div>
                 <div class="col-6">
                     <div class="form-floating">
-                        <!--<button class="btn-form-control" type="submit">Ingresar</button>-->
-                        <a href="/propiedad" class="btn btn-block btn-form-control">Ingresar</a>
+                        <button class="btn-form-control" type="submit">Ingresar</button>
                     </div>
                 </div>
             </div>
