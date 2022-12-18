@@ -62,7 +62,7 @@ class LoginController extends Controller
 
         Auth::login($users);
 
-        return redirect(route('usuario.index'));
+        return redirect("/inicio");
     }
 
 
