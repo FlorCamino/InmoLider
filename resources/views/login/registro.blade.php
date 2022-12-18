@@ -22,7 +22,7 @@
 
 <body>
     <div class="container card-body">
-        <form action="{{route('login.store')}}" method="POST">
+        <form action="{{route('registro.store')}}" method="POST">
             @csrf
             <img src="{{ asset('img/logo.jpg') }}" alt="Logo" width="120" height="90">
             <h3>Bienvenido! Por favor, complete sus datos.</h3>

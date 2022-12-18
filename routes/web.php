@@ -9,6 +9,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NosotrosController;
 use App\Http\Controllers\PropiedadController;
 use App\Http\Controllers\PropietarioController;
+use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\TransaccionController;
 use App\Http\Controllers\UbicacionController;
 use App\Http\Controllers\UsuarioController;
@@ -29,9 +30,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/login.login', function () {
+    return view('login.login');
+});
+
 Route::resource('inicio', InicioController::class);
 
-Route::resource('login', LoginController::class)
+Route::resource('registro', RegistroController::class)
     ->only('index', 'store');
 
 Route::post('logout', [LoginController::class, 'destroy']);
