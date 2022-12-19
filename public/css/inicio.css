@@ -80,9 +80,38 @@ label {
 }
 
 /* Cards */
+.card-cont {
+    margin-bottom: 120px;
+    background-color: #fef4ea;
+}
 
-.img-carousel {
-    display: block;
-    width: 410px !important;
-    height: 330px !important;
+.line-card {
+    display: flex;
+}
+
+.card {
+    display: inline-block;
+}
+
+.card-body {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.card-container {
+    padding-top: 50px;
+    padding-left: 80px;
+    padding-bottom: 50px;
+}
+
+.img-card {
+    width: 400px !important;
+    display: inline-block;
+}
+
+.button-card {
+    background-color: #f55d26;
+    width: 100px;
+    border-radius: 15px;
+    border-color: orangered;
 }

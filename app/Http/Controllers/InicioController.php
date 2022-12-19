@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Propiedad;
 use App\Models\PropiedadImagenes;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+
 
 class InicioController extends Controller
 {

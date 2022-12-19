@@ -55,31 +55,31 @@
 
 <!-- Cards -->
 
-<div class="container">
-    <div class="row img-line">
+<div class="container card-cont">
+    <div class="row line-card">
         @foreach($propiedades as $propiedad)
-        <div class="col-3 d-inline">
+        <div class="col-6 card-container">
             <div class="card">
                 @if($propiedad->PropiedadImagenes()->get())
                 <?php  $img = $propiedad->PropiedadImagenes()->get()->first()
                     ?>
                 <img class="img-card" src="{{asset('storage/propiedad_imagenes/'.$img->urlImg)}}" alt="First slide">
                 @endif
-            </div>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">{{$propiedad->titulo}}</h5>
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver mas</button>
+                <div class="card-body">
+                    <h5 class="card-title">{{$propiedad->titulo}}</h5>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="button-card">Ver mas</button>
+                        </div>
+                        <small class="text-muted">{{$propiedad->valor}}</small>
+                    </div>
                 </div>
-                <small class="text-muted">{{$propiedad->valor}}</small>
             </div>
         </div>
+        @endforeach
     </div>
-</div>
-
-@endforeach
 
 
-@endsection
+
+
+    @endsection
