@@ -30,11 +30,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/vermas', function () {
-    return view('inicio.ver_mas');
-});
-
-
 Route::resource('/login', LoginController::class)
     ->only('index', 'store');
 

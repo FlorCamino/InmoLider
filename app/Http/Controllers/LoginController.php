@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
-use App\Models\Ciudad;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Users;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Hash;
+
 
 class LoginController extends Controller
 {
@@ -19,6 +16,7 @@ class LoginController extends Controller
 
     public function index()
     {
+        return view('login.login');
     }
     /**
      * Store a newly created resource in storage.
@@ -28,6 +26,19 @@ class LoginController extends Controller
      */
     public function store(LoginRequest $request)
     {
+        // dd($request->post('email'));
+        if (Auth::attempt([
+            'email' => $request->post('email'),
+            'password' => $request->post('password')
+        ])) {
+            $request->session()->regenerate();
+            return redirect()->intended('/inicio');
+        } else {
+            return back()->withErrors([
+                'email' => 'El email es incorrecto',
+                'password' => 'La contraseña np coincide con el usuario'
+            ]);
+        }
     }
 
 
