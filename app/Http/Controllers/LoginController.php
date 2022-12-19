@@ -51,5 +51,7 @@ class LoginController extends Controller
      */
     public function destroy(LoginRequest $request)
     {
+        $request->session()->invalidate();
+        return redirect(route('login.login'));
     }
 }

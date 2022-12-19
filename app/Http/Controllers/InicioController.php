@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Propiedad;
 use App\Models\PropiedadImagenes;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 
 class InicioController extends Controller
 {
@@ -16,6 +16,8 @@ class InicioController extends Controller
      */
     public function index()
     {
+        dd($users = Auth::users()->nombre);
+        $users = Auth::users();
 
         $propiedades = Propiedad::all();
         return view('inicio.inicio', [

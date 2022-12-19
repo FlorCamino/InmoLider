@@ -63,7 +63,7 @@ class RegistroController extends Controller
 
         Auth::login($users);
 
-        return redirect("/inicio");
+        return redirect("/login");
     }
 
 
