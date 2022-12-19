@@ -1,0 +1,41 @@
+* {
+    font-family: serif;
+    color: black;
+}
+
+.ubicacion {
+    height: 600px !important;
+}
+
+.v-line1 {
+    height: 600px;
+}
+
+.heading {
+    margin-top: 20%;
+    padding-left: 30%;
+}
+
+.lead {
+    margin: 0;
+    padding: 0;
+}
+
+.list-datos {
+    position: relative;
+}
+.group-item {
+    border: solid 1px orangered;
+    list-style: none;
+    border-radius: 15px;
+    margin-left: 20%;
+    margin-top: 30px;
+}
+
+iframe {
+    border: solid 1px black;
+    height: 550px !important;
+    width: 800px !important;
+    margin-top: 5%;
+    margin-left: 5%;
+}

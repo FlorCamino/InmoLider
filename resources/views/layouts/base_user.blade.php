@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/inicio.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/nosotros.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/contacto.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/ubicacion.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
     <!-- Favicons -->
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
@@ -55,7 +56,10 @@
                                 <a class="nav-link" href="/ubicacion">Ubicación</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/login">Bienvenido/a</a>
+                                <a class="nav-link" href="#">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/registro">Registrarse</a>
                             </li>
                         </ul>
                     </div>
