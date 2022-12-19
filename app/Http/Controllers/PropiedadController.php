@@ -10,6 +10,7 @@ use App\Models\Propietario;
 use App\Models\TipoTransaccion;
 use Illuminate\Support\Facades\File;
 
+
 class PropiedadController extends Controller
 {
     /**
@@ -133,7 +134,7 @@ class PropiedadController extends Controller
      */
     public function show(Propiedad $propiedad)
     {
-        return view('propiedad.show', compact('propiedad'));
+        return view('propiedad.show', (compact('propiedad')));
     }
 
     /**

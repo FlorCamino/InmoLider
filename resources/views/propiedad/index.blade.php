@@ -67,21 +67,6 @@
         </tbody>
     </table>
 </div>
-
-<div class="col-xl-12">
-    <form action="{{route('propiedad.index')}}" method="get">
-        <div class="form-row">
-            <div class="col-sm-4">
-                <input type="text" class="form-control" name="texto">
-            </div>
-            <div class="col-auto">
-                <input type="submit" class="btn btn-primary" value="Buscar"> 
-            </div>
-        </div>
-    </form>
-</div>
-  
-
 <div class="container-fluid">
     <div class="text-right">
         <div class="row">
