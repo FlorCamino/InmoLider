@@ -27,13 +27,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.registro_login');
 });
 
 Route::resource('/login', LoginController::class)
     ->only('index', 'store');
 
-Route::post('logout', [LoginController::class, 'destroy']);
+Route::post('/logout', [LoginController::class, 'destroy']);
 
 Route::resource('inicio', InicioController::class);
 

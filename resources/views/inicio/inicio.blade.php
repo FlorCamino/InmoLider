@@ -1,6 +1,7 @@
 @extends('layouts.base_user')
 
 @section('content')
+
 <div class="container barra-busqueda">
     <form action="#" method="POST">
         @csrf

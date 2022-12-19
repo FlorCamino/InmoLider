@@ -10,13 +10,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/base_user.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/inicio.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/nosotros.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/contacto.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/ubicacion.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/registro_login.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/login.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
     <!-- Favicons -->
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <script src="https://code.iconify.design/3/3.0.1/iconify.min.js"></script>
@@ -41,20 +42,13 @@
                     </div>
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="/inicio">Inicio</a>
+                            <li class="nav-li">
+                                <button id="boton-log" class="log-button"><a class="nav-link"
+                                        href="/login">Login</a></button>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/nosotros">Nosotros</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/contacto">Contacto</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/ubicacion">Ubicación</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/logout">Salir</a>
+                                <button id="boton-reg" class="reg-button"><a class="nav-link"
+                                        href="/registro">Registrarse</a></button>
                             </li>
                         </ul>
                     </div>

@@ -1,0 +1,34 @@
+* {
+    font-family: serif;
+}
+
+.log-button {
+    border-radius: 15px;
+    border-color: orangered;
+    margin: 20px;
+}
+
+.log-button a:hover {
+    color: orangered;
+}
+
+.reg-button {
+    border-radius: 15px;
+    border-color: orangered;
+    margin: 20px;
+}
+
+.reg-button a:hover {
+    color: orangered;
+}
+
+.nav-ul {
+    color: orangered;
+    right: 0 !important;
+    flex-wrap: nowrap;
+}
+
+.nav-li {
+    list-style: none;
+    justify-content: end;
+}

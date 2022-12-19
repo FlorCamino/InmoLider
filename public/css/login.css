@@ -1,20 +1,38 @@
 body {
     font-family: serif;
     background-color: #fef4ea;
+    z-index: 9999;
 }
 
-form {
+.form {
+    text-align: center;
+    position: relative;
+    margin-bottom: 150px;
+    margin-top: 150px;
+    border-radius: 15px;
+    background-color: #fef4ea;
+}
+
+label {
+    padding-left: 40px;
+}
+
+.form-login {
     /* centrado vertical */
     text-align: center;
     position: absolute;
-    top: 5%;
-    left: 5%;
-    right: 5%;
-    margin-top: -5px 0 0 -5px;
+    margin-bottom: 150px;
+    background-color: #fef4ea;
+    width: 500px;
+    height: 500px;
+    border-radius: 15px;
+    top: 25%;
+    left: 35%;
 }
 
-img {
-    margin-bottom: 40px !important;
+.logo-bi {
+    margin-bottom: 20px !important;
+    margin-top: 20px;
 }
 
 .row {
@@ -28,15 +46,31 @@ img {
     font-size: 2rem !important;
     text-align: center !important;
 }
-label {
+.form-check-label {
     display: flex !important;
-    margin-left: 10px !important;
+    margin-left: 100px !important;
     font-family: serif;
     padding-bottom: 0 !important;
 }
 
+.form-reg-label {
+    display: flex !important;
+    margin-left: 20px !important;
+    font-family: serif;
+}
+
 .form-floating {
     margin-bottom: 15px !important;
+    padding-left: 20px !important;
+    padding-right: 20px;
+}
+
+.form-floating {
+    margin-bottom: 15px !important;
+}
+.form-control:focus {
+    box-shadow: none;
+    border-color: #f55d26;
 }
 
 .form-control:hover .form-select:hover {
@@ -48,8 +82,8 @@ label {
     width: 15%;
     color: white;
     display: inline-block !important;
-    margin-inline-end: 0 !important;
-    justify-content: end !important;
+    margin-inline-end: 30px !important;
+    margin-bottom: 50px;
 }
 
 .btn-form-control-registro:focus {
@@ -59,17 +93,19 @@ label {
     box-shadow: none;
 }
 
-.form-login {
-    /* centrado vertical */
-    position: absolute;
-    top: 25%;
-    left: 40%;
-    right: 40%;
-    margin-top: -25px 0 0 -25px;
+.form-floating {
+    padding-left: 100px;
 }
 
 .form-control-orange {
     border-color: #f55d26;
+    width: 300px;
+    margin-left: 80px;
+}
+
+.form-reg-orange {
+    border-color: #f55d26;
+    width: 100%;
 }
 
 .form-control-orange:focus {
@@ -79,8 +115,11 @@ label {
 
 .btn-form-control {
     background-color: #f55d26;
-    width: 100%;
+    width: 300px;
     color: white;
+    border-radius: 15px;
+    padding-left: 10px;
+    margin-left: 100px;
 }
 
 .btn-form-control:focus {
@@ -92,6 +131,15 @@ label {
 
 p {
     margin-top: 30px !important;
+}
+
+.form-check {
+    margin-left: 100px;
+    text-align: left;
+}
+
+.check-label {
+    padding-left: 5px;
 }
 
 .form-check-input {
@@ -111,4 +159,8 @@ p {
 
 .form-check-input:visited {
     background-color: #f55d26;
+}
+
+#modal-preview1 {
+    padding-top: 20px;
 }
