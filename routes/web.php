@@ -30,17 +30,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::get('/login.login', function () {
-    return view('login.login');
+Route::get('/vermas', function () {
+    return view('inicio.ver_mas');
 });
+
+
+Route::resource('/login', LoginController::class)
+    ->only('index', 'store');
+
+Route::post('logout', [LoginController::class, 'destroy']);
 
 Route::resource('inicio', InicioController::class);
 
 Route::resource('registro', RegistroController::class)
     ->only('index', 'store');
-
-Route::post('logout', [LoginController::class, 'destroy']);
 
 Route::resource('propiedad', PropiedadController::class);
 

@@ -18,42 +18,41 @@
 </head>
 
 <body>
-    <main>
-        <div class="container">
-            <form class="form-login">
-                <img src="{{ asset('img/logo.jpg') }}" alt="Logo" width="120" height="90">
-                <h1 class="subtitle">Bienvenido! Por favor, inicie sesión.</h1>
-                <div class="form-floating">
-                    <input type="email" class="form-control form-control-orange" id="floatingInput"
-                        placeholder="name@example.com">
-                    <label for="floatingInput">Email</label>
-                </div>
-                <div class="form-floating">
-                    <input type="password" class="form-control form-control-orange" id="floatingPassword"
-                        placeholder="Password">
-                    <label for="floatingPassword">Contraseña</label>
-                </div>
-                <button class="btn-form-control form-control" type="submit">Ingresar</button>
-                    <p>-o-</p>
+    <div class="container">
+        <form class="form-login" method="POST" action="{{route('login.store')}}">
+            @csrf
+            <img src="{{ asset('img/logo.jpg') }}" alt="Logo" width="120" height="90">
+            <h1 class="subtitle">Bienvenido! Por favor, inicie sesión.</h1>
+            <div class="form-floating">
+                <input type="email" name="email" class="form-control form-control-orange" id="email"
+                    placeholder="name@example.com">
+                <label for="email">Email</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" name="password" class="form-control form-control-orange" id="password"
+                    placeholder="Password">
+                <label for="password">Contraseña</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="remember_token" id="remember_token" {{
+                    old('remember_token') ? 'checked' : '' }}>
+                <label class="form-check-label" for="remember_token">
+                    Recordar datos
+                </label>
+            </div>
+            <button class="btn-form-control form-control" type="submit">Ingresar</button>
+            <p class="text-muted">InmoLider &copy; Derechos reservados 2022</p>
+        </form>
+    </div>
 
-                    <a href="login/facebook" class="btn btn-block btn-primary">  &nbsp &nbsp &nbsp Inicia sesion con Facebook &nbsp &nbsp &nbsp </a>
-                    <br>
-                    <br> 
-                    <a href="login/google" class="btn btn-block btn-danger">  &nbsp &nbsp &nbsp &nbsp Inicia sesion con Google &nbsp &nbsp &nbsp &nbsp</a>
-
-                <p class="text-muted">InmoLider &copy; Derechos reservados 2022</p>
-            </form>
-        </div>
-    </main>
 
     {{-- JS --}}
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous">
-    </script>
-
+        </script>
 </body>
 
 </html>

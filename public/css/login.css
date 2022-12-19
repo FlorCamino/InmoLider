@@ -93,3 +93,22 @@ label {
 p {
     margin-top: 30px !important;
 }
+
+.form-check-input {
+    background-color: white;
+    border: solid 1px orangered;
+}
+
+.form-check-input:hover {
+    background-color: #f55d26;
+}
+
+.form-check-input:focus {
+    background-color: #f55d26;
+    box-shadow: none;
+    border: #f55d26;
+}
+
+.form-check-input:visited {
+    background-color: #f55d26;
+}
