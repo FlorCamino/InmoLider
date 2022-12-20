@@ -78,7 +78,7 @@
                             </a>
                         </li>
                         <li class="nav-li">
-                            <a href="{{ route('inicio.index') }}" id="btn5" class="nav-link">
+                            <a href="{{ route('inicio.index') }}" id="btn6" class="nav-link">
                                 <span class="iconify bi d-block mx-auto mb-1"
                                     data-icon="material-symbols:arrow-circle-up" data-width="30"
                                     data-height="30"></span>
@@ -90,8 +90,11 @@
             </div>
         </div>
         <div class="nav-user">
-            <div class="text-end text-bienv">{{ 'Bienvenido,' . ' ' . Auth::user()->nombre}}</div>
-        </div>
+            <div class="row">
+                <div class="text-end text-bienv">{{ 'Bienvenido,' . ' ' . Auth::user()->nombre}}
+                    <button class="btn-close"></button>
+                </div>
+            </div>
     </nav>
 
     @yield('content')

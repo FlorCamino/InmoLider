@@ -59,7 +59,16 @@ body {
 
 .text-bienv {
     padding-top: 5px;
-    padding-right: 50px;
+    padding-right: 150px;
+}
+
+.btn-close {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.text-close {
+    margin-left: 30px;
 }
 
 /* Styles to footer */
