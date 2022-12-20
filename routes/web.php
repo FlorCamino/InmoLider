@@ -29,7 +29,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('login.login');
 });
 
 Route::get('/login_admin', [LoginAdminController::class, 'index'])
@@ -44,7 +44,12 @@ Route::post('/login', [LoginController::class, 'store'])->name('login');
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::resource('inicio', InicioController::class)
+Route::get('inicio', [InicioController::class, 'index'])
+    ->name('inicio.index')
+    ->middleware('Visitante');
+
+Route::get('inicio_ver', [InicioController::class, 'show'])
+    ->name('inicio.show')
     ->middleware('Visitante');
 
 Route::resource('registro', RegistroController::class)
