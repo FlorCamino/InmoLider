@@ -7,6 +7,7 @@ use App\Models\Ciudad;
 use App\Models\Rol;
 use App\Models\Users;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
 {
@@ -59,7 +60,7 @@ class UsuarioController extends Controller
         $usuario->fechaDeCreacion = date('y-m-d h:i:s');
         $usuario->idCiudad = $request->idCiudad;
         $usuario->idRol = $request->idRol;
-        $usuario->password = $request->password();
+        $usuario->password = Hash::make($request->password);
 
         $usuario->save();
         return redirect()->route('usuario.index')->with('Exitoso', 'El usuario ha sido creado con exito.');

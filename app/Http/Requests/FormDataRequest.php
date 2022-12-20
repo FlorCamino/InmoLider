@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\Password;
 
 class FormDataRequest extends FormRequest
 {
@@ -32,6 +33,9 @@ class FormDataRequest extends FormRequest
             'fechaNacimiento' => ['required', 'date'],
             'direccion' => ['required'],
             'CP' => ['required'],
+            'idRol' => ['required'],
+            'password' => ['required', Password::min(8)],
+            'confirmar-contraseña' => ['required', 'same:password']
         ];
     }
     public function messages()
@@ -51,6 +55,11 @@ class FormDataRequest extends FormRequest
             'telefono.numeric' => 'El teléfono  debe contener valores numéricos.',
             'direccion.required' => 'El domicilio es obligatorio.',
             'CP.required' => 'El Código postal es obligatorio.',
+            'idRol.required' => 'El rol es obligatorio',
+            'password.required' => 'La contraseña es obligatoria',
+            'password.Pasword::min(8)' => 'La contraseña debe contener 8 o más caracteres',
+            'confirmar-contraseña.required' => 'La contraseña es obligatoria',
+            'confirmar-contraseña.same:password' => 'La contraseña no coincide'
         ];
     }
 }
