@@ -20,10 +20,6 @@ class Visitante
         if (!Auth::check()) {
             return redirect()->route('login');
         }
-        if (Auth::user()->rol->id == 2) {
-            return $next($request);
-        } else {
-            return redirect()->route('login');
-        }
+        return $next($request);
     }
 }
