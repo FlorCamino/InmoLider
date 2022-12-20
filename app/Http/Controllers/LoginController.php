@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -42,17 +41,17 @@ class LoginController extends Controller
         }
     }
 
-
-
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+
+    public function logout()
     {
-        $request->session()->invalidate();
-        return redirect(route('login.login'));
+        Session::flush();
+        Auth::logout();
+        return redirect('login');
     }
 }

@@ -29,7 +29,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('admin.login');
+    return view('login');
 });
 
 Route::get('/login_admin', [LoginAdminController::class, 'index'])
@@ -82,3 +82,4 @@ Route::get('/ubicacion', [UbicacionController::class, 'index'])
 // Route::get('login/facebook', [FacebookController::class, 'index']);
 
 // Route::get('login/google', [GoogleController::class, 'index']);
+Route::get('/logout', [LoginController::class, 'logout'])->name('login.logout');

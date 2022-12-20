@@ -92,7 +92,8 @@
         <div class="nav-user">
             <div class="row">
                 <div class="text-end text-bienv">{{ 'Bienvenido,' . ' ' . Auth::user()->nombre}}
-                    <button class="btn-close"></button>
+                    <button class="btn-cerrar"><a class="text-cerrar" href="{{ route('login.logout') }}">
+                            Salir</a></button>
                 </div>
             </div>
     </nav>

@@ -57,11 +57,7 @@
                                 {{'Hola,'. ' ' . Auth::user()->nombre}}
                             </li>
                             <li class="nav-item">
-                                <!-- <a class="nav-link" href="/logout">Salir</a> -->
-                                <form method="POST" action="{{url('logout')}}">
-                                    @csrf
-                                    <button type="button" class="btn btn-primary">Logout</button>
-                                </form>
+                                <a class="nav-link" href="{{ route('login.logout') }}">Salir</a>
                             </li>
                         </ul>
                     </div>

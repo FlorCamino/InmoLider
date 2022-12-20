@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session as FacadesSession;
 
 class LoginAdminController extends Controller
 {
@@ -37,17 +39,5 @@ class LoginAdminController extends Controller
                 'password' => 'La contraseña np coincide con el usuario'
             ]);
         }
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Request $request)
-    {
-        $request->session()->invalidate();
-        return redirect(view('admin.login'));
     }
 }
