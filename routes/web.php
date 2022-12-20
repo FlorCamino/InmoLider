@@ -31,12 +31,15 @@ Route::get('/', function () {
     return view('layouts.registro_login');
 });
 
-Route::resource('/login', LoginController::class)
-    ->only('index', 'store');
+Route::get('/login', [LoginController::class, 'index'])
+    ->name('login');
+
+Route::post('/login', [LoginController::class, 'store'])->name('login');
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::resource('inicio', InicioController::class);
+Route::resource('inicio', InicioController::class)
+    ->middleware('Visitante');
 
 Route::resource('registro', RegistroController::class)
     ->only('index', 'store');
@@ -45,24 +48,30 @@ Route::resource('admin_registro', AdminController::class)
     ->only('index', 'store');
 
 Route::resource('propiedad', PropiedadController::class)
-    ->middleware('auth')
-    ->middleware('can:crear_propiedades');
+    ->middleware('Administrador');
 
-Route::resource('propietario', PropietarioController::class);
+Route::resource('propietario', PropietarioController::class)
+    ->middleware('Administrador');
 
-Route::resource('ciudad', CiudadController::class);
+Route::resource('ciudad', CiudadController::class)
+    ->middleware('Administrador');
 
-Route::resource('usuario', UsuarioController::class);
+Route::resource('usuario', UsuarioController::class)
+    ->middleware('Administrador');
 
-Route::resource('transaccion', TransaccionController::class);
+Route::resource('transaccion', TransaccionController::class)
+    ->middleware('Administrador');
 
 Route::get('propiedad/getIdTipoTransaccion/{idPropiedad}', [PropiedadController::class, 'getIdTipoTransaccion']);
 
-Route::get('/nosotros', [NosotrosController::class, 'index']);
+Route::get('/nosotros', [NosotrosController::class, 'index'])
+    ->middleware('Visitante');
 
-Route::get('/contacto', [ContactoController::class, 'index']);
+Route::get('/contacto', [ContactoController::class, 'index'])
+    ->middleware('Visitante');
 
-Route::get('/ubicacion', [UbicacionController::class, 'index']);
+Route::get('/ubicacion', [UbicacionController::class, 'index'])
+    ->middleware('Visitante');
 
 // Route::get('login/facebook', [FacebookController::class, 'index']);
 

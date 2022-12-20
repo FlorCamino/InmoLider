@@ -14,7 +14,7 @@
 </style>
 
 <div class="container">
-    <form class="form-login" method="POST" action="{{route('login.store')}}">
+    <form class="form-login" method="POST" action="{{route('login')}}">
         @csrf
         <img class="logo-bi" src="{{ asset('img/logo.jpg') }}" alt="Logo" width="120" height="90">
         <h1 class="subtitle">Bienvenido! Por favor, inicie sesión.</h1>
