@@ -5,6 +5,9 @@
     color: black;
 }
 
+body {
+    z-index: 9999;
+}
 /* Form */
 
 .btn-search {
@@ -114,4 +117,48 @@ label {
     width: 100px;
     border-radius: 15px;
     border-color: orangered;
+}
+
+/* VER MAS */
+
+.form-datos {
+    background-color: #fef4ea;
+    border: solid 1px black;
+    border-radius: 15px;
+    margin-bottom: 150px;
+    margin-top: 100px;
+    height: 100%;
+    position: relative;
+}
+
+.form-reg-orange {
+    border-color: #f55d26;
+    width: 100%;
+    background-color: #fef4ea !important;
+}
+.form-check {
+    border-color: #ea5928;
+}
+
+.form-floating-reg {
+    margin-top: 25px;
+    padding-left: 40px !important;
+    padding-right: 40px;
+}
+
+.carousel-img {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.btn-volver {
+    background-color: #f55d26;
+    border: none;
+    width: 15%;
+    color: black;
+    display: inline-block !important;
+    margin-inline-end: 30px !important;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    border-radius: 15px;
 }

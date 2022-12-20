@@ -27,8 +27,9 @@ class InicioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Propiedad $propiedad)
+    public function show($id)
     {
+        $propiedad = Propiedad::find($id);
         return view('inicio.ver_mas', (compact('propiedad')));
     }
 }

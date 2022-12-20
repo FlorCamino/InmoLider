@@ -48,7 +48,7 @@ Route::get('inicio', [InicioController::class, 'index'])
     ->name('inicio.index')
     ->middleware('Visitante');
 
-Route::get('inicio_ver', [InicioController::class, 'show'])
+Route::get('inicio_ver/{id}', [InicioController::class, 'show'])
     ->name('inicio.show')
     ->middleware('Visitante');
 

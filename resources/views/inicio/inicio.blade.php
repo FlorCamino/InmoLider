@@ -76,10 +76,12 @@
                     <h5 class="card-title">{{$propiedad->titulo}}</h5>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <a href="{{route('inicio.show', $propiedad)}}"><button type="button" class="button-card">Ver
-                                    mas</button></a>
+                            <a href="/inicio_ver/{{$propiedad->id}}">
+                                Ver
+                                mas</a>
+
                         </div>
-                        <small class="text-muted">{{$propiedad->valor}}</small>
+                        <small class="text-muted">${{$propiedad->costo}}</small>
                     </div>
                 </div>
             </div>
