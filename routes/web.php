@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CiudadController;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\FacebookController;
@@ -40,7 +41,12 @@ Route::resource('inicio', InicioController::class);
 Route::resource('registro', RegistroController::class)
     ->only('index', 'store');
 
-Route::resource('propiedad', PropiedadController::class);
+Route::resource('admin_registro', AdminController::class)
+    ->only('index', 'store');
+
+Route::resource('propiedad', PropiedadController::class)
+    ->middleware('auth')
+    ->middleware('can:crear_propiedades');
 
 Route::resource('propietario', PropietarioController::class);
 

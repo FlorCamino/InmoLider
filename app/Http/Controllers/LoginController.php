@@ -50,7 +50,9 @@ class LoginController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function logout(Request $request)
+    public function destroy(Request $request)
     {
+        $request->session()->invalidate();
+        return redirect(route('login.login'));
     }
 }

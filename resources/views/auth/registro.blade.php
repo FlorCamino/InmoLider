@@ -1,22 +1,11 @@
-@extends('layouts.registro_login')
+@extends('layouts.base_admin')
 
 @section('content')
-
-<style>
-    #boton-reg {
-        background-color: #f55d26;
-        border-color: orangered;
-    }
-
-    #boton-reg a {
-        color: white;
-    }
-</style>
 
 <div class="container card-body">
     <form class="form" action="{{route('registro.store')}}" method="POST">
         @csrf
-        <img class="logo-bi" src="{{ asset('img/logo.jpg') }}" alt="Logo" width="120" height="90">
+        <img class="logo-bi" src="{{ asset('img/logo1.jpg') }}" alt="Logo" width="120" height="90">
         <h3>Bienvenido! Por favor, complete sus datos.</h3>
         <div class="row">
             <h5 class="subtitle"> <strong> Datos personales </strong> </h5>

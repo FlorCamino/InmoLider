@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Admin;
-use App\Models\Administrador;
+use App\Http\Requests\RegistroRequest;
+use App\Models\Ciudad;
 use App\Models\Propiedad;
-use App\Models\User;
+use App\Models\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -26,42 +26,14 @@ class AdminController extends Controller
     {
         $usuario = Auth::user();
 
-        // $propiedades = DB::select('SELECT p.id, p.descripcion, 
-        // p.direccion, p.barrio, p.CP, p.costo , p.cantBanios, 
-        // p.cantHab, p.estacionamiento, p.aceptaMascotas, p.amoblado,
-        // c.nombre as nombreCiudad, pp.nombre as nombrePropietario, 
-        // t.nombre as nombreTipoTransaccion, e.nombre as nombreEstadoPropiedad,
-        // pe.nombre as nombrePeriodo FROM propiedad p
-        // inner join ciudad c ON p.idciudad = c.id
-        // inner join propietario pp ON p.idPropietario = pp.id
-        // inner join tipotransaccion t ON p.idTipoTransaccion = t.id
-        // inner join estadoPropiedad e ON p.idEstadoPropiedad = e.id
-        // left join periodo pe ON p.idPeriodo = pe.id');
-        $propiedades = Propiedad::all();
-        return view('admin.index', [
-            'propiedades' => $propiedades,
-            'titulo' => 'Listado de propiedades',
-            "usuario" => $usuario
-        ]);
+        $ciudades = Ciudad::all();
+        return view(
+            'auth.registro',
+            ['ciudades' => $ciudades]
+        );
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('propiedad.show');
-    }
-    private function validar(Request $request)
-    {
-        Validator::make($request->post(), [
-            'nombre' => ['required', 'alpha'],
-            'apellido' => ['required', 'alpha'],
-            'legajo' => ['required', 'numeric']
-        ])->validate();
-    }
+
 
 
     /**
@@ -70,75 +42,37 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RegistroRequest $request)
     {
-        $this->validar($request);
-        try {
-            DB::transaction(function () use ($request) {
-                DB::insert('INSERT INTO propiedad (descripcion, fechaCreacion, direccion,barrio,CP
-                 cantHab, cantBanios, estacionamiento, aceptaMascotas, amoblado, costo) values(?,?,?,?)', [
-                    $request->post('descripcion'),
-                    $request->post('fechaCreacion'),
-                    $request->post('direccion'),
-                    $request->post('barrio'),
-                    $request->post('CP'),
-                    $request->post('cantHab'),
-                    $request->post('cantBanios'),
-                    $request->post('estacionamiento'),
-                    $request->post('aceptaMascotas'),
-                    $request->post('amoblado'),
-                    $request->post('costo')
-                ]);
-            });
-            return redirect(route('admin.login'));
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            echo $exception->getMessage();
+        $users = new Users();
+        $users->nombre = $request->nombre;
+        $users->apellido = $request->apellido;
+        $users->dni = $request->dni;
+        $users->fechaNacimiento = $request->fechaNacimiento;
+        $users->email = $request->email;
+        $users->password = Hash::make($request->password);
+        $users->telefono = $request->telefono;
+        $users->direccion = $request->direccion;
+        $users->idCiudad = $request->idCiudad;
+        $users->idRol = 2;
+        $users->CP = $request->CP;
+        $users->fechaDeCreacion = date('y-m-d h:i:s');
+        $destinationPath = 'public/perfil_imagenes/';
+        if ($files = $request->file('perfil-imagen')) {
+            //delete old file
+            File::delete('public/perfil_imagenes/' . $request->hidden_image);
+            $path = $files->store($destinationPath);
+
+            $users->urlFoto = pathinfo($path)['basename'];
+        } else {
+            $users->urlFoto = null;
         }
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
+        $users->save();
 
+        Auth::login($users);
 
-        return view('admin.show', [
-            'user' => User::findOrFail($id)
-        ]);
-        // return view('admin.show', compact('propiedad'));
-    }
-
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Propiedad $propiedad)
-    {
-        return view('admin.editar', compact('propiedad'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Propiedad $propiedad)
-    {
-        $request->validate([
-            'nombre' => 'required',
-        ]);
-        $propiedad->fill($request->post())->save();
-        return redirect()->route('propiedad.index')->with('Exitoso', 'La ciudad ha sido editada con exito.');
+        return redirect("/login");
     }
 
     /**
@@ -147,9 +81,7 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Propiedad $propiedad)
+    public function destroy()
     {
-        $propiedad->delete();
-        return redirect()->route('propiedad.index')->with('Exitoso', 'La ciudad ha sido eliminada con exito.');
     }
 }

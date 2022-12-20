@@ -2,6 +2,12 @@
 
 @section('content')
 
+@can('crear_propiedades')
+<div>
+    <a href="'/nosotros'"><button>Ver</button></a>
+</div>
+@endcan
+
 <div class="container barra-busqueda">
     <form action="#" method="POST">
         @csrf
