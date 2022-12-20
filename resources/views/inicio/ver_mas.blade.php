@@ -3,9 +3,8 @@
 @section('content')
 
 <div class="container">
-    <h2 class="title">Propiedades</h2>
-
     <form class="form-datos">
+        <h2 class="title1">Detalles de propiedad</h2>
         <div class="row">
             <div class="col form-floating-reg">
                 <div class="form-outline" style="margin-bottom: 0px">
@@ -161,25 +160,16 @@
             </div>
         </div>
         <!-- IMAGENES -->
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                @foreach($propiedad->PropiedadImagenes()->get() as $img)
-                <div class="carousel-item-ver active">
-                    <img src="{{asset('storage/propiedad_imagenes/'.$img->urlImg)}}" class="d-block w-100" alt="...">
-                </div>
-                @endforeach
+
+        @foreach($propiedad->PropiedadImagenes()->get() as $img)
+        <div class="row ver-imagen">
+            <div class="col-6 img-contenedor">
+                <img src="{{asset('storage/propiedad_imagenes/'.$img->urlImg)}}" class="d-block w-100 img-ver"
+                    alt="...">
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
+        @endforeach
+
         <!-- Submit button -->
         <div class="container-fluid">
             <div class="text-end">

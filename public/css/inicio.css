@@ -125,6 +125,10 @@ label {
 }
 
 /* VER MAS */
+.title1 {
+    margin-left: 570px !important;
+    margin-top: 20px !important;
+}
 
 .form-datos {
     background-color: #fef4ea;
@@ -154,6 +158,22 @@ label {
 .carousel-img {
     width: 100% !important;
     height: 100% !important;
+}
+
+.ver-imagen {
+    width: 80% !important;
+    height: 80% !important;
+    display: inline;
+}
+
+.ver-mas {
+    width: 300px !important;
+    height: 300px !important;
+}
+
+.img-contenedor {
+    margin-bottom: 30px;
+    margin-left: 300px;
 }
 
 .btn-volver {
