@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -49,9 +50,7 @@ class LoginController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(LoginRequest $request)
+    public function logout(Request $request)
     {
-        $request->session()->invalidate();
-        return redirect(route('login.login'));
     }
 }

@@ -16,12 +16,13 @@ class InicioController extends Controller
      */
     public function index()
     {
-        dd($users = Auth::users()->nombre);
-        $users = Auth::users();
+
+        $usuario = Auth::user();
 
         $propiedades = Propiedad::all();
         return view('inicio.inicio', [
-            'propiedades' => $propiedades
+            'propiedades' => $propiedades,
+            'usuario' => $usuario
         ]);
     }
 

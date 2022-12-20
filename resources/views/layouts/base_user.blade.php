@@ -53,8 +53,15 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="/ubicacion">Ubicación</a>
                             </li>
+                            <li class="nav-link">
+                                {{'Hola,'. ' ' . $usuario->nombre}}
+                            </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/logout">Salir</a>
+                                <!-- <a class="nav-link" href="/logout">Salir</a> -->
+                                <form method="POST" action="{{url('logout')}}">
+                                    @csrf
+                                    <button type="button" class="btn btn-primary">Logout</button>
+                                </form>
                             </li>
                         </ul>
                     </div>
