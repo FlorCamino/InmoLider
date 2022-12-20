@@ -59,7 +59,7 @@ class UsuarioController extends Controller
         $usuario->fechaDeCreacion = date('y-m-d h:i:s');
         $usuario->idCiudad = $request->idCiudad;
         $usuario->idRol = $request->idRol;
-        // $usuario->password = '1234'
+        $usuario->password = $request->password();
 
         $usuario->save();
         return redirect()->route('usuario.index')->with('Exitoso', 'El usuario ha sido creado con exito.');

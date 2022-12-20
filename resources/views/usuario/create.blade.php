@@ -102,6 +102,33 @@
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <div class="form-group">
+                    <strong>Rol:</strong>
+                    <select class="form-control" name="idRol" id="idRol">
+                        <option value="">- Seleccionar -</option>
+                        @foreach($roles as $rol )
+                        <option value="{{$rol->id}}">{{ $rol->nombre }}
+                        </option>
+                        @endforeach
+                    </select>
+                    @error('idRol')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <strong>Contraseña:</strong>
+                    <input type="text" name="password" class="form-control">
+                    @error('password')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <strong>Confirmar contraseña:</strong>
+                    <input type="text" name="confirmar-contraseña" class="form-control">
+                    @error('confirmar-contraseña')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
                 <div class="text-end">
                     <a class="button-7" href="{{ route('usuario.index') }}"> Volver</a>
                     <button type="submit" class="button-7 ml-3">Guardar</button>

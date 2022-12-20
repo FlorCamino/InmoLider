@@ -10,8 +10,10 @@
     {{-- Icons Navbar --}}
     <script src="https://code.iconify.design/3/3.0.0/iconify.min.js"></script>
     {{-- Estilos --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/base_admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -39,7 +41,7 @@
                         alt="logo">
                 </div>
                 <div class="col-8">
-                    <ul class="group-list">
+                    <ul class="group-list d-inline-block">
                         <li class="nav-li">
                             <a href="{{ route('propiedad.index') }}" id="btn1" class="nav-link">
                                 <span class="iconify bi d-block mx-auto mb-1" data-icon="mdi:home-city" data-width="30"
@@ -75,11 +77,20 @@
                                 Transacción
                             </a>
                         </li>
+                        <li class="nav-li">
+                            <a href="{{ route('inicio.index') }}" id="btn5" class="nav-link">
+                                <span class="iconify bi d-block mx-auto mb-1"
+                                    data-icon="material-symbols:arrow-circle-up" data-width="30"
+                                    data-height="30"></span>
+                                Usuario/Inicio
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="nav-user">
+            <div class="text-end text-bienv">{{ 'Bienvenido,' . ' ' . Auth::user()->nombre}}</div>
         </div>
     </nav>
 

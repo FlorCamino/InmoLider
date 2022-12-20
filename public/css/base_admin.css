@@ -39,6 +39,7 @@ body {
 
 .nav-link {
     color: black;
+    padding: 0 !important;
 }
 
 .group-list {
@@ -53,7 +54,12 @@ body {
     color: white;
     background-color: #1565c0;
     margin-bottom: 3px;
-    height: 15px;
+    height: 30px;
+}
+
+.text-bienv {
+    padding-top: 5px;
+    padding-right: 50px;
 }
 
 /* Styles to footer */

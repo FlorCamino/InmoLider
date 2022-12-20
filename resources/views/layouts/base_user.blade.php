@@ -54,7 +54,7 @@
                                 <a class="nav-link" href="/ubicacion">Ubicación</a>
                             </li>
                             <li class="nav-link">
-                                {{'Hola,'. ' ' . $usuario->nombre}}
+                                {{'Hola,'. ' ' . Auth::user()->nombre}}
                             </li>
                             <li class="nav-item">
                                 <!-- <a class="nav-link" href="/logout">Salir</a> -->
