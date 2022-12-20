@@ -6,6 +6,7 @@ use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\InicioController;
+use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NosotrosController;
 use App\Http\Controllers\PropiedadController;
@@ -28,8 +29,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layouts.registro_login');
+    return view('admin.login');
 });
+
+Route::get('/login_admin', [LoginAdminController::class, 'index'])
+    ->name('login_admin.index');
+
+Route::post('/login_admin', [LoginAdminController::class, 'store'])->name('login_admin.store');
 
 Route::get('/login', [LoginController::class, 'index'])
     ->name('login');

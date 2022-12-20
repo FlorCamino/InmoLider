@@ -1,0 +1,38 @@
+/* LOGIN */
+
+.subtitle {
+    color: #1565c0;
+    text-align: center;
+    font-size: 25px;
+    padding-top: 20%;
+    padding-bottom: 20px;
+}
+
+.form-control-orange {
+    margin-left: 34% !important;
+    width: 30% !important;
+    border: solid 1px #1565c0 !important;
+    margin-top: 20px;
+}
+.form-check-label {
+    margin-left: 35% !important;
+    color: gray !important;
+}
+
+.form-check {
+    margin-bottom: 40px;
+    margin-top: 15px;
+    margin-left: 35% !important;
+}
+
+.btn-form-control {
+    width: 20% !important;
+    background-color: #1565c0 !important;
+    color: white !important;
+    margin-left: 38% !important;
+}
+
+.text-muted {
+    margin-left: 37%;
+    margin-top: 40px;
+}

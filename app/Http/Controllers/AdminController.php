@@ -4,19 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RegistroRequest;
 use App\Models\Ciudad;
-use App\Models\Propiedad;
 use App\Models\Users;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -28,12 +22,10 @@ class AdminController extends Controller
 
         $ciudades = Ciudad::all();
         return view(
-            'auth.registro',
+            'registro_admin.registro',
             ['ciudades' => $ciudades]
         );
     }
-
-
 
 
     /**
@@ -54,7 +46,7 @@ class AdminController extends Controller
         $users->telefono = $request->telefono;
         $users->direccion = $request->direccion;
         $users->idCiudad = $request->idCiudad;
-        $users->idRol = 2;
+        $users->idRol = 1;
         $users->CP = $request->CP;
         $users->fechaDeCreacion = date('y-m-d h:i:s');
         $destinationPath = 'public/perfil_imagenes/';
@@ -72,7 +64,7 @@ class AdminController extends Controller
 
         Auth::login($users);
 
-        return redirect("/login");
+        return redirect("login_admin");
     }
 
     /**
