@@ -9,6 +9,8 @@
 
 .v-line1 {
     height: 600px;
+    left: 62%;
+    position: absolute;
 }
 
 .heading {
@@ -17,8 +19,7 @@
 }
 
 .lead {
-    margin: 0;
-    padding: 0;
+    margin-bottom: 30px;
 }
 
 .list-datos {
@@ -28,8 +29,9 @@
     border: solid 1px orangered;
     list-style: none;
     border-radius: 15px;
-    margin-left: 20%;
+    margin-left: 5%;
     margin-top: 30px;
+    width: 100%;
 }
 
 iframe {
