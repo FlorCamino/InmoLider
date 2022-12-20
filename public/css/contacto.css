@@ -7,17 +7,18 @@
 
 .v-line {
     border-left: 1px solid orangered;
-    height: 60%;
+    height: 56%;
     left: 38%;
     position: absolute;
 }
 
-.v-line1 {
+.v-1line {
     border-left: 1px solid orangered;
-    height: 60%;
+    height: 56%;
     left: 62%;
     position: absolute;
 }
+
 .marketing {
     margin-top: 150px;
     margin-bottom: 100px;
@@ -46,14 +47,16 @@ p {
 }
 
 .cont-list {
-    text-align: center;
-    word-spacing: 10px;
-    margin-left: 20px;
+    list-style: circle;
+    text-align: left;
+    margin-left: 50px;
     margin-right: 10px;
-    list-style: none;
-    display: inline-block !important;
+    display: block !important;
 }
 
+a {
+    color: orangered;
+}
 li {
     margin-right: 10px;
     align-items: center;
