@@ -18,12 +18,12 @@ class Administrador
     public function handle(Request $request, Closure $next)
     {
         if (!Auth::check()) {
-            return redirect()->route('login');
+            return redirect()->route('login_admin.index');
         }
         if (Auth::user()->rol->id == 1) {
             return $next($request);
         } else {
-            return redirect()->route('login');
+            return redirect()->route('login_admin.index');
         }
         abort(403);
     }
