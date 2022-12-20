@@ -8,6 +8,7 @@ use App\Models\Propiedad;
 use App\Models\PropiedadImagenes;
 use App\Models\Propietario;
 use App\Models\TipoTransaccion;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
 
@@ -20,9 +21,10 @@ class PropiedadController extends Controller
      */
     public function index()
     {
+
         $propiedades = Propiedad::all();
         return view('propiedad.index', [
-            'propiedades' => $propiedades,
+            'propiedades' => $propiedades
         ]);
     }
 
@@ -52,6 +54,7 @@ class PropiedadController extends Controller
      */
     public function store(PropiedadRequest $request)
     {
+
         $propiedad = new Propiedad();
         $propiedad->titulo = $request->titulo;
         $propiedad->descripcion = $request->descripcion;

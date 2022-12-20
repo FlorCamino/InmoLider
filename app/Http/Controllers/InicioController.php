@@ -17,12 +17,9 @@ class InicioController extends Controller
     public function index()
     {
 
-        $usuario = Auth::user();
-
         $propiedades = Propiedad::all();
         return view('inicio.inicio', [
-            'propiedades' => $propiedades,
-            'usuario' => $usuario
+            'propiedades' => $propiedades
         ]);
     }
 
