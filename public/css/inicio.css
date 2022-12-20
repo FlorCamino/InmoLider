@@ -92,8 +92,13 @@ label {
     display: flex;
 }
 
+.ver_mas:hover {
+    color: #ea5928;
+}
 .card {
     display: inline-block;
+    height: 400px !important;
+    width: 400px !important;
 }
 
 .card-body {

@@ -2,16 +2,9 @@
 
 @section('content')
 
-@can('crear_propiedades')
-<div>
-    <a href="'/nosotros'"><button>Ver</button></a>
-</div>
-@endcan
-
 <div class="container barra-busqueda">
     <form action="#" method="POST">
         @csrf
-        @method('POST')
         <div class="row">
             <div class="col-6">
                 <div class="form-floating">
@@ -76,10 +69,7 @@
                     <h5 class="card-title">{{$propiedad->titulo}}</h5>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <a href="/inicio_ver/{{$propiedad->id}}">
-                                Ver
-                                mas</a>
-
+                            <a class="ver_mas" href="/inicio_ver/{{$propiedad->id}}">Ver mas</a>
                         </div>
                         <small class="text-muted">${{$propiedad->costo}}</small>
                     </div>
@@ -89,8 +79,5 @@
         @endforeach
     </div>
 </div>
-
-
-
 
 @endsection
