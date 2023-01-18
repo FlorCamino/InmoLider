@@ -15,6 +15,7 @@ body {
     min-height: 100vh !important;
     margin: 0;
     padding-bottom: 100px;
+    z-index: 9999;
 }
 
 /* Navbar */
@@ -65,7 +66,7 @@ ul {
 /* Footer */
 
 .footer-distributed {
-    position: absolute !important;
+    position: fixed !important;
     text-align: left;
     font: bold 15px serif;
     padding: 3px 50px;
